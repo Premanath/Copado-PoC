@@ -1,0 +1,8 @@
+<div ng-if="$index >= (parent.limitActionLinksTo?parent.limitActionLinksTo:5)">
+    <div class="slds-section__title slds-m-bottom--x-small slds-m-top--small">Actions</div>
+    <ul class="slds-has-inline-block-links--space">
+        <li ng-repeat="action in parent.data.actions" ng-if="$index >= (parent.limitActionLinksTo?parent.limitActionLinksTo:5)">
+            <a class="slds-truncate" href="javascript:void(0);" ng-click="performAction(action)" hotkey-card-action> {{action.displayName}}</a>
+        </li>
+    </ul>
+</div>

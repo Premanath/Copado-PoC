@@ -1,0 +1,27 @@
+{
+    "Cards": [
+        "SAMPLE-Account Info",
+        "SAMPLE-Billing",
+        "SAMPLE-Product",
+        "SAMPLE-Orders",
+        "SAMPLE-New Case"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "001f40000040s51"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "SAMPLE_GetAcctCases",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "card-canvas-3x-slds"
+        }
+    }
+}

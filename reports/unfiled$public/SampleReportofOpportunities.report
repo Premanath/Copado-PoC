@@ -48,10 +48,6 @@
     </groupingsDown>
     <name>Sample Report: # of Opportunities</name>
     <params>
-        <name>terr</name>
-        <value>all</value>
-    </params>
-    <params>
         <name>open</name>
         <value>all</value>
     </params>

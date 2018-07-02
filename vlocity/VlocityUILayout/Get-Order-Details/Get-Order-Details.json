@@ -1,0 +1,16 @@
+{
+    "Cards": [
+    ],
+    "dataSource": {
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "GetAccountOrders",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "card-canvas-3x-slds"
+        }
+    }
+}

@@ -6,7 +6,7 @@
     <label>TRNG_OmniScript_Page</label>
     <packageVersions>
         <majorNumber>900</majorNumber>
-        <minorNumber>39</minorNumber>
+        <minorNumber>7</minorNumber>
         <namespace>vlocity_cmt</namespace>
     </packageVersions>
 </ApexPage>

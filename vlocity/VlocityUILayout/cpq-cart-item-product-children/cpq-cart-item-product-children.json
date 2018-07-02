@@ -1,0 +1,13 @@
+{
+    "Cards": [
+        "cpq-cart-item-child-products"
+    ],
+    "dataSource": {
+        "type": "Inherit"
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "cpq-cart-item-product-children"
+        }
+    }
+}

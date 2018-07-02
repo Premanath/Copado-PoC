@@ -1,0 +1,26 @@
+{
+    "Cards": [
+        "SAMPLE_trng-interaction-profile-account-slds",
+        "SAMPLE_trng-interaction-profile-account-info-slds",
+        "SAMPLE_trng-interaction-profile-contact",
+        "SAMPLE_trng-interaction-profile-contact-info"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "a3Zf4000000LT7W"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "TRNGGetInteractionContAcct",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "vlocity-interaction-console-sidebar-slds"
+        }
+    }
+}

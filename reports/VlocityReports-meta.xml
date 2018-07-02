@@ -2,7 +2,7 @@
 <ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
     <folderShares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>student3046@cme.edu</sharedTo>
+        <sharedTo>student3057@cme.edu</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <name>Vlocity Reports</name>

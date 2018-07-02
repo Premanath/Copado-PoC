@@ -1,0 +1,23 @@
+{
+    "AddToCart": "Add to Cart",
+    "OmniMonthly": "Monthly Cost",
+    "OmniOneTime": "One Time Cost",
+    "control": {
+        "itemsKey": "results",
+        "propSetMap": {
+            "label": "Property Label"
+        },
+        "vlcSI": {
+            "results": [
+                {
+                    "BillDeliveryMethod": "BillDeliveryMethod",
+                    "BillFrequency": "BillDeliveryMethod",
+                    "BillingName": "BillingName",
+                    "BillingPaymentType": "BillingPaymentType",
+                    "MonthlyCost": 20,
+                    "added": false
+                }
+            ]
+        }
+    }
+}

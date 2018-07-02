@@ -8,5 +8,4 @@
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
     <tabs>VU_AccountContact__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

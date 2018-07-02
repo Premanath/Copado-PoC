@@ -185,11 +185,7 @@
     <tabs>standard-Lead</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>vlocity_cmt__CustomerInteraction__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
     <workspaceConfig>
-        <mappings>
-            <tab>Vlocity_Package__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

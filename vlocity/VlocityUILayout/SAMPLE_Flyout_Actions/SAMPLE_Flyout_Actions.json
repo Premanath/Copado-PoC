@@ -1,0 +1,12 @@
+{
+    "Cards": [
+    ],
+    "dataSource": {
+        "type": "Inherit"
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "flyout-grid"
+        }
+    }
+}

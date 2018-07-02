@@ -1,0 +1,31 @@
+<div class="slds-card via-slds-card--active" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}">
+    
+    <header ng-class="{'via-slds-card-alert':params.SLA=='Platinum'}" class="via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--medium">
+        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+        
+        <div class="slds-media__figure">
+             <span class="slds-icon_container slds-icon-{{data.sprite}}-{{data.icon}}" title="description of icon when needed">
+               <slds-svg-icon
+                       sprite="data.sprite"
+                       icon="data.icon"
+                       size="'medium'"
+                       no-hint="true"
+                   ></slds-svg-icon> 
+            </span>
+        </div>
+            <span class="slds-text-heading--label slds-truncate">
+                <div ng-repeat="field in data.fields" ng-show="key != 'attributes'" ng-if="(obj | getter: field)">
+                    <span class="slds-text-heading--label">{{field.label}} </span>
+                    <span class="slds-text-body--regular" ng-if="!obj[field.relationshipName]">{{obj | getter: field | picker: field.type}}</span>
+                </div>
+            </span>
+    </div>
+    <div class="slds-no-flex">
+        <button class="slds-button slds-button--neutral slds-col--bump-left" ng-click="performAction(action)" ng-repeat="action in data.actions | limitTo: (data.limitActionLinksTo?data.limitActionLinksTo:3)">      
+            <i ng-if="!action.imageRef" class="icon {{action.vlocityIcon}}"></i>{{action.displayName}}
+            <span ng-if="action.imageRef"><img ng-src="{{action.imageRef}}" alt="{{action.displayName}}"/></span>
+        </button>
+      
+    </div>
+  </header>
+ </div>

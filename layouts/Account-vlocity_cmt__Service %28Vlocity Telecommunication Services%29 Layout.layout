@@ -13,7 +13,7 @@
                 </sidebarComponents>
                 <style>Stack</style>
                 <unit>Pixel</unit>
-                <width>250</width>
+                <width>500</width>
             </containers>
             <containers>
                 <isContainerAutoSizeEnabled>true</isContainerAutoSizeEnabled>
@@ -21,17 +21,16 @@
                 <sidebarComponents>
                     <componentType>VisualForcePage</componentType>
                     <height>100</height>
-                    <page>vlocity_cmt__ConsoleSidebar_slds</page>
+                    <page>vlocity_cmt__ConsoleSidebar</page>
                     <unit>Percentage</unit>
                 </sidebarComponents>
                 <style>Stack</style>
                 <unit>Pixel</unit>
-                <width>250</width>
+                <width>50</width>
             </containers>
         </primaryTabComponents>
     </customConsoleComponents>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -86,10 +85,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>BillingAddress</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>External_Id__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -338,7 +333,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7F000005a3m6</masterLabel>
+        <masterLabel>00h7F000005a2gw</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>2</sizeY>
         <summaryLayoutItems>

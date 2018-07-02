@@ -1,0 +1,57 @@
+<div class="slds-card via-slds-card--active slds-m-bottom--small" data-card="card-{{cardIndex}}" ng-class="{selected:isSelected(cardIndex)}"  data-embed-flyout=".embed-flyout">
+    <div class="via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--medium" ng-click="performFlyout('card-'+cardIndex)">
+    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+   
+        <div class="slds-media__figure">
+            <span class="slds-icon_container slds-icon-{{data.sprite}}-{{data.icon}}" title="description of icon when needed">
+               <slds-svg-icon
+                       sprite="data.sprite"
+                       icon="data.icon"
+                       size="'medium'"
+                       no-hint="true"
+                   ></slds-svg-icon> 
+            </span>
+           
+        </div>
+        
+    <div class="slds-media__body slds-truncate">
+        <a href="javascript:void(0);" class="slds-text-link--reset" tooltip-placement="bottom" tooltip="{{data.title}}">
+        <!-- use the name field if it exists, if not use the title -->
+        <span class="slds-text-heading--label" ng-if="obj.Name">{{obj | getter:data.fields[0] | picker:data.fields[0].type}}</span>
+        <span class="slds-text-heading--label" ng-if="!obj.Name">{{data.title}}</span>
+        </a>
+    </div>
+   
+    </div>
+    </div>
+    
+    <div class="slds-card__body--inner slds-media">
+        <div class="slds-media__figure"><a href="#"><img class="slds-avatar--large" src="/servlet/servlet.FileDownload?file={{obj.Image}}"></a>
+        
+        <div ng-repeat="field in data.fields.slice(1) " ng-show="key != 'attributes'" ng-if="(obj | getter: field)">
+            <span class="slds-text-heading--label">{{field.label}}: </span>
+            <span class="slds-text-body--regular" ng-if="!obj[field.relationshipName]">
+                 {{obj | getter: field | picker: field.type}}</span>
+        </div>
+            
+        </div>
+    
+    <div class="slds-media__body slds-section">
+        <div class="slds-grid slds-grid--align-center">
+            <ul class="actions">
+                <li ng-repeat="action in data.actions | limitTo: (data.limitActionLinksTo?data.limitActionLinksTo:5)">
+                <a href="#" ng-click="performAction(action)" hotkey-card-action>
+                    <i ng-if="!action.imageRef" class="icon {{action.vlocityIcon}}"></i>
+                    <span ng-if="action.imageRef">
+                        <img ng-src="{{action.imageRef}}" alt="{{action.displayName}}"/>
+                    </span>
+                    <span>{{action.displayName}}</span>
+                </a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    
+</div>   
+</div>

@@ -1,0 +1,35 @@
+{
+    "Cards": [
+        "comp-assets-product-item"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "parent.Id.value",
+                "val": "80041000000E67tAAC"
+            }
+        ],
+        "type": "Dual",
+        "value": {
+            "apexRemoteResultVar": "records",
+            "apexRestResultVar": "records",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/contracts/{{parent.Id.value}}/assets?priceDetailsFields=%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeManualDiscount__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c",
+            "inputMap": {
+                "contractId": "{{parent.Id.value}}",
+                "priceDetailsFields": "%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeManualDiscount__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c"
+            },
+            "methodType": "GET",
+            "optionsMap": {
+            },
+            "remoteClass": "CpqAppHandler",
+            "remoteMethod": "getAssetsByContract",
+            "remoteNSPrefix": "%vlocity_namespace%",
+            "resultVar": "records"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "comp-assets-contract"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "Cards": [
+        "SAMPLE Billing",
+        "SAMPLE Product",
+        "SAMPLE Account Info",
+        "SAMPLE Orders"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "0017F00000TTwOT"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "TRNGgetAccountCases",
+            "ctxId": "params.id",
+            "resultVar": ""
+        }
+    },
+    "sessionVars": [
+        {
+            "name": "sldsFormat",
+            "val": "'list'"
+        }
+    ],
+    "templates": {
+        "0": {
+            "templateUrl": "_RR-card-canvas-list-with-search-slds"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "%vlocity_namespace%__Definition__c": "Advanced_Service_Layout.json",
+    "%vlocity_namespace%__Description__c": "",
+    "%vlocity_namespace%__Type__c": "Layout",
+    "%vlocity_namespace%__Version__c": 3,
+    "Name": "Advanced_Service_Layout",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__VlocityUILayout__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__VlocityUILayout__c/Advanced_Service_Layout"
+}

@@ -49,10 +49,6 @@
     </groupingsDown>
     <name>Sample Report: Sales Leaderboard</name>
     <params>
-        <name>terr</name>
-        <value>all</value>
-    </params>
-    <params>
         <name>open</name>
         <value>closedwon</value>
     </params>

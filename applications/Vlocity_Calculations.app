@@ -11,5 +11,4 @@
     <tabs>vlocity_cmt__DataRaptor</tabs>
     <tabs>vlocity_cmt__CalculationProcedure__c</tabs>
     <tabs>vlocity_cmt__CalculationMatrix__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

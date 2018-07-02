@@ -1,0 +1,157 @@
+<div class="via-slds-card-alert slds-card via-slds-card--active via-slds-card--flyout-grid-items">
+    <div class="via-slds-card-alert via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--medium">
+    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+      <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-standard-case" title="description of icon when needed">
+                    <slds-svg-icon
+                        sprite="'custom'"
+                        icon="'custom60'"
+                        size="'medium'"
+                       no-hint="true"
+                   ></slds-svg-icon> 
+                </span>
+          
+      </div>
+      <div class="slds-media__body slds-truncate">
+          
+        <a href="javascript:void(0);" class="slds-text-link--reset" tooltip-placement="bottom" tooltip="{{data.title}}">
+          <span class="slds-text-heading--label">{{obj.display_location.full}}<br />
+          <span>WARNING! FREEZING TEMPERATURES DETECTED. CUSTOMER MUST RESCHEDULE OR CANCEL.</span> </span>
+        </a>
+        <br />
+        
+      </div>
+    </div>
+    </div>
+    <div class="slds-card__body via-slds-card__body slds-grid slds-wrap slds-theme--default slds-p-around--medium">
+      <div class="slds-col--padded slds-size--1-of-2">
+          <div class="slds-media slds-media--center slds-has-flexi-truncate">
+            <div class="slds-media__body slds-truncate">
+                <span class="slds-text-heading--label">Current Conditions</span>
+                <div class="slds-media__figure">
+                <a href="#"><img src="{{obj.icon_url}}"></a>
+                </div>
+                <div class="slds-tile__detail slds-text-heading--small ">{{obj.weather}}
+                </div>
+            </div>
+  </div>
+  <br />
+          <div class="slds-tile slds-p-bottom--medium" ng-repeat="field in data.fields " ng-show="key != 'attributes'">
+            <p class="slds-truncate slds-text-heading--label" title="{{field.label}}">{{field.label}}</p>
+            <div class="slds-tile__detail slds-text-heading--small ">
+                <p class="slds-truncate" ng-if="!obj[field.relationshipName]">{{obj | getter: field | picker: field.type}}</p>
+                <p class="slds-truncate" ng-if="obj[field.relationshipName]">{{obj[field.relationshipName]['Name']}}</p>
+            </div>
+        </div>
+      </div>
+      
+      <div class="slds-col--padded slds-size--1-of-2">
+          <div class="slds-tile slds-p-bottom--x-small slds-truncate" ng-repeat="action in data.actions | limitTo: (data.limitActionLinksTo?data.limitActionLinksTo:5)">
+              <p class="slds-truncate slds-text-heading--label"> </p>
+              <a href="javascript:void(0);" class="slds-truncate via-action-link" ng-click="performAction(action)">
+                <span class="icon via-action-icon {{action.vlocityIcon}}" aria-hidden="true"></span>{{action.displayName}}
+              </a>
+          </div>
+      </div>
+         <div class="slds-tile slds-p-bottom--medium">
+            <p class="slds-truncate slds-text-heading--label" title="Forecast">Forecasts</p>
+            <div class="slds-tile__detail slds-text-heading--small ">
+                <p class="slds-truncate" ng-if="!obj[field.relationshipName]"><a href="{{obj.forecast_url}}" target="_blank">10 day forecast</a> </p>
+                
+            </div>
+        </div>
+      </div>
+   
+      </div>
+  <div class="slds-card__footer via-slds-card__footer slds-p-top--x-small ">
+
+<a href="{{obj.image.link}}" target="_blank"><img src="{{obj.image.url}}" height="50" width="50"></a>
+
+</div>
+
+<!--
+    
+    <div class="slds-card via-slds-card--active slds-m-bottom--small">
+  <div class="via-slds-card-alert via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--medium">
+          <header class="via-slds-card__header slds-card__header slds-grid slds-grid--vertical-align-center slds-p-around--medium">
+        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+        
+        <div class="slds-media__figure">
+             <span class="slds-icon_container slds-icon-{{data.sprite}}-{{data.icon}}" title="description of icon when needed">
+                        <slds-svg-icon
+                        sprite="'custom'"
+                        icon="'custom60'"
+                        size="'medium'"
+                       no-hint="true"
+                   ></slds-svg-icon> 
+                </span>
+ 
+      </div>
+      <div class="slds-media__body slds-truncate">
+        <a href="javascript:void(0);" class="slds-text-link--reset" tooltip-placement="bottom" tooltip="{{data.title}}">
+          <span class="slds-text-heading--label"><span>{{obj.Name ? obj.Name : data.title}}</span> </span>
+        </a>
+        <br />
+        
+      </div>
+      
+    </div>
+    </header>
+  
+      
+            
+    
+
+  <div class="slds-card__body via-slds-card__body slds-grid slds-wrap slds-theme--default slds-p-around--medium">
+        <div class="slds-col--padded slds-size--1-of-2">
+                <div class="slds-tile slds-p-bottom--medium" ng-repeat="field in data.fields " ng-show="key != 'attributes'">
+            <p class="slds-text-heading--label">WARNING! FREEZING TEMPERATURES DETECTED. CUSTOMER MUST RESCHEDULE OR CANCEL.</p>
+            
+        </div>  
+          
+               <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                <div class="slds-media__body slds-truncate">
+                <span class="slds-text-heading--label">Current Conditions for {{obj.display_location.full}}</span>
+                <div class="slds-media__figure">
+                <a href="#"><img src="{{obj.icon_url}}"></a>
+                </div>
+                <div class="slds-tile__detail slds-text-heading--small ">{{obj.weather}}
+                </div>
+            </div>
+  </div>
+  <br />
+          <div class="slds-tile slds-p-bottom--medium" ng-repeat="field in data.fields " ng-show="key != 'attributes'">
+            <p class="slds-truncate slds-text-heading--label" title="{{field.label}}">{{field.label}}</p>
+            <div class="slds-tile__detail slds-text-heading--small ">
+                <p class="slds-truncate" ng-if="!obj[field.relationshipName]">{{obj | getter: field | picker: field.type}}</p>
+                <p class="slds-truncate" ng-if="obj[field.relationshipName]">{{obj[field.relationshipName]['Name']}}</p>
+            </div>
+        </div>
+      </div>
+      
+      <div class="slds-col--padded slds-size--1-of-2">
+          <div class="slds-tile slds-p-bottom--x-small slds-truncate" ng-repeat="action in data.actions | limitTo: (data.limitActionLinksTo?data.limitActionLinksTo:5)">
+              <p class="slds-truncate slds-text-heading--label"> </p>
+              <a href="javascript:void(0);" class="slds-truncate via-action-link" ng-click="performAction(action)">
+                <span class="icon via-action-icon {{action.vlocityIcon}}" aria-hidden="true"></span>{{action.displayName}}
+              </a>
+          </div>
+      </div>
+         <div class="slds-tile slds-p-bottom--medium">
+            <p class="slds-truncate slds-text-heading--label" title="Forecast">Forecasts</p>
+            <div class="slds-tile__detail slds-text-heading--small ">
+                <p class="slds-truncate" ng-if="!obj[field.relationshipName]"><a href="{{obj.forecast_url}}" target="_blank">10 day forecast</a> </p>
+                
+            </div>
+        </div>
+      </div>
+   
+      </div>
+      
+  
+  <div class="slds-card__footer via-slds-card__footer slds-p-top--x-small ">
+      
+<a href="{{obj.image.link}}" target="_blank"><img src="{{obj.image.url}}" height="50" width="50"></a>
+</div>
+</div>
+-->

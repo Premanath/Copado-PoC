@@ -1,0 +1,16 @@
+.via-slds .slds-table:not(.slds-no-row-hover) tbody tr.detail-row:hover {
+        >th {
+        background-color: white;
+        }
+       &>td{
+            background-color: white;
+        }
+}
+
+.cell-header{
+    color: #0070d2;
+}
+
+.total-border{
+    border-top: 2px solid #d8dde6;
+}

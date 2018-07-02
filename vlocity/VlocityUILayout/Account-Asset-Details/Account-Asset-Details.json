@@ -1,0 +1,23 @@
+{
+    "Cards": [
+        "Asset Details 05"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.Id",
+                "val": "0017F00000TTwJp"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "AccountAssetData",
+            "ctxId": "params.Id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "card-canvas-3x-slds"
+        }
+    }
+}

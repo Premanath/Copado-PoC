@@ -1,0 +1,23 @@
+{
+    "Cards": [
+        "SAMPLE profile-account",
+        "SAMPLE profile-account-info"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "[copy Acme's record id here]"
+            }
+        ],
+        "type": "Query",
+        "value": {
+            "query": "SELECT Id, Name, BillingAddress, Phone, PhotoURL, Website FROM Account WHERE Id = '{{params.id}}'"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "console-sidebar"
+        }
+    }
+}

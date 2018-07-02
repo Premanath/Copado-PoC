@@ -1,0 +1,17 @@
+{
+    "%vlocity_namespace%__Author__c": "RoadRunner",
+    "%vlocity_namespace%__CustomJavascript__c": "",
+    "%vlocity_namespace%__Description__c": "",
+    "%vlocity_namespace%__DisplayOn__c": "",
+    "%vlocity_namespace%__ExternalID__c": "_RR-flyout-grid-items-weather-alert-slds/2/RoadRunner/1473314478134",
+    "%vlocity_namespace%__HTML__c": "RR-flyout-grid-items-weather-alert-slds.html",
+    "%vlocity_namespace%__ParentID__c": "_RR-flyout-grid-items-weather-slds/1/RoadRunner/1473303073813",
+    "%vlocity_namespace%__SampleJson__c": "",
+    "%vlocity_namespace%__Sass__c": "RR-flyout-grid-items-weather-alert-slds.scss",
+    "%vlocity_namespace%__Type__c": "Flyout",
+    "%vlocity_namespace%__Version__c": 2,
+    "Name": "_RR-flyout-grid-items-weather-alert-slds",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__VlocityUITemplate__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__VlocityUITemplate__c/_RR-flyout-grid-items-weather-alert-slds"
+}

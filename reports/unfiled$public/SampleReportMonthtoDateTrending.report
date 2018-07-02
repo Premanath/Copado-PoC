@@ -54,10 +54,6 @@
     </groupingsDown>
     <name>Sample Report: Month to Date Trending</name>
     <params>
-        <name>terr</name>
-        <value>all</value>
-    </params>
-    <params>
         <name>open</name>
         <value>closedwon</value>
     </params>

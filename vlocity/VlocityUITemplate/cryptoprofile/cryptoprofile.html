@@ -1,0 +1,56 @@
+<span class="test">testfgfgffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+<div class="profile-box" style="background-image:url('{{$root.staticResourceURL.consoleSidebarProfile}}');">
+   
+    <div class="container">
+  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">{{obj.Name}}</div>
+  </div>
+</div>
+    <div class="social">
+                <a href="tel:{{records[0].Phone}}"><i class="icon-v-phone-line"></i></a>
+                <a href="mailto:{{records[0].Email__c}}" target="_top"><i class="icon-v-email-line"></i></a>
+
+        </div>
+</div>
+
+     <div class="slds-card__body via-slds-card__body slds-grid slds-wrap slds-theme--default slds-p-around--medium" >
+   
+               <div>
+                   Cryptocurrency Information
+                  <div class="slds-tile slds-p-bottom--medium" ng-repeat="field in data.obj.data " >
+                      <p ng-switch="field.symbol" class="cryptonite">
+                                 <span ng-switch-when="BTC"><img class="cryptopng" src="https://i1.wp.com/bitcoinbenny.com/wp-content/uploads/2017/11/cropped-bitcoin-favicon.png"/></span>
+                                 <span ng-switch-when="ETH"><img class="cryptopng" src="https://etherprices.com/wp-content/uploads/2017/02/ether_ethereum_fuel_coin_favicon.jpg"/></span>
+                                 <span ng-switch-when="XRP"><img class="cryptopng" src="https://theripplecryptocurrency.com/wp-content/uploads/2017/12/cropped-ripple-1.png"/></span>
+                                 <span ng-switch-when="BCH"><img class="cryptopng" src="https://www.bitprime.co.nz/wp-content/uploads/2017/12/bitcoin-cash-logo-mark.png"/></span>
+                                <span ng-switch-when="LTC"><img class="cryptopng" src="http://cryptonoob.io/media/backend/img/coin-icon-images/1517918820.png"/></span>
+                
+                              <span id="demo" ></span>
+                              <span  class="icon">
+                                <span ng-mouseenter="options=true" ng-mouseleave="options=false">Details</span>
+                                <span ng-click="options = !options">
+                                    <span ng-if="options"><i class="icon-v-right-caret"></i></span>
+                                    <span ng-if="!options"><i class="icon-v-left-caret"></i></span>
+                                </span>
+                               <span ng-show="options"> : Name: {{field.name}} |  AUD: {{field.price_aud}}</span>
+                             </span>
+            
+                        </p>
+                     </div>
+              </div>
+            
+    
+    </div>
+<script>
+
+Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1; 
+  var dd = this.getDate();
+
+  return [this.getFullYear(),(mm>9 ? '' : '0') + mm,(dd>9 ? '' : '0') + dd].join('-');
+};
+
+
+document.getElementById("demo").innerHTML = ' | '+ new Date().yyyymmdd();;
+</script>

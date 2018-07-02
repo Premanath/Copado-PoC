@@ -15,5 +15,4 @@
     <tabs>vlocity_cmt__FieldMapper</tabs>
     <tabs>vlocity_cmt__InterfaceImplementation__c</tabs>
     <tabs>vlocity_cmt__ProductChildItem__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

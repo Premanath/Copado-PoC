@@ -1,0 +1,27 @@
+{
+    "Cards": [
+        "SAMPLE Account Info Contact",
+        "SAMPLE Billing Contact",
+        "SAMPLE Product Contact",
+        "SAMPLE Orders Contact",
+        "SAMPLE_New Case"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "a3Zf4000000LT7M"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "TRNGGetIntCasesContacts",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "card-canvas-3x-slds"
+        }
+    }
+}

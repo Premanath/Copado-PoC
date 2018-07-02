@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>student3057@cme.edu</contactEmail>
+    <label>Test for UT</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:5000/show_ut_results</callbackUrl>
+        <consumerKey>3MVG9d8..z.hDcPJANcJzFrAW.54hy8PKkDNiqkUqiD18boo44.Szw1V0fpjJOIDsmB66NOLJP4lzzTKLlNpK</consumerKey>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

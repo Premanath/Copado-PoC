@@ -1,0 +1,23 @@
+{
+    "Cards": [
+        "Open Cases"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "0017F00000TTwOT"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "LoadCasesForAcct",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "_RR-card-canvas-list-with-search-slds"
+        }
+    }
+}

@@ -179,11 +179,7 @@
     <tabs>standard-Account</tabs>
     <tabs>standard-home</tabs>
     <tabs>standard-Contact</tabs>
-    <tabs>Vlocity_Package__c</tabs>
     <workspaceConfig>
-        <mappings>
-            <tab>Vlocity_Package__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

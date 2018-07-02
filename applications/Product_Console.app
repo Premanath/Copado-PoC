@@ -6,5 +6,4 @@
     <tabs>standard-Chatter</tabs>
     <tabs>vlocity_cmt__VlocityIndustryConsole</tabs>
     <tabs>vlocity_cmt__ProductChildItem__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

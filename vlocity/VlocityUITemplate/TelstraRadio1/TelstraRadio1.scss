@@ -1,0 +1,23 @@
+label.voice-nm.itemSelected {
+border:1px solid;
+color:white;
+background-color:#00aaf3;
+padding: 1rem 1rem 1rem 1rem;
+margin: .5rem 0rem .5rem 0!important;
+}
+
+label.voice-nm:not(.itemSelected) {
+border:1px solid;
+color: #00aaf3;
+background-color:white;
+margin: .5rem 0rem .5rem 0!important;
+padding: 1rem 1rem 1rem 1rem;
+}
+
+.voice-nm.itemSelected>span.slds-form-element__label{
+color:white!important;
+}
+
+.voice-nm:not(.itemSelected)>span.slds-form-element__label{
+color:#00aaf3!important;
+}

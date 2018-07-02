@@ -1,0 +1,23 @@
+{
+    "Cards": [
+        "Orders Info Cards1"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "0017F00000TTwJp"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "GetAccountOrders",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "card-canvas-1x-slds"
+        }
+    }
+}

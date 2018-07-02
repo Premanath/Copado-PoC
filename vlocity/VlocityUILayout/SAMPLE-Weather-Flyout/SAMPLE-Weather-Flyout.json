@@ -1,0 +1,29 @@
+{
+    "Cards": [
+        "SAMPLE Weather Card"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "parent.obj.State",
+                "val": "Antarctica"
+            },
+            {
+                "name": "parent.obj.City",
+                "val": "Vostok"
+            }
+        ],
+        "type": "REST",
+        "value": {
+            "endpoint": "https://api.wunderground.com/api/37293ffe89797b0a/conditions/q/{{parent.obj.State}}/{{parent.obj.City}}.json",
+            "methodType": "GET",
+            "resultVar": "data.current_observation",
+            "subType": "Web"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "flyout-grid-slds"
+        }
+    }
+}

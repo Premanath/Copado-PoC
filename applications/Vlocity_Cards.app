@@ -14,5 +14,4 @@
     <tabs>vlocity_cmt__VlocityAction__c</tabs>
     <tabs>vlocity_cmt__OmniScriptDesigner</tabs>
     <tabs>vlocity_cmt__VlocitySearchWidgetSetup__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

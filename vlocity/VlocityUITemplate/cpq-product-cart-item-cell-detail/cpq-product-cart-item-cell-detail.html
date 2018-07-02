@@ -1,0 +1,53 @@
+<table class="slds-table slds-table--cell-buffer" style="border-bottom:none">
+    <!--TO DO: API FOR "SHOW MORE"
+    <button class="slds-button slds-p-horizontal--xx-small slds-float--right slds-m-right--small" ng-click="show_more !== true ? show_more = true : show_more = false" > show
+          <span ng-if="show_more !== true">more</span><span ng-if="show_more === true">less</span>
+          <span class="slds-assistive-text">Details</span>
+    </button> -->
+  <tbody>
+    <tr ng-repeat="record in importedScope.records" class="detail-row">
+      <th scope="row" class="detail-row">
+        <div class="slds-truncate cell-header">{{record.DetailType}}</div>
+      </th>
+      <td data-label="discoount" class="slds-text-align--right detail-row">
+        <div class="slds-truncate" title="Cloudhub">
+            <span ng-if="record.AdjustmentType === 'Discount'">-</span><span ng-if="record.AdjustmentType === 'Markup'">+</span>
+          <span ng-if="record.AdjustmentMethod === 'Absolute'">
+          {{record.AdjustmentValue | currency}}
+          </span>
+          <span ng-if="record.AdjustmentMethod === 'Percent'">
+            {{record.AdjustmentValue | currency : "%"}}
+           </span>
+          <span ng-if="record.AdjustmentType === 'Override'" class="text-decoration: line-through;">
+                {{record.StartValue | currency}}</span>
+          <span ng-if="!record.AdjustmentValue">
+             <span ng-if="record.AdjustmentMethod === 'Percent'">
+               {{record.EndValue | currency : "%"}}
+            </span>
+            <span ng-if="record.AdjustmentMethod === null">
+            {{record.EndValue | currency}}</span>
+        </div>
+      </td>
+      <td data-label="Agent Name" ng-if="show_more">
+        <div class="slds-truncate" title="Agent Name">{{record.Agent}}</div>
+      </td>
+      <td data-label="Date" ng-if="show_more">
+        <div class="slds-truncate" title="Date">{{record.Date}}</div>
+      </td>
+    </tr>
+    <tr class="detail-row" ng-class="{'total-border': importedScope.records.length > 0}">
+      <th scope="row" data-label="total" class="cell-header">
+        <div class="slds-truncate" title="Cloudhub">{{attrs.cellTitle}}</div>
+      </th>
+      <td class="slds-text-align--right">
+        <div class="slds-truncate" title="Cloudhub">{{attrs.cellValue | currency}}</div>
+      </td>
+     <td data-label="Agent Name" ng-if="show_more" style="border-top: 2px solid #d8dde6">
+        <div class="slds-truncate" title="Cloudhub">{{importedScope.cellAgent}}</div>
+      </td>
+      <td data-label="Date" ng-if="show_more" style="border-top: 2px solid #d8dde6">
+        <div class="slds-truncate" title="Cloudhub">{{importedScope.cellDate}}</div>
+      </td>
+    </tr>
+  </tbody>
+</table>

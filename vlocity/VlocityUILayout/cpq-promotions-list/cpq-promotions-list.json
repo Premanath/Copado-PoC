@@ -1,0 +1,41 @@
+{
+    "Cards": [
+        "cpq-promotion-item"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "80141000000Onau"
+            }
+        ],
+        "type": "Dual",
+        "value": {
+            "apexRemoteResultVar": "records",
+            "apexRestResultVar": "records",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v3/cpq/carts/{{params.id}}/promotions",
+            "inputMap": {
+                "cartId": "{{params.id}}"
+            },
+            "methodType": "GET",
+            "remoteClass": "CpqAppHandler",
+            "remoteMethod": "getCartsPromotions",
+            "remoteNSPrefix": "%vlocity_namespace%"
+        }
+    },
+    "sessionVars": [
+        {
+            "name": "totalSize",
+            "val": "payload.totalSize"
+        },
+        {
+            "name": "nextPromotions",
+            "val": "payload.actions.nextpromotions"
+        }
+    ],
+    "templates": {
+        "0": {
+            "templateUrl": "cpq-promotions-list"
+        }
+    }
+}

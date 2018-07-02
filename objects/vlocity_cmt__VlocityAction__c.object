@@ -529,6 +529,8 @@
         <columns>vlocity_cmt__DisplaySequence__c</columns>
         <columns>vlocity_cmt__LinkType__c</columns>
         <columns>vlocity_cmt__DisplayOn__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
         <language>en_US</language>

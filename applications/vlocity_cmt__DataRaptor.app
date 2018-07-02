@@ -8,5 +8,4 @@
     <tabs>standard-Contact</tabs>
     <tabs>vlocity_cmt__DataRaptor</tabs>
     <tabs>vlocity_cmt__OmniScriptHome</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

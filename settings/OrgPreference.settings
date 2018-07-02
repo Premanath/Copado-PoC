@@ -162,7 +162,7 @@
     </preferences>
     <preferences>
         <settingName>TerritoryManagement2Enable</settingName>
-        <settingValue>true</settingValue>
+        <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>CompileOnDeploy</settingName>

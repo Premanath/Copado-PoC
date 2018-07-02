@@ -1,0 +1,4 @@
+<tr data-card="card-{{cardIndex}}" >
+    <td class="slds-truncate" data-label="{{field.label}}" ng-repeat="field in data.fields" ng-show="key != 'attributes'">{{obj | getter: field | picker: field.type}}</td>
+    
+</tr>

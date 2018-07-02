@@ -1,0 +1,33 @@
+<div class="profile-box">
+    <div class="customer-type">
+        <!-- Add the sentiments and values from records -->
+        <div class="sentiment {{obj.demo_CustomerSentiment__c | lowercase}}"></div>
+        <div class="value-type {{obj.demo_CustomerValue__c | lowercase}}"></div>
+    </div>
+    <div class="profile-box-img">
+        <div style="text-align:center;">
+            <img id="user-photo" src="{{records[0].PhotoUrl}}" class="img-circle profile-img"
+            ng-click="importedScope.openTab()" width="100px"/>
+        </div>
+    </div>
+    <div class="profile-box-details">
+        <div class="title-card">
+            <h1>{{obj.Name}}</h1>
+            <h1>{{obj.Website}}</h1>
+        </div>
+        <div class="social">
+                <a href="tel:{{records[0].Phone}}"><i class="icon-v-phone-line"></i></a>
+                <a href="mailto:{{records[0].Email__c}}" target="_top"><i class="icon-v-email-line"></i></a>
+                <i class="icon-v-payment-line"></i>
+                <a href="sms:{{records[0].Phone}}"><i class="icon-v-chat2-line"></i></a>
+        </div>
+        <div class="profile-links">
+            <!--<a href="#" id="profile-edit" >EDIT PROFILE</a> <span class="separator">|</span><a href="#">VERIFY CALLER</a> <span class="separator">|</span> <a href="#">RESET PASSWORD</a>-->
+            <span ng-repeat="action in data.actions | limitTo: (data.limitActionLinksTo?data.limitActionLinksTo:3)">
+                <a href="#" ng-click="performAction(action)" >{{action.displayName}}</a> 
+                <span class="separator" ng-if="!$last">|</span>
+            </span>
+            
+        </div>
+    </div>
+</div>

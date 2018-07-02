@@ -156,10 +156,6 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>IsExcludedFromTerritory2Filter</fullName>
-        <trackTrending>false</trackTrending>
-    </fields>
-    <fields>
         <fullName>IsPrivate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
@@ -205,11 +201,6 @@
     <fields>
         <fullName>SyncedQuoteId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Territory2Id</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>

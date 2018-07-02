@@ -1,0 +1,40 @@
+{
+    "Cards": [
+        "comp-assets-product-item"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "attrs.accountId",
+                "val": "0013600000QqLUZ"
+            },
+            {
+                "name": "attrs.assetIncludeType",
+                "val": "noContractAssets"
+            }
+        ],
+        "type": "Dual",
+        "value": {
+            "apexRemoteResultVar": "records",
+            "apexRestResultVar": "records",
+            "endpoint": "/services/apexrest/%vlocity_namespace%/v2/accounts/{{attrs.accountId}}/assets?includes={{attrs.assetIncludeType}}&priceDetailsFields=%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c",
+            "inputMap": {
+                "accountId": "{{attrs.accountId}}",
+                "includes": "{{attrs.assetIncludeType}}",
+                "priceDetailsFields": "%vlocity_namespace%__OneTimeCharge__c,%vlocity_namespace%__OneTimeManualDiscount__c,%vlocity_namespace%__OneTimeCalculatedPrice__c,%vlocity_namespace%__OneTimeTotal__c,%vlocity_namespace%__RecurringCharge__c,%vlocity_namespace%__RecurringCalculatedPrice__c,%vlocity_namespace%__RecurringTotal__c"
+            },
+            "methodType": "GET",
+            "optionsMap": {
+            },
+            "remoteClass": "CpqAppHandler",
+            "remoteMethod": "getAssetsByAccount",
+            "remoteNSPrefix": "%vlocity_namespace%",
+            "resultVar": "records"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "comp-assets-no-contract"
+        }
+    }
+}

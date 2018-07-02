@@ -1,0 +1,114 @@
+<div class="assets-root-product">
+    <div data-cart-item-id="{{::obj.Id.value}}">
+        <div class="assets-item-product" ng-class="{'assets-item-selected':importedScope.isSelected}">
+            <div class="assets-item-product-header assets-item-base-product">
+                <div ng-repeat="pricingView in $root.pricingViews.cpqPricingViews[$root.pricingViews.currentPricingView].fields" class="assets-item-base-product-{{pricingView.classSuffix}}">
+                    <span ng-if="!$root.vlocity.customLabels[pricingView.label]">{{obj | getter: pricingView: 'label' }}</span>
+                    <span ng-if="$root.vlocity.customLabels[pricingView.label]">{{$root.vlocity.customLabels[pricingView.label][$root.vlocity.userSfLocale]}}</span>
+                </div>
+                <div class="assets-item-base-product-actions" ng-class="{'compacted': !$root.pricingViews.productListHidden}">
+                    <div ng-class="{'slds-button-group slds-float--right': importedScope.isMobileTablet}" role="group" class="slds-hidden">
+                        <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.config(null,obj)"  title="{{::importedScope.customLabels.CPQSettings}}" ng-class="{'slds-button--icon-border': importedScope.isMobileTablet}">
+                            <slds-button-svg-icon sprite="'utility'" icon="'info'"></slds-button-svg-icon>
+                            <span class="slds-assistive-text">{{::importedScope.customLabels.CPQSettings}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="assets-item-base-product" ng-init="childProdState.show = importedScope.expandMode">
+                <div ng-repeat="pricingView in $root.pricingViews.cpqPricingViews[$root.pricingViews.currentPricingView].fields" class="assets-item-base-product-{{pricingView.classSuffix}}" ng-class="{'assets-item-currency-value': pricingView.type === 'currency', 'assets-item-text-value': pricingView.type === 'string', 'assets-item-product-title': pricingView.name === 'Name'}">
+
+                    <!-- Name -->
+                    <div ng-if="pricingView.name === 'Name'">
+                        <!-- Checkbox -->
+                        <div class="slds-form-element" ng-if="attrs.promotionMode != 'off'">
+                            <div class="slds-form-element__control slds-float--left">
+                                <span class="slds-checkbox">
+                                    <input type="checkbox" name="options" id="checkbox-{{::obj.Id.value}}" checked="" ng-model="obj.selected" ng-click="importedScope.clickOnAssetCheckbox(obj)"/>
+                                    <label class="slds-checkbox__label" for="checkbox-{{::obj.Id.value}}">
+                                        <span class="slds-checkbox--faux"></span>
+                                    </label>
+                                </span>
+                             </div>
+                        </div>
+
+                        <button ng-click="childProdState.show = !childProdState.show" class="slds-button assets-item-has-children" aria-controls="tree0-node1" ng-hide="!(obj.childAssets.records || obj.lineItems.records || obj.productGroups.records || obj.attributeCategories.records.length > 0)">
+                            <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" extra-classes="'slds-button__icon--left'" ng-class="{'fix-slds-close-switch' : !childProdState.show}"></slds-button-svg-icon>
+                            <span class="slds-assistive-text">Toggle</span>
+                            <span class="assets-product-name">{{obj[pricingView.name]}}</span>
+                        </button>
+    
+                        <span class="assets-item-no-children" ng-show="!(obj.childAssets.records || obj.lineItems.records || obj.productGroups.records || obj.attributeCategories.records.length > 0)">
+                            {{ obj[pricingView.name]}}
+                        </span>
+                    </div>
+                    <!-- Text -->
+                    <div ng-if="pricingView.type === 'string'">
+                        <!-- {{obj | getter: pricingView: 'name' }} -->
+                        {{obj[pricingView.fieldName]['value']}}
+                    </div>
+                    <!-- Price -->
+                    <div ng-if="pricingView.type === 'currency'"> 
+                        <div  cpq-dropdown-handler="showPopover = false">
+                            <div><strike>{{obj[pricingView.fieldName]['originalValue']}}</strike></div>
+                            <span ng-click="showPopover = !showPopover" ng-class="{'assets-underline': obj[pricingView.name]['actions']['pricedetail'], 'hovered': hovered[$index]}" ng-mouseenter="hovered[$index] = true" ng-mouseleave="hovered[$index] = false">
+                                <span  ng-class="{'assets-item-discount-price': obj[pricingView.name]['originalValue']}">
+                                    <!-- {{obj | getter: pricingView: 'name' | currency}} -->
+                                    {{obj[pricingView.fieldName]['value'] | currency}}
+                                </span>
+                            </span>
+                            <div class="slds-popover slds-nubbin--bottom-left assets-price-actions-popover" role="dialog" ng-class="{'active': hovered[$index]}" ng-show="attrs.promotionMode && showPopover && (obj[pricingView.name]['actions']['applydiscount'] || obj[pricingView.name]['actions']['pricedetail'])">
+                                <div class="slds-popover__body assets-price-actions-popover__body">
+                                    <div class="slds-button-group" role="group">
+                                        <button  ng-if="obj[pricingView.name]['actions']['pricedetail']" class="slds-button slds-button--icon-border" aria-haspopup="true" title="{{::importedScope.customLabels.CPQPriceDetails}}" ng-click="importedScope.applyAction(obj[pricingView.name], 'pricedetail')">
+                                            <slds-button-svg-icon sprite="'utility'" icon="'info'"></slds-button-svg-icon>
+                                            <span class="slds-assistive-text">{{::importedScope.customLabels.CPQPriceDetails}}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div> 
+
+                    <!-- Promotions -->
+                    <div ng-if="pricingView.type === 'promo'">
+                        <div cpq-dropdown-handler="showPopover = false">
+                            <div ng-click="showPopover = !showPopover" ng-mouseenter="hovered[$index] = true" ng-mouseleave="hovered[$index] = false">
+                                <div ng-repeat='promoItem in obj[pricingView.fieldName].records'>
+                                    {{promoItem.Name}}
+                                    <!--<div class="slds-popover slds-nubbin--bottom-left cpq-price-actions-popover" role="dialog" ng-show="showPopover">
+                                        <div class="slds-popover__body cpq-price-actions-popover__body">
+                                            <div class="slds-button-group" role="group">
+                                                <button  class="slds-button slds-button--icon-border" aria-haspopup="true" title="{{::importedScope.customLabels.CPQPriceDetails}}" ng-click="importedScope.applyAction(promoItem, 'getpromodetails')">
+                                                    <slds-button-svg-icon sprite="'utility'" icon="'info'"></slds-button-svg-icon>
+                                                    <span class="slds-assistive-text">{{::importedScope.customLabels.CPQPriceDetails}}</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>    
+                    </div> 
+                </div>
+                <div class="assets-item-base-product-actions slds-text-align--right" ng-class="{'compacted': !$root.pricingViews.productListHidden}">
+                    <div  ng-class="{'slds-button-group slds-float--right': importedScope.isMobileTablet}" role="group">
+                        <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.config(null,obj)"  title="{{::importedScope.customLabels.CPQSettings}}" ng-class="{'slds-button--icon-border': importedScope.isMobileTablet}">
+                            <slds-button-svg-icon sprite="'utility'" icon="'info'"></slds-button-svg-icon>
+                            <span class="slds-assistive-text">{{::importedScope.customLabels.CPQSettings}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="assets-item-base-product-details">
+                <div ng-if="obj.childAssets.records || obj.lineItems.records || obj.productGroups.records" ng-show="childProdState.show">
+                    <vloc-layout layout-name="comp-assets-product-children" ng-model="card" data="card" records="obj" 
+                        show-config-panel="{{attrs.showConfigPanel}}" >
+                    </vloc-layout>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>

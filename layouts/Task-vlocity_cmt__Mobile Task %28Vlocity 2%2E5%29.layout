@@ -65,10 +65,10 @@
             <quickActionName>Task.UpdatePriority_4</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Task.EditDescription_3</quickActionName>
+            <quickActionName>Task.Defer_3</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Task.Defer_3</quickActionName>
+            <quickActionName>Task.EditDescription_3</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>Task.UpdateStatus_3</quickActionName>

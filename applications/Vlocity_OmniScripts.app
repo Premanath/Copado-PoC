@@ -16,5 +16,4 @@
     <tabs>vlocity_cmt__OmniScriptWorkbench</tabs>
     <tabs>My_OmniScripts</tabs>
     <tabs>vlocity_cmt__VlocityUITemplateDesigner</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

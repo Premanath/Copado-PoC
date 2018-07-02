@@ -178,11 +178,7 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>standard-Knowledge</tabs>
-    <tabs>Vlocity_Package__c</tabs>
     <workspaceConfig>
-        <mappings>
-            <tab>Vlocity_Package__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

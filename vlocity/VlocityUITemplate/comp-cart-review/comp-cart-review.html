@@ -1,0 +1,11 @@
+<div class="slds-grid slds-grid--vertical review-product-cart">
+	<div ng-controller="AssetsMainController">
+		<div ng-init="getStateData(cards)"></div>
+		<!--The scroll Class is used for mobile devices -->
+    	<div class="slds-col review-product-cart-items scroll" >
+		    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card" 
+		    	records="records" cart-id="{{attrs.cartId}}" pricing-mode="{{attrs.pricingMode}}" promotion-mode="{{attrs.promotionMode}}" show-config-panel="{{attrs.showConfigPanel}}" index="{{$index}}" session-id="{{sessionId}}">
+		    </vloc-card>
+		</div>    
+	</div>
+</div>

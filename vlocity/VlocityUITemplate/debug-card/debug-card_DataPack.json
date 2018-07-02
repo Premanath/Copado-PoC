@@ -1,0 +1,18 @@
+{
+    "%vlocity_namespace%__Author__c": "VlocityUniversity",
+    "%vlocity_namespace%__CSS__c": "",
+    "%vlocity_namespace%__CustomJavascript__c": "",
+    "%vlocity_namespace%__Description__c": "My new favorite card!",
+    "%vlocity_namespace%__DisplayOn__c": "",
+    "%vlocity_namespace%__ExternalID__c": "debug-card/1/VlocityUniversity/1483119671698",
+    "%vlocity_namespace%__HTML__c": "debug-card.html",
+    "%vlocity_namespace%__ParentID__c": "_RR-debug-card/3/RoadRunner/1483119641557",
+    "%vlocity_namespace%__SampleJson__c": "debug-card_Sample.json",
+    "%vlocity_namespace%__Sass__c": "",
+    "%vlocity_namespace%__Type__c": "DEBUG",
+    "%vlocity_namespace%__Version__c": 1,
+    "Name": "debug-card",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__VlocityUITemplate__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__VlocityUITemplate__c/debug-card"
+}

@@ -11,13 +11,9 @@
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-home</tabs>
     <tabs>vlocity_cmt__ProductChildItem__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceConfig>
-        <mappings>
-            <tab>Vlocity_Package__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

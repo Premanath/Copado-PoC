@@ -54,10 +54,6 @@
     </groupingsDown>
     <name>Sample Report: Sales Pipeline by Stage</name>
     <params>
-        <name>terr</name>
-        <value>all</value>
-    </params>
-    <params>
         <name>open</name>
         <value>all</value>
     </params>

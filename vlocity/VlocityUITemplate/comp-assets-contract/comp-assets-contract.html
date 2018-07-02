@@ -1,0 +1,46 @@
+<div class="slds-tabs--default slds-p-horizontal--small">
+  <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+
+      <article class="slds-card">
+          <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                  <!-- Checkbox -->
+                  <div class="slds-form-element">
+                      <div class="slds-form-element__control slds-float--left">
+                          <span class="slds-checkbox">
+                              <input type="checkbox" name="options" id="checkbox-{{parent.Id.value}}" checked="" />
+                              <label class="slds-checkbox__label" for="checkbox-{{parent.Id.value}}">
+                                  <span class="slds-checkbox--faux"></span>
+                              </label>
+                          </span>
+                       </div>
+                  </div>
+
+                    <span class="slds-text-heading--small">Contract: {{parent.Id.value}}</span>
+                </div>
+              </header>
+              <div class="slds-no-flex slds-p-right--x-small">
+                <div>Number: {{parent.name}}</div>
+              </div>
+              <!-- <div class="slds-no-flex slds-p-left--x-small">
+                <div>Sort Date: Mar 16</div>
+              </div> -->
+           	</div>
+          
+            <div class="slds-table slds-table--bordered slds-p-bottom--small" >
+                <div ng-controller="AssetsMainController">
+									  <div ng-init="getStateData(cards)"></div>
+								    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card" 
+								    		records="records" show-config-panel="{{attrs.showConfigPanel}}" index="{{$index}}" session-id="{{sessionId}}">
+								    </vloc-card>
+								</div>
+                
+                <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center" ng-if="!records || records.length === 0 ">
+                  {{::importedScope.customLabels.CPQCartIsEmpty}}
+                </div>
+            </div>
+      </article>
+  </div>
+  
+</div>

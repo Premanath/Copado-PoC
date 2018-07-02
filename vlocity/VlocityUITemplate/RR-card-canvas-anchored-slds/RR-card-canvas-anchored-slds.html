@@ -1,0 +1,101 @@
+<div class="via-slds">
+<!--------- ANCHORED CONTAINER TEMPLATE
+            We can "anchor" cards on to sections of a layout by adding a filter
+            to the Angular ng-repeat "card in cards" that retrieves the cards 
+            for the layout. Then, the cards can be placed in the sections by 
+            updating the card title in the Card Designer to pre-set values, 
+            which in this case are Block0, Block1, Block2, etc.
+            See more about filters: https://docs.angularjs.org/api/ng/filter
+            
+            This layout is configured as follows:
+            
+            -------------------------------------------------------------------
+                           BLOCK0                       SEARCH DIALOG - REFRESH
+            -------------------------------------------------------------------
+            [SECTION TITLE]  | [SECTION TITLE]            
+                             |    
+                             |            BLOCK2
+                             |    
+                  B          |            
+                  L          |--------------------------------------------------           
+                  O          | [SECTION TITLE]           
+                  C          |            
+                  K          |            BLOCK3
+                  1          |            
+                             |            
+                             |--------------------------------------------------    
+                             | [SECTION TITLE]            
+                             |    
+                             |            BLOCK4 (EMBEDDED LAYOUT)
+                             |    
+                             |            
+                             |--------------------------------------------------    
+           
+           
+           SECTION TITLES
+           We can set section titles for this layout from the Card Designer 
+           using Layout Session Variables. In this example, we will use Block-# 
+           session variables to store this information.
+           
+    -------------------->
+
+    <div class="slds-grid slds-wrap">
+
+        <!--Block0 -->
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--5-of-6 slds-large-size--8-of-12">
+            <h2 class="slds-text-heading--medium">{{session.Block0}}</h2>
+            <div class="slds-grid slds-grid--pull-padded slds-wrap slds-form-element slds-p-bottom--medium">
+                <div class="slds-col--padded slds-size--1-of-1" vloc-card ng-repeat="card in cards | orderBy:order | filter : {title: 'Block0'}" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}" use-existing-element-type>
+                </div>
+            </div>        
+        </div>
+  
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-6 slds-large-size--4-of-12">
+            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--left">
+                <slds-svg-icon sprite="'utility'" icon="'search'" extra-classes="'slds-input__icon'"></slds-svg-icon>
+                <input ng-model="$parent.searchTerm" class="slds-input" type="text" placeholder="Search cards" />
+            </div>
+        
+  
+            <button class="slds-button slds-button--neutral" onclick="window.location.reload()">
+                <slds-button-svg-icon sprite="'utility'" icon="'refresh'" no-hint="true" extra-classes="'slds-button__icon--left'"></slds-button-svg-icon>Refresh</button>
+        </div>
+
+    <form class="slds-grid slds-grid--pull-padded slds-m-around--small slds-wrap ">
+    
+        <!--Block1 -->
+        <div class="slds-col--padded slds-size--2-of-6">
+        <h2 class="slds-text-heading--medium">{{session.Block1}}</h2>
+          <div vloc-card ng-repeat="card in cards | orderBy:order | filter: searchFunc(card) | filter : {title: 'Block1'}" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}" use-existing-element-type>
+          </div>
+        </div>
+        
+        <!--Block2 -->
+        <div class="slds-col--padded slds-size--4-of-6">
+            <h2 class="slds-text-heading--medium">
+                {{(cards | filter : {title: 'Block2'}).length}} {{session.Block2}} 
+            </h2>
+            <div class="slds-grid slds-wrap slds-grid--pull-padded cards-container">
+                <div vloc-card ng-repeat="card in cards | orderBy:order | filter: searchFunc(card) | filter : {title: 'Block2'}" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}"
+                class="slds-col--padded slds-size--1-of-2" use-existing-element-type>
+                </div>
+            </div>
+            
+        <!--Block3 -->
+            <h2 class="slds-text-heading--medium">{{session.Block3}}</h2>
+            <div class="slds-grid slds-wrap slds-grid--pull-padded cards-container">
+                <div vloc-card ng-repeat="card in cards | orderBy:order | filter: searchFunc(card) | filter : {title: 'Block3'}" ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}"
+                class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-p-bottom--medium slds-no-flex" use-existing-element-type>
+                </div>
+            </div>
+
+        <!--Block4 -->
+        
+            <h2 class="slds-text-heading--medium">{{session.Block4}}</h2>
+            <vloc-layout layout-name="{{session.embeddedLayout}}" search-token="{{$parent.searchTerm}}"></vloc-layout>
+         
+        </div>
+        
+    </form>
+</div>    
+</div>

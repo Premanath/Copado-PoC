@@ -1,0 +1,30 @@
+{
+    "Cards": [
+        "Weather Card"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "parent.obj.State",
+                "val": "Minnesota"
+            },
+            {
+                "name": "parent.obj.City",
+                "val": "Minneapolis"
+            }
+        ],
+        "type": "REST",
+        "value": {
+            "endpoint": "https://api.wunderground.com/api/dbe31ce563123e0d/conditions/q/{{parent.obj.State}}/{{parent.obj.City}}.json",
+            "methodType": "GET",
+            "resultVar": "data.current_observation",
+            "subType": "Web",
+            "timeout": 30000
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "flyout-grid-slds"
+        }
+    }
+}

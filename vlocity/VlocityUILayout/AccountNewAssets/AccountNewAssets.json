@@ -1,0 +1,23 @@
+{
+    "Cards": [
+        "AccountNewAsstes"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "0017F00000TTwOT"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "GetAccountNew_1",
+            "ctxId": "params.id"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "_RR-card-canvas-list-with-search-slds"
+        }
+    }
+}

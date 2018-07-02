@@ -1,0 +1,34 @@
+CARD FRAMEWORK VARIABLES
+
+params: Globlal context variable, it represents the page parameters passed to the url.
+
+<pre>{{params | json }}</pre>
+
+attrs: Allows access to the attributes passed to the vloc-card, vloc-layout and vloc-cmp directives so it can be used in any context
+<pre>{{attrs | json }}</pre>
+
+obj: The object that is represented in the card; it holds all the fields and information for the record
+<pre>{{obj | json }}</pre>
+
+SESSION VARIABLES - Set in Card Designer. Can access any property in the scope plus the payload variable.<br>
+
+$parent.$parent.session variable
+<pre>{{$parent.$parent.session | json }}</pre>
+
+session variable
+<pre>{{session | json }}</pre>
+
+$root variable
+<pre>{{$root | json }}</pre>
+
+$rootScope variable
+<pre>{{$rootScope | json }}</pre>
+
+actions
+<pre>{{data.actions | json }}</pre>
+
+payload
+<pre>{{payload | json }}</pre>
+
+data: This is the entire card's definition.
+<pre>{{data | json }}</pre>

@@ -15,5 +15,4 @@
     <tabs>VU_AccountContact__c</tabs>
     <tabs>InterfacePriceBookProduct__c</tabs>
     <tabs>vlocity_cmt__ProductChildItem__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

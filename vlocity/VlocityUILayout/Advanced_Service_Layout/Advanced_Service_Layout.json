@@ -1,0 +1,56 @@
+{
+    "Cards": [
+        "Asset",
+        "Appointment",
+        "Contact1",
+        "Code Red Card"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "params.id",
+                "val": "0017F00000TTwOT"
+            },
+            {
+                "name": "params.SLA",
+                "val": "Platinum"
+            }
+        ],
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "TRNGAccountExtract",
+            "ctxId": "params.id"
+        }
+    },
+    "sessionVars": [
+        {
+            "name": "Block1",
+            "val": "'Assets'"
+        },
+        {
+            "name": "Block2",
+            "val": "'Upcoming Appointments'"
+        },
+        {
+            "name": "Block3",
+            "val": "'Contacts'"
+        },
+        {
+            "name": "Block4",
+            "val": "'Cases'"
+        },
+        {
+            "name": "embeddedLayout",
+            "val": "'SAMPLE_Case_Card_Layout'"
+        },
+        {
+            "name": "Block0",
+            "val": "'Alerts'"
+        }
+    ],
+    "templates": {
+        "0": {
+            "templateUrl": "_RR-card-canvas-anchored-slds"
+        }
+    }
+}

@@ -1,0 +1,131 @@
+<div class="cpq-product-cart-item" ng-class="{'transitional-hide': importedScope.isDeleting}" data-cart-item-id="{{::obj.Id.value}}">
+    <div class="cpq-product-cart-item-container" ng-class="{'cpq-product-cart-item-selected':importedScope.isSelected && !attrs.lineItemModal}">
+        <div class="cpq-cart-item-header cpq-cart-item-root-product">
+            <div class="cpq-cart-item-root-product-name"></div>
+            <div class="cpq-cart-item-root-product-input">{{::obj['Quantity']['label'] | uppercase}}</div>
+            <div class="cpq-cart-item-root-product-price">{{::obj[$root.nsPrefix+'RecurringTotal__c']['label'] | uppercase}}</div>
+            <div class="cpq-cart-item-root-product-price">{{::obj[$root.nsPrefix+'OneTimeTotal__c']['label'] | uppercase}}</div>
+            <div class="cpq-cart-item-root-product-input">{{::obj[$root.nsPrefix+'RecurringManualDiscount__c']['label'] | uppercase}} %</div>
+            <div class="cpq-cart-item-root-product-input">{{::obj[$root.nsPrefix+'OneTimeManualDiscount__c']['label'] | uppercase}} %</div>
+            <div class="cpq-cart-item-root-product-actions"></div>
+        </div>
+        <div class="cpq-cart-item-root-product-messages">
+            <ul ng-if="obj.messages.length > 0">
+                <li ng-repeat="msg in obj.messages">
+                    <span class="error-msg js-error-msg-{{msg.messageId}}" ng-if="msg.severity === 'ERROR'">
+                        {{msg.message}}
+                        <i ng-init="data.hasError = true"></i>
+                    </span>
+                    <span ng-if="msg.severity !== 'ERROR'">
+                        {{msg.message}}
+                    </span>
+                </li>
+            </ul>
+            <span ng-if="obj.messages.length == 0">
+                <i ng-init="data.hasError = false"></i>
+            </span>
+            <ul ng-if="obj.fieldValidationMessageList.length > 0">
+                <li ng-repeat="fieldValidationMessage in obj.fieldValidationMessageList">
+                    <span class="error-msg js-error-msg">{{fieldValidationMessage}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="cpq-cart-item-root-product">
+            <div class="cpq-cart-item-root-product-name cpq-cart-item-title">
+                <button ng-click="childProdState = !childProdState" class="slds-button slds-button--icon-small" aria-controls="tree0-node1" ng-init="childProdState = importedScope.expandMode"
+                    ng-class="{'slds-hidden': !(obj.lineItems.records || obj.childProducts.records || obj.productGroups.records || (attrs.lineItemModal && obj.attributeCategories.records.length > 0))}">
+                    <slds-button-svg-icon sprite="'utility'" size="'small'" icon="'switch'" ng-class="{'fix-slds-close-switch' : !childProdState}"></slds-button-svg-icon>
+
+                    <span class="slds-assistive-text">Toggle</span>
+                </button>
+                {{::obj.PricebookEntry.Product2.Name}}
+            </div>
+            <div class="cpq-cart-item-root-product-input" data-header="Header2">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control cpq-cart-item-qty-input" ng-class="{'slds-has-error': importedScope.lineItemIdsWithInvalidQuantity.indexOf(obj.Id.value) > -1 }">
+                        <input type="number" min="1" class="slds-input cpq-cart-item-input" 
+                            ng-model="obj.Quantity.value" 
+                            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 800, 'blur': 0 } }" 
+                            ng-change="importedScope.updateLineField(null, obj)"
+                            ng-disabled="importedScope.isProvisioningStatusDeleted(obj)"
+                            required />
+                    </div>
+                </div>
+            </div>
+            <div class="cpq-cart-item-root-product-price cpq-cart-item-currency-value">{{obj[$root.nsPrefix+'RecurringTotal__c']['value'] | currency}}</div>
+            <div class="cpq-cart-item-root-product-price cpq-cart-item-currency-value">{{obj[$root.nsPrefix+'OneTimeTotal__c']['value'] | currency}}</div>
+            <div class="cpq-cart-item-root-product-input" data-header="Header2">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control cpq-cart-item-qty-input" ng-class="{'slds-has-error': importedScope.lineItemIdsWithInvalidRecurringDiscount.indexOf(obj.Id.value) > -1 }" ng-class="{'slds-has-error': importedScope.lineItemIdsWithInvalidRecurringDiscount.indexOf(childProd.Id.value) > -1 }">
+                        <input type='number' min="0" step='any' class="slds-input cpq-cart-item-input" 
+                            ng-model="obj[$root.nsPrefix+'RecurringManualDiscount__c']['value']" 
+                            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 800, 'blur': 0 } }" 
+                            ng-change="importedScope.updateLineField(null, obj)" 
+                            ng-disabled="importedScope.isProvisioningStatusDeleted(obj)" />
+                    </div>
+                </div>
+            </div>
+            <div class="cpq-cart-item-root-product-input" data-header="Header2">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control cpq-cart-item-qty-input" ng-class="{'slds-has-error': importedScope.lineItemIdsWithInvalidOneTimeDiscount.indexOf(obj.Id.value) > -1 }">
+                        <input type='number' min="0" step='any' class="slds-input cpq-cart-item-input" 
+                            ng-model="obj[$root.nsPrefix+'OneTimeManualDiscount__c']['value']" 
+                            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 800, 'blur': 0 } }" 
+                            ng-change="importedScope.updateLineField(null, obj)"
+                            ng-disabled="importedScope.isProvisioningStatusDeleted(obj)" />
+                    </div>
+                </div>
+            </div>
+            <div class="cpq-cart-item-root-product-actions slds-text-align--right">
+                <span ng-show="!importedScope.isProvisioningStatusDeleted(obj)">
+                    <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.openDetailView(obj)" ng-class="{'error-msg' : data.hasError}" ng-if="!attrs.lineItemModal" ng-disabled="importedScope.processing" title="Details">
+                        <slds-button-svg-icon sprite="'utility'" icon="'preview'"></slds-button-svg-icon>
+                        <span class="slds-assistive-text">Details</span>
+                    </button>
+                    <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.clone(null, obj)" ng-disabled="!obj.actions.cloneitem" ng-if="!attrs.lineItemModal" title="Clone">
+                        <slds-button-svg-icon sprite="'utility'" icon="'copy'"></slds-button-svg-icon>
+                        <span class="slds-assistive-text">Clone</span>
+                    </button>
+                    <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.config(null,obj)" ng-if="!attrs.lineItemModal" title="Settings">
+                        <slds-button-svg-icon sprite="'utility'" icon="'settings'"></slds-button-svg-icon>
+                        <span class="slds-assistive-text">Settings</span>
+                    </button>
+                    <button class="slds-button slds-p-horizontal--xx-small" ng-click="importedScope.delete(null, obj)" ng-disabled="!obj.actions.deleteitem" ng-if="!attrs.lineItemModal" title="Delete Item">
+                        <slds-button-svg-icon sprite="'utility'" icon="'close'"></slds-button-svg-icon>
+                        <span class="slds-assistive-text">Delete</span>
+                    </button>
+                </span>    
+            </div>
+        </div>
+        <div class="cpq-cart-item-root-product-details">
+            <div class="cpq-cart-item-root-product-cfg-attr" ng-if="obj.attributeCategories.records.length >0" ng-show="childProdState && attrs.lineItemModal">
+                <div class="slds-section" ng-class="{'slds-is-open': productLineItemToggle}">
+                    <div class="slds-section__title">
+                        <a href="javascript:void(0);" ng-click="productLineItemToggle = !productLineItemToggle" class="slds-section__title-action cpq-product-cart-item-section-heading" ng-init="productLineItemToggle = importedScope.expandMode">
+                            <button class="slds-button slds-button--icon-container slds-button--icon-x-small">
+                                <slds-button-svg-icon sprite="'utility'" icon="'switch'" ng-class="{'fix-slds-close-switch' : !productLineItemToggle}"></slds-button-svg-icon>
+                            </button>
+                            Product Configuration
+                        </a>
+                    </div>
+                    <div class="slds-section__content slds-p-left--large slds-m-bottom--small cpq-product-item-details-form" ng-show="productLineItemToggle">
+                        <div ng-if="!importedScope.reRenderAttributesForm">
+                            <vlocity-dynamic-form
+                                class="cpq-cart-item-attributes-form" class="slds-form--stacked"
+                                tooltip-container=".slds-modal"
+                                form-on-change="importedScope.saveUpdates(e, obj)"
+                                name="productconfig{{attrs.lineItemModal?'modal':''}}{{obj.Id.value}}"
+                                ng-model="obj.attributeCategories.records"
+                                map-object="{{importedScope.mapObject()}}"
+                                form-auto-save="{{attrs.lineItemModal}}">
+                            </vlocity-dynamic-form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="(obj.childProducts.records || obj.lineItems.records || obj.productGroups.records)" ng-show="childProdState">
+                <vloc-layout layout-name="cpq-cart-item-product-children" ng-model="card" data="card" records="obj" line-item-modal="{{attrs.lineItemModal}}" provisioning-status="{{importedScope.isProvisioningStatusDeleted(obj)}}"></vloc-layout>
+            </div>
+        </div>
+    </div>
+</div>

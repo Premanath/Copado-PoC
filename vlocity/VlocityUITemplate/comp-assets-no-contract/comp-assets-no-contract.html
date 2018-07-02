@@ -1,0 +1,13 @@
+<div class="slds-p-top--large slds-p-horizontal--small">
+    <div ng-controller="AssetsMainController">
+		<div ng-init="getStateData(cards)"></div>
+	    <vloc-card ng-repeat="card in cards" ctrl="AssetsProductItemController" ng-model="card" data="card" 
+	    	records="records" asset-include-type="{{attrs.assetIncludeType}}" account-id="{{attrs.accountId}}" show-config-panel="{{attrs.showConfigPanel}}" 
+	    	index="{{$index}}" session-id="{{sessionId}}">
+	    </vloc-card>
+	</div>
+    
+    <div class="slds-grid slds-grid--vertical-align-center slds-grid--align-center" ng-if="!records || records.length === 0 ">
+      {{::importedScope.customLabels.CPQCartIsEmpty}}
+    </div>
+</div>

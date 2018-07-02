@@ -1,0 +1,22 @@
+{
+    "Cards": [
+        "Case Description"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "parent.obj.CaseId",
+                "val": "5007F00000DBpRfQAL"
+            }
+        ],
+        "type": "Query",
+        "value": {
+            "query": "SELECT Description FROM Case WHERE Id = '{{parent.obj.CaseId}}'"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "flyout-grid-noActions-slds"
+        }
+    }
+}

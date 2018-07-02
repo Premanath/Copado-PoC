@@ -6,5 +6,4 @@
     <tabs>standard-Workspace</tabs>
     <tabs>standard-ContentSearch</tabs>
     <tabs>standard-ContentSubscriptions</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

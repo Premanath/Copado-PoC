@@ -1,0 +1,10 @@
+{
+    "%vlocity_namespace%__Definition__c": "flyout-case-description.json",
+    "%vlocity_namespace%__Description__c": "",
+    "%vlocity_namespace%__Type__c": "Flyout",
+    "%vlocity_namespace%__Version__c": 1,
+    "Name": "flyout-case-description",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__VlocityUILayout__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__VlocityUILayout__c/flyout-case-description"
+}

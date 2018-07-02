@@ -49,10 +49,6 @@
                 <behavior>Edit</behavior>
                 <field>vlocity_cmt__PremisesId__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>External_Id__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

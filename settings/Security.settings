@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SecuritySettings xmlns="http://soap.sforce.com/2006/04/metadata">
-    <networkAccess>
-        <ipRanges>
-            <end>107.2.220.176</end>
-            <start>107.2.220.176</start>
-        </ipRanges>
-        <ipRanges>
-            <description>DFW - Munich</description>
-            <end>80.149.116.162</end>
-            <start>80.149.116.162</start>
-        </ipRanges>
-    </networkAccess>
+    <networkAccess/>
     <passwordPolicies>
         <complexity>AlphaNumeric</complexity>
         <expiration>NinetyDays</expiration>

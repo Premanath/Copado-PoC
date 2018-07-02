@@ -6,10 +6,6 @@
 
 <!---------------------------------------- HEADER AND LOGO ----------------------------------------->
 <!--------------------------- NOTE: Header and Image Styling in VFComponent ------------------------>
-<div class="OS_Header">
- <apex:image styleclass="OS_Header_Logo" value="{!$Resource.TRNG_OmniScript_Logo}"/>
- <h1>Road Runner Services</h1>  <!--  HEADER TEXT -->
-</div>
 
    <div id="app_container">
         <div ng-app="TRNG_OmniScript" class='vlocity'> 

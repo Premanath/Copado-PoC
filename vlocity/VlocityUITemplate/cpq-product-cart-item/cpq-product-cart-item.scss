@@ -1,0 +1,121 @@
+/*** CPQ Theme VARIABLES ***/
+@import "cpq-theme-variables";
+
+/*** MIXINS ***/
+@import "cpq-mixin";
+
+/*** STYLES ***/
+.vlocity {
+    .cpq-product-cart-item {
+        position:relative; //needed for selected border
+
+        input.ng-invalid {
+            color: $error;
+        }
+
+        &.transitional-hide {
+            opacity: 0;
+            transition: all linear 0.5s;
+        }
+
+        .cpq-product-cart-item-container {
+            padding: $cpq-padding-large-vertical 0px;
+            margin: 0px $cpq-padding-large-horizontal;
+            border-bottom: 1px solid $middle-light-gray;
+
+            &.cpq-product-cart-item-selected {
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    // don't use left:0, as it will take full width rather than creating just the border to the right
+                    border-right: 8px solid $cpq-product-cart-item-selected-border-color;
+                }
+            }
+
+            .cpq-cart-item-root-product {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-end;
+                padding-bottom: 4px;
+
+                .cpq-cart-item-root-product-name {
+                    flex-grow: 1;
+                }
+
+                .cpq-cart-item-root-product-input {
+                    flex: 0 0 80px;
+                }
+
+                .cpq-cart-item-root-product-price {
+                    flex: 0 0 120px;
+                }
+
+                .cpq-cart-item-root-product-actions {
+                    flex: 0 0 120px;
+                }
+            }
+
+            .cpq-cart-item-header {
+                font-size: $cpq-cart-item-attr-label-font-size;
+                padding-bottom: 6px;
+            }
+
+            .cpq-cart-item-title {
+                font-weight: $cpq-headings-font-weight;
+                padding-top: $cpq-padding-large-vertical/2;
+            }
+
+            .cpq-cart-item-currency-value {
+                font-weight: $cpq-headings-font-weight;
+                color: $cpq-product-cart-items-attr-value-color;
+                padding-top: $cpq-padding-large-vertical/2;
+            }
+
+            .cpq-cart-item-qty-input input {
+                padding: 0px 3px;
+                margin-top: $cpq-padding-large-vertical/5;
+                text-align: center;
+                width: 50px; //width can fit 3 digits
+                height: 25px;
+                min-height: calc(25px + 2px); //override slds input styles
+            }
+
+            .cpq-cart-item-root-product-messages {
+                padding-left: $cpq-cart-item-product-messages-padding;
+                font-size: 95%;
+            }
+
+            .cpq-cart-item-root-product-details {
+                padding-left: $cpq-cart-item-product-details-padding;
+            }
+
+            .cpq-cart-item-root-product-cfg-attr {
+                .slds-section__title {
+                    a {
+                        font-size: $cpq-cart-item-product-cfg-attr-font-size;
+                    }
+
+                    button {
+                        padding-bottom: 4px;
+                    }
+                }
+
+                .cpq-cart-item-attributes-form {
+                    .slds-section:first-child {
+                        .slds-section__title {
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+
+            .error-msg {
+                color: $error;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "Cards": [
+        "SAMPLE Contact Card"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "parent.obj.AccountId",
+                "val": "[copy Acme's record id here]"
+            }
+        ],
+        "type": "Query",
+        "value": {
+            "query": "Select Name,Phone,Title FROM Contact WHERE AccountId = '{{parent.obj.AccountId}}'"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "flyout-grid"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+            <div class="panel-heading">
+                <label>{{control.propSetMap.label}}</label>
+            </div>
+            <table class="table">
+               <thead>
+                    <tr>
+                        <th width="20px"></th>
+                        <th>File Name</th>
+                        <th>Mime-Type</th>
+                    </tr>
+                </thead>
+                <tbody class="upgrade-tbody-omni">
+                    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+                        <td><input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)' checked/></td>
+                        <td><a href="https://drive.google.com/open?id={{p.id}}" target="_blank" type="{{p.mimeType}}">{{p.name}}</a></td>
+                        <td>{{p.mimeType}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+        </div>

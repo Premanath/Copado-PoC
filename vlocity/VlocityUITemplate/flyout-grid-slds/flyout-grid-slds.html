@@ -1,0 +1,5 @@
+<div class="slds-grid slds-wrap via-slds-flyout-grid">
+    <div class="slds-size--1-of-1 slds-medium-size--1-of-3 slds-col--rule-right" vloc-card name="Flyout Grid Actions Slds" customtemplate="flyout-grid-actions-slds" data="parent" loaded="true" use-existing-element-type></div>
+    <div class="slds-size--1-of-1 slds-medium-size--1-of-3" ng-repeat="card in cards |orderBy:order|filter: searchFunc(card)" vloc-card ctrl="{{ctrl}}" ng-model="card" data="card" records="records" index="{{$index}}" session-id="{{sessionId}}" use-existing-element-type>
+    </div>
+</div>

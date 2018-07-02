@@ -14,5 +14,4 @@
     <tabs>standard-Dashboard</tabs>
     <tabs>VU_AccountContact__c</tabs>
     <tabs>standard-Quote</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

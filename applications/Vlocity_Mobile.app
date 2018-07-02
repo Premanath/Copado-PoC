@@ -9,5 +9,4 @@
     <tabs>vlocity_cmt__VlocityUITemplateDesigner</tabs>
     <tabs>vlocity_cmt__VlocityCardHome</tabs>
     <tabs>vlocity_cmt__VlocityAction__c</tabs>
-    <tabs>Vlocity_Package__c</tabs>
 </CustomApplication>

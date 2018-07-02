@@ -1,0 +1,22 @@
+{
+    "Cards": [
+        "SAMPLE Case Contact"
+    ],
+    "dataSource": {
+        "contextVariables": [
+            {
+                "name": "parent.obj.AccountId",
+                "val": "001f40000040s51"
+            }
+        ],
+        "type": "Query",
+        "value": {
+            "query": "Select Name,Title,Phone FROM Contact WHERE AccountId = '{{parent.obj.CaseAccountId}}'"
+        }
+    },
+    "templates": {
+        "0": {
+            "templateUrl": "flyout-grid-noActions-slds"
+        }
+    }
+}
