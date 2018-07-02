@@ -1,0 +1,394 @@
+[
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "19ffb",
+            "dataType": "Text",
+            "displayOrder": 1,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1F1N000001v7ovUAA",
+            "listValues": null,
+            "name": "Reference Product Name"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "4df4c1",
+            "dataType": "Text",
+            "displayOrder": 3,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1F1N000001v7ouUAA",
+            "listValues": null,
+            "name": "Characteristic Name"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "9a1abf",
+            "dataType": "Text",
+            "displayOrder": 8,
+            "headerType": "Output",
+            "label": null,
+            "lineItemId": "a1F1N000001v7oyUAA",
+            "listValues": null,
+            "name": "NRC"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "a5f109",
+            "dataType": "Text",
+            "displayOrder": 4,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1F1N000001v7ozUAA",
+            "listValues": null,
+            "name": "Characteristic Value"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "b66150",
+            "dataType": "Text",
+            "displayOrder": 7,
+            "headerType": "Output",
+            "label": null,
+            "lineItemId": "a1F1N000001v7otUAA",
+            "listValues": null,
+            "name": "MRC"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "b6e7f9",
+            "dataType": "Text",
+            "displayOrder": 2,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1F1N000001v7oxUAA",
+            "listValues": null,
+            "name": "Reference External Id"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "e5bff9",
+            "dataType": "Text",
+            "displayOrder": 6,
+            "headerType": "Output",
+            "label": null,
+            "lineItemId": "a1F1N000001v7p0UAA",
+            "listValues": null,
+            "name": "Target External Id"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "f713f6",
+            "dataType": "Text",
+            "displayOrder": 5,
+            "headerType": "Output",
+            "label": null,
+            "lineItemId": "a1F1N000001v7owUAA",
+            "listValues": null,
+            "name": "Target Product Name"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "128 GB;Black",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "33.99",
+            "NRC": "99.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "c7e66a56c71954adb34a8b649379d5a9",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "128 GB;Blue",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "22.99",
+            "NRC": "2.09",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "958658af31a68e49fcc563e88f15146c",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "128 GB;Red",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "44.99",
+            "NRC": "88.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "64ec62d8460921775ac2a9815ad94c6e",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "32 GB;Black",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "39.99",
+            "NRC": "49.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "96115395a943f84b0547ba7aa8c70181",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "32 GB;Blue",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "59.99",
+            "NRC": "129.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "2727171e540630849141646762b014b4",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "32 GB;Red",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "12.99",
+            "NRC": "13.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "4bd9b8eeb11e00870f189fbf47692097",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "64 GB;Black",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "65.99",
+            "NRC": "54.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "91c4d0791f1534340642fd138e5125f8",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "64 GB;Blue",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "67.99",
+            "NRC": "23.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "6123d62b0b0f5632484a43c6b566fe33",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Vlocity MultiAttribute Calculation Matrix",
+            "%vlocity_namespace%__VersionNumber__c": 1,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Vlocity MultiAttribute Calculation Matrix",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "Characteristic Name": "Capacity;Color",
+            "Characteristic Value": "64 GB;Red",
+            "Reference External Id": "HSDEV-MOB-0119",
+            "Reference Product Name": "iPhone 7"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "MRC": "66.99",
+            "NRC": "77.99",
+            "Target External Id": "HSDEV-MOB-0119",
+            "Target Product Name": "iPhone 7"
+        },
+        "Name": "a5fae219691c5e09e8e29522dae36fb4",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    }
+]

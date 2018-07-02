@@ -1,0 +1,17 @@
+<aura:component access="GLOBAL">
+    <aura:registerEvent name="unapplyAttribute" type="vlocity_cmt:profileUnapplyAttributeEvent"/>
+    <aura:registerEvent name="unappliedAttributesFiltered" type="vlocity_cmt:profileUnappliedAttributesFilteredEvent"/>
+	<aura:handler event="vlocity_cmt:profileApplyAttributeSucceededEvent" action="{!c.handleApplyAttributeSucceededEvent}"/>
+    <aura:attribute name="appliedAttributes" type="vlocity_cmt.SegmentElement[]"/> 
+    <aura:attribute name="unappliedAttributesToBeSearched" type="vlocity_cmt.SegmentElement[]"/>
+
+    <ul class="slds-list--horizontal slds-has-dividers--right slds-has-block-links--space slds-wrap slds-grid--vertical-align-center">
+        <aura:iteration items="{!v.appliedAttributes}" var="attribute">
+            <li class="needsClick slds-item" onclick="{!c.handleAppliedAttributeClicked}">
+                <a href="javascript:void(0);">{!attribute.Name}</a>
+            </li>
+        </aura:iteration>
+        <ui:inputText aura:id="type-ahead-input" placeholder="Add new attribute" updateOn="keyup" keyup="{!c.filterUnappliedAttributes}"/>
+    </ul>
+    
+</aura:component>

@@ -1,0 +1,7 @@
+{
+    "%vlocity_namespace%__CalculationMatrixVersion__c": "Sample-Office-Internet-Solution-Attribute-Based-Pricing_Version.json",
+    "Name": "Sample Office Internet Solution Attribute Based Pricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrix__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__CalculationMatrix__c/Sample Office Internet Solution Attribute Based Pricing"
+}

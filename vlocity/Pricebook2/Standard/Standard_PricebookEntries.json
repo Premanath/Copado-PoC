@@ -1,0 +1,89 @@
+[
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Customer Appreciation Event - VIP Ticket",
+        "Pricebook2.Name": "Standard",
+        "Pricebook2Id": {
+            "Name": "Standard",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/Standard",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Customer Appreciation Event - VIP Ticket",
+        "Product2Id": {
+            "Name": "Customer Appreciation Event - VIP Ticket",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NYQA0",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "CAE500",
+        "UnitPrice": 499,
+        "UseStandardPrice": true,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M6NYQA0"
+    },
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Customer Appreciation Event - Premier Ticket",
+        "Pricebook2.Name": "Standard",
+        "Pricebook2Id": {
+            "Name": "Standard",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/Standard",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Customer Appreciation Event - Premier Ticket",
+        "Product2Id": {
+            "Name": "Customer Appreciation Event - Premier Ticket",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NnQAK",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "CAE200",
+        "UnitPrice": 199,
+        "UseStandardPrice": true,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M6NnQAK"
+    },
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Customer Appreciation Event - Standard Ticket",
+        "Pricebook2.Name": "Standard",
+        "Pricebook2Id": {
+            "Name": "Standard",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/Standard",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Customer Appreciation Event - Standard Ticket",
+        "Product2Id": {
+            "Name": "Customer Appreciation Event - Standard Ticket",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NoQAK",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "CAE100",
+        "UnitPrice": 99,
+        "UseStandardPrice": true,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M6NoQAK"
+    }
+]

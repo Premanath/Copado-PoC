@@ -1,0 +1,34 @@
+{
+    "ContextId": "00141000003Rw75",
+    "Id": "00141000003Rw75AAC",
+    "Name": "Hilton - Swindon",
+    "SelectBilling": {
+        "BillingList": [
+            {
+                "AutoPaymentAmount": "TEST",
+                "BillDeliveryMethod": "Paper Billing",
+                "BillFrequency": "Monthly",
+                "BillingAutopay": true,
+                "BillingEmailAddress": "bjones@hilton.co.uk",
+                "BillingName": "Hilton - Swindon",
+                "BillingPaymentType": "Postpaid",
+                "BillingPhone": "5411192166",
+                "Id": "00141000003Rw8PAAS"
+            }
+        ],
+        "Formula 2": null,
+        "IsBillingAccountSelected": 1
+    },
+    "UpdateBilling": {
+        "AutoPaymentAmount": "TEST",
+        "BillDeliveryMethod": "Paper Billing",
+        "BillFrequency": "Monthly",
+        "BillingAddress": null,
+        "BillingAutopay": true,
+        "BillingEmailAddress": "bjones@hilton.co.uk",
+        "BillingName": "Hilton - Swindon",
+        "BillingPaymentType": "Postpaid",
+        "BillingPhone": "5411192166"
+    },
+    "id": "a1I41000007tG8CEAU"
+}

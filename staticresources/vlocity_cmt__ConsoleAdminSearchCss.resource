@@ -1,0 +1,1 @@
+.via-slds form.search-form input.search-object{padding-bottom:1px;padding-top:1px;width:400px}.via-slds table.items .actions{width:90px}.via-slds table.items .actions .slds-button+.slds-button{margin-left:12px}.via-slds table.items tr>td{cursor:pointer}

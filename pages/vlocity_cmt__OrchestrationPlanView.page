@@ -1,0 +1,100 @@
+<apex:page docType="html-5.0" applyBodyTag="false" standardController="vlocity_cmt__OrchestrationPlan__c" extensions="vlocity_cmt.OrchestrationPlanControllerExtension">
+<!-- <html xmlns:ng="http://angularjs.org" ng-app="vloc.planView" class="ng-cloak"  style="height:100%"> -->
+<html xmlns:ng="http://angularjs.org" ng-app="vloc.planView" class="ng-cloak"  style="height:100%" ng-controller="PlanViewController" ng-attr-width="{{getCanvasWidth(orchestrationPlan.swimlanes)}}" ng-attr-height="{{getCanvasHeight(orchestrationPlan.swimlanes)}}" width="100" height="100">
+    <head>
+      
+
+        <apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/css/vlocity.css')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/javascripts/vlocity.js')}"/>
+        
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/bower_components/forceng/forceng.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/bower_components/ForceTK/forcetk.js')}"/>
+        <script type="text/javascript">
+          var remoteActions = {
+                getOrchestrationPlan: "{!$RemoteAction.OrchestrationPlanControllerExtension.getOrchestrationPlan}"
+            };
+        </script>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__JQuery_1_5_1}"/>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__Cometd_2_2_0}"/>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__JQueryCometd_2_2_0}"/>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__PlanView}"/>
+        <apex:stylesheet value="{!$Resource.vlocity_cmt__PlanViewCss}"/>
+        <apex:stylesheet value="{!$Resource.vlocity_cmt__core}"/>
+        <apex:stylesheet value="{!$Resource.vlocity_cmt__communications}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+        
+        <script type="text/javascript">
+            
+            var app = angular.module('vloc.planView');
+
+            app.constant ('id', '{!$CurrentPage.parameters.id}');
+            app.constant ('sessionId', '{!$Api.Session_ID}');
+
+            app.constant ('taskTypes', {
+              'Callout': 'Callout to',
+              'ManualTask': 'Manual Task in',
+              'Milestone': 'Milestone',
+              'PushEvent': 'Waiting for event',
+              'AutoTask': 'Auto Task'
+            });
+      </script>
+    </head>
+    <body ng-controller="PlanViewController">
+    <div class="vlocity btns-left btn-container" ng-attr-width="{{getCanvasWidth(orchestrationPlan.swimlanes)}}" right="{{getCanvasWidth(orchestrationPlan.swimlanes)}}">
+        <button id="zoomIn"  ng-click="scaleVal = scaleVal+0.1; zoomIn();"  type="button" class="btn btn-small btn-default"><span class="icon icon-v-plus"   aria-hidden="true"></span></button>
+        <button id="zoomOut" ng-if="scaleVal > 0.2"  ng-click="zoomOut();" type="button" class="btn btn-small  btn-default">                     <span class="icon icon-v-minus"  aria-hidden="true"></span></button>
+        <button id="zoomOut" ng-if="scaleVal <= 0.2" ng-click="zoomOut();" type="button" class="btn btn-small  btn-default" ng-disabled="true"><span class="icon icon-v-minus"  aria-hidden="true"></span></button>
+    
+    </div>
+    <div id="wholepage" class="via-slds" style="zoom: 100%">
+      <div id="canvas">
+        <svg ng-attr-width="{{getCanvasWidth(orchestrationPlan.swimlanes)}}" ng-attr-height="{{getCanvasHeight(orchestrationPlan.swimlanes)}}" width="100" height="100" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <line x1="0" y1="0" ng-attr-x2="{{getCanvasWidth(orchestrationPlan.swimlanes)}}" y2="0" class="swimlane"/>
+          <line ng-attr-x1="{{::getSwimlaneX(swimlane)}}" ng-attr-y1="{{::getSwimlaneY2(swimlane)}}" ng-attr-x2="{{getCanvasWidth(orchestrationPlan.swimlanes)}}" ng-attr-y2="{{::getSwimlaneY2(swimlane)}}" ng-repeat="swimlane in orchestrationPlan.swimlanes track by swimlane.idx" class="swimlane"/>
+          <g ng-repeat="item in orchestrationPlan.items track by item.id">
+            <rect ng-attr-x="{{::getItemX(item)}}" ng-attr-y="{{::getItemY(item)}}"
+                  ng-attr-width="{{::getItemWidth(item)}}" ng-attr-height="{{::getHeaderHeight(item)}}"
+                  ng-class="['item-header', label2class(item.state)]" rx="8" ry="8"/>
+            <rect ng-attr-x="{{::getItemX(item)}}" ng-attr-y="{{::getItemY(item)}}"
+                  ng-attr-width="{{::getItemWidth(item)}}" ng-attr-height="{{::getItemHeight(item)}}"
+                  ng-class="[label2class(item.state), label2class(item.type), 'item']" rx="8" ry="8"/>
+            <use xlink:href="{{getIconURL('{!URLFOR($Resource.slds, 'assets/icons/utility-sprite/svg/symbols.svg')}', item)}}" fill="{{getIconColor(item)}}" stroke="{{getIconColor(item)}}" stroke-width="0.5" 
+                ng-attr-x="{{getItemIconX(item)}}" ng-attr-y="{{getItemIconY(item)}}" ng-attr-width="{{getItemIconWidth(item)}}" ng-attr-height="{{getItemIconHeight(item)}}"
+                ng-if="shouldShowIcon(item)"
+                ></use>
+          </g>
+          <g>
+            <g ng-repeat="dep in orchestrationPlan.deps track by dep.id">
+              <path ng-attr-d="{{::buildPath(dep)}}"  class="dep"/>
+            </g>
+          </g>
+          <g ng-if="orchestrationPlan.highlightedDeps">
+            <path ng-attr-d="{{::buildPath(dep)}}" class="dep highlighted" ng-repeat="dep in orchestrationPlan.highlightedDeps track by dep.id"/>
+          </g>
+          <g ng-if="orchestrationPlan.highlightedItems">
+            <rect ng-repeat="item in orchestrationPlan.highlightedItems track by item.id"
+                ng-attr-x="{{::getItemX(item)}}" ng-attr-y="{{::getItemY(item)}}" 
+                ng-attr-width="{{::getItemWidth(item)}}" ng-attr-height="{{::getItemHeight(item)}}" rx="8" ry="8"
+                class="highlighted"/>
+          </g>
+        </svg>
+        <div ng-repeat="swimlane in orchestrationPlan.swimlanes track by swimlane.idx | orderBy : 'showOrder'"
+            ng-style="{top: '{{::getSwimlaneY(swimlane)+30}}px', left:'{{::getSwimlaneX(swimlane)+20}}px', width: '100%'}"
+                class="order-label-container">
+                <a ng-href="/{{::swimlane.orderId}}" target="_blank" ng-bind="swimlane.orderName"  class="order-label"></a> - <a ng-href="/{{::swimlane.planDefId}}" target="_blank" ng-bind="swimlane.planDefName"  class="order-label"></a>
+        </div>
+        <div ng-repeat="item in orchestrationPlan.items track by item.id" ng-mouseenter="highlightItemAndDependencies(item)" ng-mouseleave="unhighlightItemAndDependencies()">
+          <div ng-style="{top: '{{::getItemLabelY(item)+22}}px', left:'{{::getItemLabelX(item)}}px', width:'{{::getLabelItemWidth(item)}}px', height:'30px'}"  class="item-label-container" ng-class="['item-header', label2class(item.state)]" id="itemLabel-{{::item.id}}">
+                <a ng-href="/{{::item.id}}" ng-style="{'max-width': '142px'}" target="_blank" ng-bind="item.name" class="item-label" ng-class="['item-header', label2class(item.state)]"></a>
+          </div>
+          <div ng-style="{left: '{{::getItemTextX(item)+20}}px', top: '{{::getItemTextY(item)+20}}px', width: '{{::getItemTextWidth(item)}}px'}" class="item-body-text">
+            <span>{{::getItemText(item)}}</span>
+            <span ng-if="item.additionalName"><a href="/{{::item.additionalId}}" target="_blank">{{::item.additionalName}}</a></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </body>
+</html>
+</apex:page>

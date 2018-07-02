@@ -1,0 +1,658 @@
+<apex:page standardController="vlocity_cmt__DecompositionRelationship__c" extensions="vlocity_cmt.XOMJSONMapperController" showHeader="false" sidebar="false"  applyHtmlTag="false">
+
+<apex:includeScript value="/support/console/31.0/integration.js"/>
+<apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__Jquery, 'jquery-1.8.2.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__Jquery, '/ui/jquery-ui-1.9.1.custom.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/javascripts/vlocity.js')}"/>
+<!-- <apex:includeScript value="{!URLFOR($Resource.AngularJS)}"/>
+<apex:includeScript value="{!URLFOR($Resource.AngularStrapJS)}"/>
+<apex:includeScript value="{!URLFOR($Resource.AngularStrapTplJS)}"/>-->
+<apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/bower_components/forceng/forceng.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/bower_components/ForceTK/forcetk.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__bootstrap, '/bootstrap-3.2.0-dist/css/bootstrap.min.css')}"/>
+<apex:includeScript value="{!$Resource.vlocity_cmt__FieldLookupAngDirective}"/>
+<apex:includeScript value="{!$Resource.vlocity_cmt__ANGULARBOOT}"/>
+<apex:includeScript value="{!$Resource.vlocity_cmt__AttributeLookupAngDirective}"/>
+		   	
+<apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/css/vlocity.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__bootstrap, '/bootstrap-3.2.0-dist/js/bootstrap.min.js')}"/>
+ <apex:stylesheet value="{!$Resource.vlocity_cmt__xom}"/>
+ 
+<html ng-app="jsonMapper" xmlns:ng="http://angularjs.org" lang="en" >
+ <head>
+    <title>Decompose Order</title>
+    <apex:includeScript value="/soap/ajax/31.0/connection.js" />
+    <apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/css/vlocity.css')}"/>
+    <style type="text/css">
+        div[class^="fieldsContainer"]{
+            width:300px;
+            height:235px;
+            display: inline-block;
+            border:1.5px solid rgb(224, 222, 222);
+   		}
+    	.referenceContainer{
+            width:100%;
+            overflow-x: auto;
+            height:250px;
+            white-space: nowrap;
+    	}
+		.form-control{
+			font-size:12px !important;
+		}	
+        .overflowTxt{
+        	text-overflow:ellipsis;
+        }
+        
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+        }  
+        #saveAllBtn{
+        	width:10%;
+        	margin-right:10px;
+        }
+        #deleteAllBtn{
+        	width:10%;
+        }
+        .commonControls{
+        	margin-bottom:10px ;
+        	width:20% !important;
+        	float:left;
+        	padding:10px !important;
+        	line-height:5px !important;
+        }
+        
+        .step-block{
+        	margin-top:-21px!important;
+        	border:1px solid #d8d8d8;
+        	margin-bottom:20px;
+        }
+        .vlocity .table>tbody>tr>td{
+        	overflow:visible;
+        	border:none !important;
+        }
+        
+        
+        .step-table{
+        	width:95% !important;
+        	margin:20px !important;
+        	margin-left:25px !important;
+        }
+        
+        .outcome-wrapper{
+        	margin-top:-21px !important;
+        }
+        .outcome-wrapper-first{
+        	margin-top:-0px !important;
+        }
+        #errorMsg{
+        	color:red;
+        }
+        #msgDiv{
+        	color:blue;
+        }
+        .ng-invalid-required{
+        	border-color: rgba(82,168,236,.8);
+        	outline:0;
+        	box-shadow:0 0 8px rgba(82, 168, 236, 0.6);
+        }
+        
+    .vloc_lookup{
+    	padding:0px !important;
+    }
+   .vloc_lookup_btn{
+		float:left !important;
+		width: 15% !important;
+		position:relative !important;	
+	}
+	.vloc_lookup_inp{
+		display:inline !important;
+		width:80% !important;
+		float:left !important;
+	}
+	.vloc_btn{
+		width:90% !important;
+	}
+	.vloc_inp{
+		width:100% !important;
+		float:left !important;
+		display:inline !important;
+		position:relative !important;
+		text-overflow:ellipsis !important;
+		border:none !important;
+		margin-top:4px !important;
+	}
+     .fieldSelColumn{
+     	width:300px !important; 
+    	overflow: scroll; 
+     	max-height: 233px; 
+     	border:none;
+     }  
+     .vloc_col{
+     	overflow:hidden;
+     	text-overflow:ellipsis;
+     }
+    </style>
+ </head>
+ 
+ <script type="text/javascript">
+ 	j$ = jQuery.noConflict();
+ 	j$(document).ready(function(){
+    	j$('[data-toggle="tooltip"]').tooltip({trigger: "hover"}); 
+    });
+    var app = angular.module('jsonMapper', ['vlocity', 'ui.bootstrap', 'fieldLookupUI', 'ngSanitize']);
+    var decompRelId = '{!decompRelId}';
+    var remoteActions = {
+      persistMappingJSON  : "{!$RemoteAction.XOMJSONMapperController.persistMappingJSON}",
+      getExistingRules    : "{!$RemoteAction.XOMJSONMapperController.getExistingRules}"
+    };
+    
+    app.config(function(remoteActionsProvider) {
+      remoteActionsProvider.setRemoteActions(remoteActions);
+    });
+    
+    app.directive("expand", function($animate) {
+        return function(scope, element, attrs) {
+            scope.$watch(attrs.expand, function(newVal) {
+                if (newVal) {
+                    element.toggleClass('closed')
+                } else {
+                    element.toggleClass('closed')
+                }
+            });
+        };
+    });
+     //used for the field Lookup Directive
+   angular.module('parameters',[]).factory('ParametersFactory', function(){
+    		var factory = {};
+    		factory.getRemoteInvokeMethod = function(){
+    			return '{!$RemoteAction.XOMJSONMapperController.invokeMethod}';
+    		
+    		}
+    		
+    		factory.getClassType = function(){
+    			return '{!classType}';
+    		
+    		}
+    		
+    		factory.getLoadingImg = function(){
+    			return '{!$Resource.WAITGIF}';
+    		}
+    		
+    		factory.getNsPrefix = function(){
+    			return '{!nsPrefix}';
+    		}
+    		
+    		return factory;
+                	
+  });
+    app.controller('jsonMapperCtrl', function($scope, remoteActions, $modal){
+    	
+    	$scope.editMode = false;
+    	$scope.nsPrefix = '{!nsPrefix}';
+    	$scope.myRuleList = [];
+    	$scope.sourceTypeOptions = ['Attribute', 'Field'];
+    	$scope.mappingTypeOptions = ['ad-verbatim', 'list'];
+    	$scope.initRule = function(index, parentIndex){
+    		$scope.myRuleList[parentIndex]=($scope.myRuleList[parentIndex]!=null)?$scope.myRuleList[parentIndex]:{};
+    		$scope.myRuleList[parentIndex]['transform_mappings']=($scope.myRuleList[parentIndex]['transform_mappings']!=null)?$scope.myRuleList[parentIndex]['transform_mappings']:[];
+    	};
+    	$scope.assignEditModes = function(myRuleList){
+    		for(var i=0; i<$scope.myRuleList.length; i++){
+    			$scope.myRuleList[i]['editMode']=false;
+    		}
+    	};
+        $scope.getExistingRules = function () {
+        	remoteActions.getExistingRules(decompRelId).then(function (response) 
+    		{
+    			var fetchedList = response;
+    			$scope.myRuleList=(fetchedList!=null)?fetchedList:[];
+    			$scope.assignEditModes();
+    			console.log('myRuleList'+$scope.myRuleList);
+    			$scope.loadedExistingRules = true;
+        	});
+        };
+       $scope.getExistingRules();
+       $scope.source_type=[];
+       $scope.iSrcAttrs={};
+       $scope.iDestAttrs ={};
+       $scope.fetchMetaData = function(){
+       		$scope.mappingJson = '{!JSENCODE(mappingJSONDataS)}';
+       		//$scope.mappingJson = '{!mappingJSONDataS}';
+        	
+        	//response = '{!decompRuleDetailsS}';
+        	response = '{!JSENCODE(decompRuleDetailsS)}';
+        	
+        	if(response!=null&&response!=''){
+        	$scope.parsedMap = JSON.parse(response);
+		         
+        	var parsedMapLocalVar = $scope.parsedMap;
+        	var keyList = Object.keys(parsedMapLocalVar);
+        
+        	keyList.forEach(function (key) 
+        	{
+            	var val = $scope.parsedMap[key];
+            	if(Array.isArray(val))
+            	{
+                	console.log('key : '+key);
+            	}
+            	else if(val.constructor === Object)
+            	{
+                	var codeNamePairs = val;
+                	$scope.codeNamePairs = val;
+                	var codeKeys =Object.keys(codeNamePairs);
+                	if(key=='outputFieldsMap'){
+                			$scope.fldApiNameLabelMap = val;
+                			$scope.fieldApiNames = Object.keys(val);
+                	}
+            	}
+        	});
+        	$scope.loadedMetaData = true;
+        	}
+       	};
+        $scope.fetchMetaData();
+        //end for each loop for each key in keysList 
+        if($scope.loadedExistingRules != true && $scope.loadedExistingRules == true){
+        	alert('Something went wrong. Please check if existing attribute mapping rules are correct and try again.');
+        }
+        else if($scope.loadedMetaData != true && $scope.loadedExistingRules == true){
+        	alert('Something went wrong. Please review the attribute-setup and try again.')
+        }
+        else if($scope.loadedMetaData != true && $scope.loadedExistingRules != true){
+        	alert('Something went wrong. Please review attribute-setup and existing attribute mappings JSON and try again.')
+        }
+        $scope.travAttrMap = function(key, val){
+        if(val!=null && val!=''){
+       		if(key==="destinationAttrs")
+       		{
+       			val.forEach(function (code){
+       				var res = $scope.codeNamePairs[code];
+       				$scope.iDestAttrs[code]=res;
+       			});
+       		}
+       		else
+       		{
+       			val.forEach(function (code){
+       				var res = $scope.codeNamePairs[code];
+       				$scope.iSrcAttrs[code]=res;
+       			});
+       		}
+       }
+       }
+        $scope.travAttrMap('sourceAttrs', $scope.parsedMap['sourceAttrs']);
+        $scope.travAttrMap('destinationAttrs', $scope.parsedMap['destinationAttrs']);
+        
+        $scope.mappings = new Object();
+        var parentIndex;
+        
+        $scope.addNewRule = function () {
+			var newRule = {};
+			newRule['source_type'] = '';
+			newRule['source_attr_code'] = '';
+			newRule['source_field_name'] = '';
+			newRule['destination_attr_code'] = '';
+			newRule['destination_attr_name'] = '';
+			newRule['mapping_type']='';
+			newRule['transform_mappings']=[];
+			newRule['editMode']=true;
+			$scope.myRuleList.push(newRule);
+      	}
+       
+      		
+		$scope.deleteRule = function(ruleIndex){
+			var resp = confirm("Are you sure you want to delete?");
+      		if (resp) 
+      		{
+      					$scope.saving = true;
+      					if ( $scope.myRuleList[ruleIndex] !== undefined) {
+          					$scope.myRuleList.splice(ruleIndex, 1);
+          					$scope.saveAll();
+            				$scope.saving = false;
+            			}
+      		}
+		}
+		
+      	$scope.addNewTransform = function (index) {
+        	var newTransform = {};
+        	$scope.editMode = true;
+        	$scope.myRuleList[index]['transform_mappings'].push(newTransform);
+      	}
+      	
+      	$scope.deleteTransform = function(ruleIndex,transformIndex) {
+        	if ($scope.myRuleList[ruleIndex]['transform_mappings'][transformIndex]!== undefined) {
+        		$scope.myRuleList[ruleIndex]['transform_mappings'].splice(transformIndex,1);
+        	}
+      	}
+        
+        $scope.saveAll = function(){
+			mappingArray = new Array();
+			if($scope.myRuleList!=null){
+				mappingArray = $scope.myRuleList;
+			}
+			$scope.persistJSON(mappingArray, false);
+		}
+		$scope.deleteAll = function(){
+			var resp = confirm("Are you sure you want to delete all rules? This cannot be undone.");
+      		if (resp) 
+      		{
+				$scope.persistJSON([], true);
+			}
+		}
+		$scope.validateJSON = function(mappingArray){
+			for(var i=0; i<mappingArray.length; i++)
+			{
+					var objFields = Object.keys(mappingArray[i]);
+					for(var f=0; f<objFields.length; f++){
+							var fl = objFields[f];
+							console.log(mappingArray[i][fl]);
+							if(fl!='transform_mappings')
+							{
+								if(mappingArray[i][fl]==null || mappingArray[i][fl]=='' || mappingArray[i][fl]==undefined){
+									$scope.validData = false;
+									return;
+								}
+							}
+					}
+			}
+		};
+		$scope.resetSrcModel = function(ruleIndex){
+			console.log(ruleIndex+':'+$scope.myRuleList[ruleIndex]);
+			if($scope.myRuleList[ruleIndex]['source_type'] =="Field")
+			{
+				$scope.myRuleList[ruleIndex]['source_field_name'] = $scope.myRuleList[ruleIndex]['source_field_name']? $scope.myRuleList[ruleIndex]['source_field_name']:'';
+			}
+			else{
+				$scope.myRuleList[ruleIndex]['source_attr_code'] = $scope.myRuleList[ruleIndex]['source_attr_code']?$scope.myRuleList[ruleIndex]['source_attr_code']:'';
+				var attrCode = $scope.myRuleList[ruleIndex]['source_attr_code'];
+				$scope.myRuleList[ruleIndex]['source_attr_name'] = $scope.codeNamePairs[attrCode]?$scope.codeNamePairs[attrCode]:'';
+			}
+			
+		};
+		$scope.myRefresh = function(){
+			$scope.getExistingRules();
+		};
+		$scope.persistJSON = function(mappingArray, toRefresh){
+			var srcCodei;
+			var destCodei;
+			for(var i=0; i<mappingArray.length; i++)
+			{
+				delete mappingArray[i]['editMode'];
+				srcCodei = mappingArray[i].source_attr_code;
+				destCodei= mappingArray[i].destination_attr_code;
+				if(destCodei!=null && destCodei!='' && $scope.codeNamePairs[destCodei]!='' && $scope.codeNamePairs[destCodei]!=null)
+				{
+					mappingArray[i]['destination_attr_name']= $scope.codeNamePairs[destCodei]['name'];
+				}
+				if(mappingArray[i]['source_type']=='Field'){
+					delete mappingArray[i]['source_attr_code'];
+					delete mappingArray[i]['source_attr_name'];
+				}
+				else
+				{
+					delete mappingArray[i]['source_field_name'];
+					if(srcCodei!=null && srcCodei!='' && $scope.codeNamePairs[srcCodei]!='' && $scope.codeNamePairs[srcCodei]!=null){
+						mappingArray[i]['source_attr_name'] = $scope.codeNamePairs[srcCodei]['name'];
+					}
+				}
+				if(mappingArray[i]['mapping_type']=='ad-verbatim'){
+					delete mappingArray[i]['transform_mappings'];
+				}
+				//XOM 192-s
+				else
+				{
+					if(srcCodei!=null && srcCodei!='' && $scope.iSrcAttrs[srcCodei]!=null && $scope.iSrcAttrs[srcCodei]!='' && $scope.iSrcAttrs[srcCodei]['dataType']=='Multi Picklist')
+					{
+							for(var k=0; k< mappingArray[i]['transform_mappings'].length; k++)
+							{
+								var str = mappingArray[i]['transform_mappings'][k]['source_value'];
+			   					var res = str.split(";");
+								res.sort();
+								mappingArray[i]['transform_mappings'][k]['source_value'] = res.join(";");
+							}
+					}
+					if(destCodei!=null && destCodei!='' && $scope.iDestAttrs[destCodei]!=null && $scope.iDestAttrs[destCodei]!='' && $scope.iDestAttrs[destCodei]['dataType']=='Multi Picklist')
+					{
+							for(var k=0; k< mappingArray[i]['transform_mappings'].length; k++)
+							{
+								var str = mappingArray[i]['transform_mappings'][k]['destination_value'];
+			   					var res = str.split(";");
+								res.sort();
+								mappingArray[i]['transform_mappings'][k]['destination_value'] = res.join(";");
+							}
+					}
+				}
+				//XOM 192 -e
+			}
+			
+			$scope.validData = true;
+			$scope.validateJSON(mappingArray);
+			if($scope.validData == false)
+			{
+				document.getElementById('errorMsg').innerHTML='Please enter the highlighted details in order to save.';
+				var elementsValid = document.querySelectorAll(".ng-valid-required");
+				for(var e=0; e<elementsValid.length; e++){
+					elementsValid[e].style.border="1px solid rgba(0, 0, 0, 0.15)";
+					if(elementsValid[e].nodeName.toLowerCase()=="input"){
+          				var p = elementsValid[e].parentElement.parentElement;
+          				p.style.border = "1px solid rgba(0, 0, 0, 0.15)";
+          			}
+				}
+				var elements = document.querySelectorAll(".ng-invalid-required");
+				for(var e=0; e<elements.length; e++){
+					elements[e].style.border="red 1px solid";
+					if(elements[e].nodeName.toLowerCase()=="input"){
+          				var p = elements[e].parentElement.parentElement;
+          				p.style.border = "1px solid red";
+          			}
+				}
+				return;
+			}
+			if($scope.validData == true){
+				var newMappingJSON = JSON.stringify(mappingArray);
+        		console.log('persist the json - newMappingJSON: '+newMappingJSON);
+        		j$('#msgDiv').hide();
+        		//call a remote action to update this mapping data json at the BE
+        		remoteActions.persistMappingJSON(newMappingJSON,decompRelId).then(function(resp){
+        			if(resp==1){
+        				//window.location.reload(true);
+        				document.getElementById('msgDiv').innerHTML = 'Saved!';
+        				j$('#msgDiv').show();
+        				if(toRefresh == true){
+        					$scope.myRefresh();
+        				}
+        				setTimeout(function(){
+        								j$('#msgDiv').hide();
+        							}, 3000);
+        			}
+        			else{
+        				//alert('Error occurred in creation of rule');
+        				document.getElementById('errorMsg').innerHTML = 'Error occurred in creation of rule';
+        			}
+        		});
+        	}
+		}
+		
+        var FieldModalInstanceCtrl = function ($scope, $modalInstance, fieldLookupService, items) {
+					$scope.selectedItem = items[0];
+					$scope.nsPrefix = items[1];
+					$scope.objectName = 'OrderItem';
+					$scope.fieldName = $scope.selectedItem['source_field_name'];
+					$scope.selectedFields = [];
+					
+					$scope.save = function () {
+						$modalInstance.close(fieldLookupService.parseFields($scope.selectedFields));
+					};
+				
+					$scope.cancel = function () {
+						$modalInstance.dismiss('cancel');
+						
+					};
+		};
+        $scope.openFieldSelection = function (rule) {
+						var modalInstance = $modal.open({
+						  templateUrl: 'fieldSelectionModal.html',
+						  controller: FieldModalInstanceCtrl,
+						  resolve: {
+						    items: function () {
+						      return [rule, $scope.nsPrefix];
+						    }
+						  }
+						});
+						modalInstance.result.then(function (fieldInfo) {
+							rule['source_field_name'] = fieldInfo.fullFieldName;
+							}, function () {
+								//console.log.info('Modal dismissed at: ' + new Date());
+						});
+		};
+		
+    });
+ </script>
+ 
+<body ng-controller="jsonMapperCtrl">
+<div class="vlocity ng-cloak"  ng-if="loadedMetaData==true && loadedExistingRules==true">
+<div id="jsonMapperForm" class="outcomes">
+<br/>
+ <!--<div class="outcome-add" style="width: 130px">-->
+ <button type="button" class="btn btn-link pull-left" ng-click="addNewRule();$event.stopPropagation();">+ Add New Rule</button>
+<!--  </div>  -->
+
+<br/><br/>
+<p ng-hide="myRuleList.length >0"  class="text-primary">Currently there are no mapping rules. Please click 'Add New Rule' button above to start adding.</p>
+
+<p id="msgDiv"></p>
+<p id="errorMsg"></p>
+
+<div id='ruleContainer' ng-if="myRuleList.length > 0" ng-repeat="rule in myRuleList track by $index" ng-init="parentIndex = $index; initRule($index, parentIndex);" ng-class="$index!=0 ? 'outcome-wrapper' : 'outcome-wrapper-first'">
+    <table  class="table table-fix container " ng-click="expand=!expand" style="border:none" >  
+    <tr expand="expand" class="step-block slider">
+    	<!-- <form name="attrMapperForm_{{parentIndex}}" class="form-inline form-group form-short" ng-click="$event.stopPropagation(); $event.preventDefault();">
+    	-->
+    	<form name="attrMapperForm" class="form-inline form-group form-short" ng-click="$event.stopPropagation(); $event.preventDefault();">
+    	<td class="tabData row">
+    		
+    		<div ng-hide="" class="col-md-2 vloc_col">
+    			<label><strong class="">Source Type:</strong></label>
+    			<span ng-show='!rule.editMode' class="ruleCluster" data-toggle="tooltip" title="{{rule['source_type']}}">{{rule['source_type']}}</span> 
+            	<select ng-show="rule.editMode" class="form-control" ng-model="rule['source_type']"  ng-click="$event.stopPropagation();" data-toggle="toggle" name="sourceTypeEle_{{parentIndex}}" required="true" ng-change="resetSrcModel(parentIndex);" ng-options="sto as sto for sto in sourceTypeOptions">
+            	</select>
+    		</div>
+    		
+    		<div class="col-md-4 vloc_col" ng-if="rule['source_type']=='Attribute'">
+    			<label><strong class="">Source Attribute:</strong></label>
+    			 <span ng-show='!rule.editMode' class="ruleCluster" data-toggle="tooltip" title="{{codeNamePairs[rule['source_attr_code']].categoryCode}}-{{codeNamePairs[rule['source_attr_code']].name}}">{{codeNamePairs[rule['source_attr_code']].categoryCode}}-{{codeNamePairs[rule['source_attr_code']].name}}</span> 
+            	<select ng-show="rule.editMode" ng-options="k as v.categoryCode+'-'+v.name for (k,v) in iSrcAttrs" class="form-control"  ng-model="rule['source_attr_code']"  ng-click="$event.stopPropagation();" data-toggle="toggle"  name="source_attr_code" required="true"></select>
+            </div>
+    	    
+    	    
+			<div class ="col-md-4 vloc_col" ng-if="rule['source_type']=='Field'">
+    	    	<label><strong class="">Source Field:</strong></label>
+    			<span ng-show="!rule.editMode" class="overflowTxt" data-toggle="tooltip" title="{{rule['source_field_name']}}">{{rule['source_field_name']}}</span>
+    			<div ng-show="rule.editMode" class="form-control vloc_lookup" required="true">
+    				<div class="vloc_lookup_btn" ><button class="btn btn-link vloc_btn" ng-click="openFieldSelection(rule);"><i class="icon icon-v-search"></i></button></div>
+    				<div class="vloc_lookup_inp" ><input type='text' class="vloc_inp" ng-model="rule['source_field_name']" ng-readOnly="true" style="width:90%; float:left; text-overflow:ellipsis" required="true"/></div>
+    			</div>
+			</div>
+    		
+    		<div class="col-md-2 vloc_col">
+    			<label><strong class="">Mapping Type:</strong></label>
+    		 	<span ng-show='!rule.editMode' class="ruleCluster" data-toggle="tooltip" title="{{rule['mapping_type']}}">{{rule['mapping_type']}}</span> 
+            	<select ng-show="rule.editMode"  class="form-control" ng-model="rule['mapping_type']"  ng-click="$event.stopPropagation();" data-toggle="toggle" name="mapping_type" required="true" ng-options="mto as mto for mto in mappingTypeOptions">
+            	</select>
+    		</div>
+    		
+    		<div class="col-md-3 vloc_col">
+    			<label><strong class="">Destination Attribute:</strong></label>
+    			<span ng-show='!rule.editMode' class="ruleCluster" data-toggle="tooltip" title="{{codeNamePairs[rule['destination_attr_code']].categoryCode}}-{{codeNamePairs[rule['destination_attr_code']].name}}">{{codeNamePairs[rule['destination_attr_code']].categoryCode}}-{{codeNamePairs[rule['destination_attr_code']].name}}</span>
+            	<select ng-show="rule.editMode" ng-options="kd as vd.categoryCode+'-'+vd.name for (kd,vd) in iDestAttrs" class="form-control" ng-model="rule['destination_attr_code']" ng-click="$event.stopPropagation();" data-toggle="toggle" name="destination_attr_code" required="true"></select>
+        	</div>
+        	
+           <div class="edit-bar pull-right col-md-1">
+           			<i class="icon-v-edit-line" ng-show="" ng-click="$event.stopPropagation(); rule.editMode = !rule.editMode "/>
+              		<!-- <i class="icon-v-edit" ng-show="editMode==true" ng-click="$event.stopPropagation(); editMode = false"/> -->
+              		<!-- <i class="icon-v-save" ng-show="editMode==true" ng-click="editMode = false; $event.stopPropagation();"/> -->
+             		<i class="icon-v-trash" ng-click="$event.stopPropagation(); deleteRule($index)"/>
+              		<i ng-class="expand ? 'icon-v-down-caret' : 'icon-v-right-caret'" />
+           </div>
+        </td>
+        </form>
+    </tr>
+    </table>
+    
+    <div expand="expand" class="step-block slider" ng-show="expand==true">
+    <p ng-hide="rule['mapping_type']=='list'"  style="color: rgb(124,124,124); font: arial; font-size: 12px">Please select list as Mapping Type if you want to add transform/mapping.</p>
+    <div class="outcome-add" style="cursor: auto">
+            	<div ng-show="rule['mapping_type']=='list'" class="step-add" style="margin:10px" ng-click="rule.editMode=true; addNewTransform($index);">
+             	  <i class="icon-v-plus-circle"/>
+              		<span class="add-outcome-text">Add New Transform/Mapping</span> 
+            	</div>
+    
+    
+    <div class="step-table">
+    		<p ng-show="rule['transform_mappings'].length==0 && rule['mapping_type']=='list'"  style="color: rgb(124,124,124); font: arial; font-size: 12px">Currently there are no transforms/mappings. Please click Add New Transform/Mapping above to start adding!</p>
+            <table class="table" ng-show="rule['mapping_type']=='list' && rule['transform_mappings'].length>0">
+                <thead>
+                <tr>
+                    	<th class="trfTabData">
+            				<span name='source_value_header'>Source Value</span>
+        				</th>
+        				<th class="trfTabData">
+            				<span name='destination_value_header'>Destination Value</span>
+        				</th>
+        				<th ng-if="rule.editMode" class="trfTabData">
+            				<span name=''></span>
+        				</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-if="rule['transform_mappings'].length>0"  ng-repeat="trf in rule['transform_mappings'] track by $index" ng-init="ruleIndex = $parent.$parent.$index" >
+                 
+                    	<td class="trfTabData">
+                    		<input ng-if="rule.editMode" class="col-md-3 form-control" ng-model="trf['source_value']" value="trf['source_value']" type="text"  data-toggle="tooltip" placeholder='Source Value' required="true"/>  
+                    		<span class="col-md-3" ng-if="!rule.editMode" data-toggle="tooltip" title="{{trf['source_value']}}">{{trf['source_value']}}</span>
+                    	</td>
+            			<td class="trfTabData">
+            				<input ng-if="rule.editMode" class="col-md-3 form-control" ng-model="trf['destination_value']" value="trf['destination_value']" type="text" data-toggle="tooltip" placeholder='Destination Value' required="true"/>   
+            				<span class="col-md-3" ng-if="!rule.editMode" data-toggle="tooltip" title="{{trf['destination_value']}}">{{trf['destination_value']}}</span>       
+            			</td>
+            			<td class="trfTabDataTrash col-md-3" ng-if="rule.editMode">
+                     		<i class="icon-v-trash pull-left" ng-click="deleteTransform(ruleIndex, $index)"/>
+                    	</td>
+                 </tr>
+                 </tbody>
+    		 </table>
+ 	</div>	
+ 	</div>
+ 	</div>
+ </div>
+<button ng-if="myRuleList.length > 0" class="btn btn-primary pull-left" id="saveAllBtn" ng-click="saveAll();">Save</button>
+<button ng-if="myRuleList.length > 0" class="btn btn-primary pull-left" id="deleteAllBtn" ng-click="deleteAll()">Delete All</button>
+ </div>
+</div> 
+
+<!-- field mapping s -->
+
+<script type="text/ng-template" id="fieldSelectionModal.html">
+				<div class="vlocity modal-header">
+					<button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">{!$Label.Close}</span></button>
+					<h4 class="modal-title" id="myModalLabel">{!$Label.FieldSelection}</h4>
+				</div>
+				<field-Lookup object-name="objectName" field-name="fieldName" selected-fields="selectedFields"> </field-Lookup>
+				<div class="vlocity modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="save()">{!$Label.Save}</button>
+					<button type="button" class="btn btn-primary" ng-click="cancel()">{!$Label.Cancel}</button>	
+				</div>
+</script>
+
+
+<script type="text/ng-template" id="fieldLookup.html">
+                <div class=" vlocity modal-body">
+                    <div class="referenceContainer">
+                        <div class="fieldsContainer-{{$index}}"  ng-repeat="fieldSet in fieldSets track by $index" ng-init="outerIndex = $index">
+                            <select class="form-control" style="width:300px !important; overflow: scroll; max-height: 233px; border:none;" size="500" size="500" ng-change="populateNextTable($index, selectedFields[$index])" data-ng-options="field as field.label+'<'+field.name+'>' for field in fieldSet | orderBy:'label'" data-ng-model="selectedFields[$index]"></select>                            
+                        </div>
+                    </div>
+                </div>
+</script>
+ <!--  field mapping e -->
+</body> 
+</html>
+</apex:page>

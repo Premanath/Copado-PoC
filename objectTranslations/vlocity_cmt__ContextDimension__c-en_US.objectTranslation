@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AppContext Dimension --></label>
+        <name>vlocity_cmt__AppContextDimension__c</name>
+    </fields>
+    <fields>
+        <label><!-- DataType --></label>
+        <name>vlocity_cmt__DataType__c</name>
+        <picklistValues>
+            <masterLabel>Boolean</masterLabel>
+            <translation><!-- Boolean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>String</masterLabel>
+            <translation><!-- String --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>vlocity_cmt__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>vlocity_cmt__EffectiveFromDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Until --></label>
+        <name>vlocity_cmt__EffectiveUntilDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Key --></label>
+        <name>vlocity_cmt__GlobalKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>vlocity_cmt__IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strong --></label>
+        <name>vlocity_cmt__IsStrong__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rule Dimension Field --></label>
+        <name>vlocity_cmt__RuleDimensionField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength Priority --></label>
+        <name>vlocity_cmt__StrengthPriority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volatility --></label>
+        <name>vlocity_cmt__Volatility__c</name>
+        <picklistValues>
+            <masterLabel>Always</masterLabel>
+            <translation><!-- Always --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OnDemand</masterLabel>
+            <translation><!-- OnDemand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Session</masterLabel>
+            <translation><!-- Session --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

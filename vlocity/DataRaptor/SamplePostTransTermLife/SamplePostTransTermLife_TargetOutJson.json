@@ -1,0 +1,49 @@
+{
+    "Contact": {
+        "Contact Info Block": {
+            "Account": "Acme",
+            "Email": "jsmith@gmail.com",
+            "First Name": "John",
+            "Last Name": "Smith",
+            "Mobile": "3155678765"
+        }
+    },
+    "ContextId": "",
+    "Step 2 Rating Profile": {
+        "Age": 20,
+        "Gender": "Male",
+        "Policy Amount": 1000000,
+        "Smoker?": "Yes",
+        "Underwriting Class": "Standard"
+    },
+    "Step 3 Product Selection": {
+        "Product": [
+            {
+                "Description": "Premiums Remain Level for 15 Years",
+                "Image": "/servlet/servlet.ImageServer?id=01536000001vuyE&oid=00D36000001GHxB&lastMod=1466624245000",
+                "Name": "Term 15 Year Level",
+                "ProductCode": "TL15",
+                "vlcSelected": true
+            }
+        ]
+    },
+    "Step 4 Premium": {
+        "Monthly Premium": 1,
+        "Quarterly Premium": 1,
+        "Yearly Premium": 1
+    },
+    "id": "a0g360000022IerAAE",
+    "timeStamp": "2016-08-21T18:33:00.150Z",
+    "userName": "student242@ins.edu",
+    "userProfile": "System Administrator",
+    "vlcPersistentComponent": {
+    },
+    "vlcTimeTracking": {
+        "Calculate Premium": 8585,
+        "Contact": 57507,
+        "GetTermProducts": 360,
+        "Step 2 Rating Profile": 12835,
+        "Step 3 Product Selection": 13805,
+        "Step 4 Premium": 52516
+    }
+}

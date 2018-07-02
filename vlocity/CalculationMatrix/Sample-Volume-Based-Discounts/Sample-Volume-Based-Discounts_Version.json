@@ -1,0 +1,19 @@
+{
+    "%vlocity_namespace%__CalculationMatrixId__c": {
+        "Name": "Sample Volume Based Discounts",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrix__c/Sample Volume Based Discounts",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrix__c"
+    },
+    "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Volume Based Discounts",
+    "%vlocity_namespace%__CalculationMatrixRow__c": "Sample-Volume-Based-Discounts_Version_Rows.json",
+    "%vlocity_namespace%__CurrentStatus__c": "Active",
+    "%vlocity_namespace%__EndDateTime__c": "",
+    "%vlocity_namespace%__Priority__c": 1,
+    "%vlocity_namespace%__StartDateTime__c": "2018-02-13T09:57:00.000Z",
+    "%vlocity_namespace%__VersionNumber__c": 1,
+    "Name": "Sample Volume Based Discounts V1",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Volume Based Discounts V1"
+}

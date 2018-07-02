@@ -1,0 +1,27 @@
+{
+    "BillingDetails": {
+        "AccountName": null,
+        "AcctType": null,
+        "ParentAccId": null,
+        "parentAccName": null
+    },
+    "ContextId": null,
+    "NewOrderJouney": {
+        "AcId": null,
+        "OrderStartDate": null,
+        "OrderStatus": null
+    },
+    "timeStamp": null,
+    "userId": null,
+    "userName": null,
+    "userProfile": null,
+    "vlcPersistentComponent": {
+    },
+    "vlcTimeTracking": {
+        "BillingDetails": null,
+        "CreateBA": null,
+        "CreateOrder": null,
+        "NewOrderJouney": null,
+        "SetValues1": null
+    }
+}

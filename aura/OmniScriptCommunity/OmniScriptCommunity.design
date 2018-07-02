@@ -1,0 +1,7 @@
+<design:component label="Vlocity OmniScript">
+    <design:attribute name="recordId" label="Record ID" default="{!recordId}" />
+    <design:attribute name="type" label="Type" />
+    <design:attribute name="subtype" label="SubType" />
+    <design:attribute name="language" label="Language" />
+    <design:attribute name="height" default="" label="Max Height (px)" description="By default the component will grow dynamically as the Layout, Card and Templates are loaded. Use this to restrict the height and make the component scrollable when the content overflows. Must be in pixels (px)."/>
+</design:component>

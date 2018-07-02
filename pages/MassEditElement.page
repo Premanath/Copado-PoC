@@ -1,0 +1,30 @@
+<apex:page standardController="vlocity_cmt__Element__c" recordSetVar="elementlist" sidebar="false" extensions="ElementSort" >
+
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+    <apex:pageMessages />
+    <apex:pageBlock >
+        Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+    </apex:pageBlock>
+    <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!save}"/>
+        <apex:commandButton value="Return" action="{!cancel}"/>
+    </apex:pageBlockButtons>
+    <apex:pageBlockTable value="{!elementlist}" var="a" id="table">
+        <apex:column headerValue="Name">
+            <apex:inputField value="{!a.name}"/>
+        </apex:column>
+        <apex:column headerValue="Type">
+            <apex:inputField value="{!a.vlocity_cmt__Type__c}"/>
+        </apex:column>
+        <apex:column headerValue="Order">
+            <apex:inputField value="{!a.vlocity_cmt__Order__c}"/>
+        </apex:column>
+        <apex:column headerValue="Parent Element">
+            <apex:inputField value="{!a.vlocity_cmt__ParentElementId__c}"/>
+        </apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

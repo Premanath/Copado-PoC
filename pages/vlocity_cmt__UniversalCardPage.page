@@ -1,0 +1,120 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" controller="vlocity_cmt.CardCanvasController" standardStylesheets="false">
+<html dir="{!IF(isLanguageRTL, 'rtl', 'ltr')}">
+    <head>
+        <style type="text/css">
+            body {
+                margin: 0px !important;
+                padding: 0px !important;
+                background: transparent;
+            }
+        </style>
+        <script>
+            window.iFrameResizer = {
+                messageCallback: function(message) {
+                    try {
+                        if (window.vlocityUniversalCardPage && window.vlocityUniversalCardPage.handleExternalEvent) {
+                            window.vlocityUniversalCardPage.handleExternalEvent(message);
+                        }
+                    } catch (e) {};
+                }
+            };
+        </script>
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__iframeresizer, '/js/iframeResizer.contentWindow.min.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/javascripts/vlocity.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/bower_components/forceng/forceng.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/bower_components/ForceTK/forcetk.js')}" />
+        <apex:includeScript value="{!$Resource.vlocity_cmt__CardFramework_Assets}" />
+        <apex:includeScript value="{!$Resource.vlocity_cmt__CardFramework}" />
+        <apex:includeScript value="{!$Resource.vlocity_cmt__SldsAngular}" />
+        <apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/css/vlocity.css')}" />
+        <apex:stylesheet value="{!IF(isLanguageRTL, URLFOR($Resource.vlocity_cmt__slds, '/assets/styles/salesforce-lightning-design-system-vf.rtl.min.css'), URLFOR($Resource.vlocity_cmt__slds, '/assets/styles/salesforce-lightning-design-system-vf.min.css'))}"
+        />
+    </head>
+    <body>
+    <div class="vlocity via-slds" ng-app="universalApp" ng-controller="rootController">
+        <vloc-layout layout-name="{{layoutName}}" />
+    </div>
+    <script type="text/javascript">
+        localStorage.setItem('nsPrefixDotNotation', "{!nsPrefixDotNotation}");
+        var _$provide = null;
+        angular
+            .module('universalApp', ['CardFramework', 'vlocity', 'forceng', 'cfp.hotkeys'])
+            .config(function(actionLauncherProvider, $provide) {
+                _$provide = $provide;
+
+                // we need to override this and send a message to the parentIFrame
+                // if not set then we'll just do a regular window.open.
+                actionLauncherProvider.setCustomWindowOpen(function($inject) {
+                    var $rootScope = $inject.get("$rootScope");
+                    return function(path, params, action) {
+                        if ('parentIFrame' in window) {
+                            parentIFrame.sendMessage({
+                                message:'actionLauncher:windowopen',
+                                path: path, 
+                                params: params,
+                                action: normalizeProperties(action, $rootScope.nsPrefix),
+                            });
+                        } else {
+                            window.open(path, params);
+                        }
+                    } 
+                }, true);
+            })
+            .run(["$rootScope", "force", function ($rootScope, force) {
+                force.init({
+                    accessToken: '{!$Api.Session_ID}',
+                    useProxy: false
+                });
+                $rootScope.forcetkClient = new forcetk.Client();
+                $rootScope.forcetkClient.setSessionToken('{!$Api.Session_ID}');
+
+                function normalizeProperties(action, nsPrefix) {
+                    return Object.keys(action).reduce(function(obj, key) {
+                        obj[key.replace(nsPrefix, '')] = action[key];
+                        return obj;
+                    }, {});
+                }
+
+                _$provide.decorator('performAction', function($delegate) {
+                    var performAction = $delegate;
+                    
+                    var wrapper = function (action, actionConfig, obj, data, filter, pickedState) {
+                        if ('parentIFrame' in window) {
+                            var record = performAction.getSORecord(data, obj);
+                            parentIFrame.sendMessage({
+                                message:'actionLauncher:windowopen',
+                                actionConfig: normalizeProperties(actionConfig, $rootScope.nsPrefix),
+                                action: normalizeProperties(action, $rootScope.nsPrefix),
+                                sObjType: performAction.getSObjectType(obj, pickedState),
+                                contextId: record ? record.Id : null
+                            });
+                        } else {
+                            performAction.apply(this, arguments);
+                        }
+                    };
+                    
+                    wrapper.getSORecord = performAction.getSORecord;
+                    wrapper.getSObjectType = performAction.getSObjectType;
+                
+                    return wrapper;
+                });
+            }])
+            .controller('rootController', ['$scope', 'pageService', function ($scope, pageService) {
+                $scope.layoutName = pageService.params.layout;
+                $scope.id = $scope.Id = pageService.params.id || pageService.params.Id;
+
+                // register external handler for message events from iframeresizer
+                window.vlocityUniversalCardPage = {
+                    handleExternalEvent: function(message) {
+                        if (message.type && message.type == 'cardevent') {
+                            $scope.$apply(function() {
+                                $scope.$broadcast('vlocity.layout.' + message.layoutName + '.events', message.message);
+                            });
+                        }
+                    }
+                };
+            }]);
+    </script>
+    </body>
+</html>
+</apex:page>

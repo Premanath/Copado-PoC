@@ -1,0 +1,18 @@
+<apex:page standardStylesheets="false" showHeader="true" sidebar="true" standardController="Contact" extensions="vlocity_cmt.VFPageControllerBase" docType="html-5.0" >
+    <div ng-app="XXX" class='vlocity'> 
+        <a ng-if="!isSforce" ng-href="/{!currentRecord['Id']}" ><i class="fa fa-caret-left"></i>{!$Label.vlocity_cmt__NewBackTo} {!sParentObjectLabel} {!$Label.vlocity_cmt__DetailLC}</a> 
+        <a ng-if="isSforce" href="javascript:sforce.one.navigateToURL('/{!currentRecord['Id']}')"><i class="fa fa-caret-left"></i>{!$Label.vlocity_cmt__NewBackTo} {!sParentObjectLabel} {!$Label.vlocity_cmt__DetailLC}</a> 
+        <hr/>
+        <vlocity_cmt:BusinessProcessComponent standardController="{!stdController}"
+                                                               strOmniScriptType="PreFill Contacts"
+                                                               strOmniScriptSubType="PreFill Contacts"
+                                                               strOmniScriptLang="English"
+                                                               strPrefillDataRaptorBundle="PrefillContacts"/> 
+        <vlocity_cmt:BusinessProcessHelperComponent />
+        <vlocity_cmt:JSONTreeHTMLTemplateComponent /> 
+        <script type="text/javascript">
+            var modules = ['vlocity-business-process'];
+            var myModule = angular.module('XXX', modules);
+        </script> 
+    </div>
+</apex:page>

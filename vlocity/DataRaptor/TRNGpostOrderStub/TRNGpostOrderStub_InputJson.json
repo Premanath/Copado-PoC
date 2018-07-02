@@ -1,0 +1,45 @@
+{
+    "Account": {
+        "AnnualRevenue": 100000000,
+        "Id": "00146000003vIN3AAM",
+        "Name": "Acme",
+        "SLA": "Platinum",
+        "Type": "Prospect"
+    },
+    "Contact": "00346000002KaJ7AAK",
+    "ContactName": "Edward  Stamos",
+    "ContextId": "00146000003vIN3",
+    "Pricebook": "B2B Price Book",
+    "Step 1 Identify Caller": {
+        "TypeAhead-Block": {
+            "TypeAhead": "Edward Stamos"
+        }
+    },
+    "TypeAhead-Block": {
+        "AccountId": "00146000003vIN3AAM",
+        "Birthdate": "1971-03-21",
+        "ContactAccountId": "00146000003vIN3AAM",
+        "ContactId": "00346000002KaJ7AAK",
+        "Email": "edward@acme.com",
+        "FirstName": "Edward",
+        "LastName": "Stamos",
+        "Phone": "(212) 669-1475",
+        "PostalCode": "10017",
+        "SSN": "789434567"
+    },
+    "id": "a0Z46000001Yu0KEAS",
+    "layout": "lightning",
+    "timeStamp": "2017-04-09T21:23:22.892Z",
+    "userId": "005460000012BpAAAU",
+    "userName": "cardsui002@cmt.edu",
+    "userProfile": "System Administrator",
+    "vlcPersistentComponent": {
+    },
+    "vlcTimeTracking": {
+        "Get Account Data DR": 279,
+        "OmniScriptSessionToken": "9c1620b2-a5a2-43b9-835b-ac9360660190",
+        "Script Constants": 0,
+        "Set Contact": 7,
+        "Step 1 Identify Caller": 7669
+    }
+}

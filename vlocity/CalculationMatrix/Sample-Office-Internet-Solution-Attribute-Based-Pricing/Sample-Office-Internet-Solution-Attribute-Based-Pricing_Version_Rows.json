@@ -1,0 +1,364 @@
+[
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "3ca528",
+            "dataType": "Currency",
+            "displayOrder": 4,
+            "headerType": "Output",
+            "label": null,
+            "lineItemId": "a1L36000000Q2Z3EAK",
+            "listValues": null,
+            "name": "OneTimeChargeOverride"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "428b95",
+            "dataType": "Currency",
+            "displayOrder": 5,
+            "headerType": "Output",
+            "label": null,
+            "lineItemId": "a1L36000000Q2Z4EAK",
+            "listValues": null,
+            "name": "RecurringChargeOverride"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "52bd35",
+            "dataType": "Text",
+            "displayOrder": 1,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1L36000000Q2Z0EAK",
+            "listValues": null,
+            "name": "Product"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "8da511",
+            "dataType": "Text",
+            "displayOrder": 2,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1L36000000Q2Z1EAK",
+            "listValues": null,
+            "name": "DownloadSpeed"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "columnKey": "f7d35e",
+            "dataType": "Text",
+            "displayOrder": 3,
+            "headerType": "Input",
+            "label": null,
+            "lineItemId": "a1L36000000Q2Z2EAK",
+            "listValues": null,
+            "name": "UploadSpeed"
+        },
+        "Name": "Header",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "100 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "10 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 105
+        },
+        "Name": "4bc0bfea792b017e900fa1273948663c",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "100 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "15 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 110
+        },
+        "Name": "3f2b178e41ae8b8e8ab321b0c916822d",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "100 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "5 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 0,
+            "RecurringChargeOverride": 100
+        },
+        "Name": "5924de74854ae0afe73c33d26e02dcd2",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "25 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "10 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 30
+        },
+        "Name": "7c8c2c805b6df613ca1e9196a7ff88b2",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "25 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "15 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 35
+        },
+        "Name": "befdfafa7600426542557aaa2d739bba",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "25 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "5 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 0,
+            "RecurringChargeOverride": 25
+        },
+        "Name": "12020e334e8147af4f7afe433027b434",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "50 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "10 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 55
+        },
+        "Name": "0557b09a8c3e4f56d17199ac21399a16",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "50 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "15 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 60
+        },
+        "Name": "1b6f80c116d401c20fc22bf766009568",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "50 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "5 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 0,
+            "RecurringChargeOverride": 50
+        },
+        "Name": "48406115388af32f160ec5bc661ec0bd",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "75 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "10 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 80
+        },
+        "Name": "b1a5075bfb7db830932442341200ee6f",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "75 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "15 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 10,
+            "RecurringChargeOverride": 85
+        },
+        "Name": "7e76abd60fe55155a9419d7df6dbd4e3",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    },
+    {
+        "%vlocity_namespace%__CalculationMatrixVersionId__c": {
+            "%vlocity_namespace%__CalculationMatrixId__r.Name": "Sample Office Internet Solution Attribute Based Pricing",
+            "%vlocity_namespace%__VersionNumber__c": 2,
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__CalculationMatrixVersion__c/Sample Office Internet Solution Attribute Based Pricing v2",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixVersion__c"
+        },
+        "%vlocity_namespace%__InputData__c": {
+            "DownloadSpeed": "75 Mbps",
+            "Product": "Office Internet Solution",
+            "UploadSpeed": "5 Mbps"
+        },
+        "%vlocity_namespace%__OutputData__c": {
+            "OneTimeChargeOverride": 0,
+            "RecurringChargeOverride": 75
+        },
+        "Name": "b685b7696aa880d662502a7209561a34",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrixRow__c"
+    }
+]

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Mobile</fullName>
+        <default>true</default>
+        <label>Mobile</label>
+    </standardValue>
+    <standardValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Individual Life</fullName>
+        <default>false</default>
+        <label>Individual Life</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Broadband</fullName>
+        <default>false</default>
+        <label>Broadband</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discount</fullName>
+        <default>false</default>
+        <label>Discount</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Appreciation</fullName>
+        <default>false</default>
+        <label>Customer Appreciation</label>
+    </standardValue>
+</StandardValueSet>

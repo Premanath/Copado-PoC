@@ -1,0 +1,13 @@
+{
+    "%vlocity_namespace%__Category__c": "Confidential",
+    "%vlocity_namespace%__ClauseContent__c": "All notices, requests or other communications hereunder shall be in writing, addressed to the Parties at the address indicated in the caption of this Agreement or as otherwise stated in the relevant Attachment hereto. Notices mailed by registered or certified mail shall be deemed to have been received by the addressee on the third business day following the mailing or sending thereof. Notices sent by facsimile or electronic mail shall be conclusively deemed to have been received when the delivery confirmation is received. Any notice of change of address shall be deemed to be received only when actually received.",
+    "%vlocity_namespace%__ContractTypes__c": "",
+    "%vlocity_namespace%__IsArchived__c": false,
+    "%vlocity_namespace%__IsRestricted__c": false,
+    "%vlocity_namespace%__Tokens__c": "",
+    "%vlocity_namespace%__Type__c": "Generic",
+    "Name": "Notices",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentClause__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__DocumentClause__c/Notices"
+}

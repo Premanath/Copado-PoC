@@ -1,0 +1,92 @@
+<apex:page controller="vlocity_cmt.EPCAdminController" title="New Object Record" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ng="http://angularjs.org" ng-app="cpqdirectives">
+        <head>
+            <base href="/"/>
+            <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.EPCAdminCss)}" />
+
+            <script type="text/javascript" src="{!URLFOR($Resource.JQUERYJS)}"/>
+            <script type="text/javascript" src="/support/console/31.0/integration.js"/>
+            <script type="text/javascript" src="{!URLFOR($Resource.vlocity_assets, '/javascripts/vlocity.js')}"/>
+            <script type="text/javascript" src="{!URLFOR($Resource.SldsAngular)}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.AngularRoute)}"/>
+            <script type="text/javascript" src="{!URLFOR($Resource.CpqDirectives)}"/>
+        </head>
+        <body class="via-slds ng-cloak" ng-controller="NewObjectRecordController">
+            <div id="entity-info">
+                <div class="slds-clearfix">
+                    <div class="entity-menu slds-float--left">
+                        <a href="javascript:void(0)" ng-click="toggleMenu()"><span class="glyphicon icon-v-menu"></span></a>
+                    </div>
+                    <div class="entity-name slds-float--left">
+                        <h1 class="slds-text-heading--medium">New {{objectLabel}}</h1>
+                    </div>
+                    <div class="entity-context slds-float--right"></div>
+                </div>
+            </div>
+            <div id="content-container" class="clearfix">
+                <div ng-class="facet-content">
+                    <div class="facet-container">
+                        <div class="new-object-record slds-form--horizontal">
+                            <div class="slds-form-element" ng-if="hasObjectTypes">
+                                <label class="slds-form-element__label" for="objectType">Object Type </label>
+                                <div class="slds-form-element__control">
+                                    <vloc-obj-field display-mode="'edit'" parent-obj="editItem" field-name="objectType" field-info="objTypeSelect" obj-picklists="objectTypes"></vloc-obj-field>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" ng-repeat="field in fieldSet">
+                                <label class="slds-form-element__label" for="{{objectFields[field.fieldPath].label}}">{{objectFields[field.fieldPath].label}}</label>
+                                <div class="slds-form-element__control">
+                                    <vloc-obj-field display-mode="'edit'" parent-obj="editItem" field-name="field.fieldPath" field-info="objectFields[field.fieldPath]" obj-picklists="objectPicklists[field.fieldPath.toLowerCase()]"></vloc-obj-field>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-text-align--right">
+                                <button type="button" class="slds-button slds-button--brand" ng-click="saveItem($event)">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                j$ = jQuery.noConflict();
+
+                var remoteActions = {
+                    getObjectPicklistsByName: {
+                        action: "{!$RemoteAction.EPCAdminController.getObjectPicklistsByName}",
+                        config: {escape: false}
+                    },
+                    describeObject: {
+                        action: "{!$RemoteAction.EPCAdminController.describeObject}",
+                        config: {escape: false}
+                    },
+                    getFieldSetsByName: {
+                        action: "{!$RemoteAction.EPCAdminController.getFieldSetsByName}",
+                        config: {escape: false}
+                    },
+                    createObject: {
+                        action: "{!$RemoteAction.EPCAdminController.createObject}",
+                        config: {escape: false}
+                    },
+                    createObjectType: {
+                        action: "{!$RemoteAction.EPCAdminController.createObjectType}",
+                        config: {escape: false}
+                    },
+                    getObjectTypes: {
+                        action: "{!$RemoteAction.EPCAdminController.getObjectClassTypesByName}",
+                        config: {escape: false}
+                    }
+                };
+
+                var SLDSICON = {
+                    'ADD': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#add")}',
+                    'NEW': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#new")}',
+                    'EDIT': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#edit")}',
+                    'PREVIEW': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#preview")}',
+                    'DELETE': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#delete")}',
+                    'SEARCH': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#search")}'
+                };
+            </script>
+        </body>
+    </html>
+</apex:page>

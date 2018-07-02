@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Destination --></label>
+        <name>vlocity_cmt__Destination__c</name>
+    </fields>
+    <fields>
+        <label><!-- Context Dimension --></label>
+        <name>vlocity_cmt__Dimension__c</name>
+        <relationshipLabel><!-- Vlocity Context Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>vlocity_cmt__EffectiveFromDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Until --></label>
+        <name>vlocity_cmt__EffectiveUntilDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Key --></label>
+        <name>vlocity_cmt__GlobalKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>vlocity_cmt__IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scope --></label>
+        <name>vlocity_cmt__Scope__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Expression --></label>
+        <name>vlocity_cmt__Source__c</name>
+    </fields>
+</CustomObjectTranslation>

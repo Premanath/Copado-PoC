@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interface PriceBook Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interface PriceBooks Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applicable Subtype --></label>
+        <name>ApplicableSubtype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicable Type --></label>
+        <name>ApplicableType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name --></label>
+        <name>AttributeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value --></label>
+        <name>AttributeValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Display Sequence --></label>
+        <name>Attribute_Display_Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Code --></label>
+        <name>CategoryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Name --></label>
+        <name>CategoryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Configurable --></label>
+        <name>Configurable__c</name>
+    </fields>
+    <fields>
+        <label><!-- DR Bundle Name --></label>
+        <name>DRBundleName__c</name>
+    </fields>
+    <fields>
+        <label><!-- DR Error --></label>
+        <name>DRError__c</name>
+    </fields>
+    <fields>
+        <label><!-- DR Progress Data --></label>
+        <name>DRProgressData__c</name>
+    </fields>
+    <fields>
+        <label><!-- DR Status --></label>
+        <name>DRStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Sequence --></label>
+        <name>DisplaySequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filterable --></label>
+        <name>Filterable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Floor Price --></label>
+        <name>FloorPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Price --></label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overage Charge --></label>
+        <name>OverageCharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overage UOM --></label>
+        <name>OverageUOM__c</name>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yearly</masterLabel>
+            <translation><!-- Yearly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Book Entry Active --></label>
+        <name>PBEntryActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book Active --></label>
+        <name>PriceBookActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book Description --></label>
+        <name>PriceBookDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book Name --></label>
+        <name>PriceBookName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>ProductCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>ProductDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>ProductFamily__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>ProductName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Price --></label>
+        <name>RecurringPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring UOM --></label>
+        <name>RecurringUOM__c</name>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yearly</masterLabel>
+            <translation><!-- Yearly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UI Control Type --></label>
+        <name>UIControlType__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

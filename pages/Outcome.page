@@ -1,0 +1,23 @@
+<apex:page standardStylesheets="false" showHeader="true" sidebar="true" standardController="Account" extensions="vlocity_cmt.VFPageControllerBase" docType="html-5.0" >
+    <div ng-app="CAP" class='vlocity'> 
+        <a ng-if="!isSforce" ng-href="/{!currentRecord['Id']}" ><i class="fa fa-caret-left"></i>{!$Label.vlocity_cmt__NewBackTo} {!sParentObjectLabel} {!$Label.vlocity_cmt__DetailLC}</a> 
+        <a ng-if="isSforce" href="javascript:sforce.one.navigateToURL('/{!currentRecord['Id']}')"><i class="fa fa-caret-left"></i>{!$Label.vlocity_cmt__NewBackTo} {!sParentObjectLabel} {!$Label.vlocity_cmt__DetailLC}</a> 
+        <hr/>
+        <vlocity_cmt:BusinessProcessComponent standardController="{!stdController}"
+                                                               strOmniScriptType="Healthy Start"
+                                                               strOmniScriptSubType="Outcome"
+                                                               strOmniScriptLang="English"
+                                                               strPrefillDataRaptorBundle="Outcome Prefill" 
+                                                               JSONTreeHTMLTemplateName="JSONTreeHTMLTemplate_Custom.html"
+                                                               verticalMode="false"
+                                                               />
+        <vlocity_cmt:BusinessProcessHelperComponent />
+        <vlocity_cmt:JSONTreeHTMLTemplateComponent />
+        <c:Confirmation_Component /> 
+               
+        <script type="text/javascript">
+            var modules = ['vlocity-business-process'];
+            var myModule = angular.module('CAP', modules);
+        </script> 
+    </div>
+</apex:page>

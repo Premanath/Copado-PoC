@@ -1,0 +1,7 @@
+{
+    "%vlocity_namespace%__CalculationMatrixVersion__c": "Vlocity-MultiAttribute-Calculation-Matrix_Version.json",
+    "Name": "Vlocity MultiAttribute Calculation Matrix",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrix__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__CalculationMatrix__c/Vlocity MultiAttribute Calculation Matrix"
+}

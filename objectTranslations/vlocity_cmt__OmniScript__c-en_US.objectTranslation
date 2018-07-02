@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>vlocity_cmt__AdditionalInformation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom JavaScript --></label>
+        <name>vlocity_cmt__CustomJavaScript__c</name>
+    </fields>
+    <fields>
+        <label><!-- DataRaptor Bundle --></label>
+        <name>vlocity_cmt__DataRaptorBundleId__c</name>
+        <relationshipLabel><!-- Vlocity OmniScripts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DataRaptor Bundle Name --></label>
+        <name>vlocity_cmt__DataRaptorBundleName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>vlocity_cmt__IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reusable --></label>
+        <name>vlocity_cmt__IsReusable__c</name>
+    </fields>
+    <fields>
+        <label><!-- JSON Output --></label>
+        <name>vlocity_cmt__JSON_Output__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>vlocity_cmt__Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese (Simplified)</masterLabel>
+            <translation><!-- Chinese (Simplified) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese (Traditional)</masterLabel>
+            <translation><!-- Chinese (Traditional) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danish</masterLabel>
+            <translation><!-- Danish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dutch</masterLabel>
+            <translation><!-- Dutch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finnish</masterLabel>
+            <translation><!-- Finnish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French</masterLabel>
+            <translation><!-- French --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean</masterLabel>
+            <translation><!-- Korean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norwegian</masterLabel>
+            <translation><!-- Norwegian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese (Brazil)</masterLabel>
+            <translation><!-- Portuguese (Brazil) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian</masterLabel>
+            <translation><!-- Russian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish (Mexico)</masterLabel>
+            <translation><!-- Spanish (Mexico) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish</masterLabel>
+            <translation><!-- Swedish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thai</masterLabel>
+            <translation><!-- Thai --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Property Set --></label>
+        <name>vlocity_cmt__PropertySet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Type --></label>
+        <name>vlocity_cmt__SubType__c</name>
+        <picklistValues>
+            <masterLabel>Add Authorized User</masterLabel>
+            <translation><!-- Add Authorized User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Birth Certificate</masterLabel>
+            <translation><!-- Birth Certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building Permit</masterLabel>
+            <translation><!-- Building Permit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Address</masterLabel>
+            <translation><!-- Change Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Payment Method</masterLabel>
+            <translation><!-- Change Payment Method --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check Status</masterLabel>
+            <translation><!-- Check Status --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Class Exercise</masterLabel>
+            <translation><!-- Class Exercise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Close Case</masterLabel>
+            <translation><!-- Close Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Prefill</masterLabel>
+            <translation><!-- Contact Prefill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create Contact</masterLabel>
+            <translation><!-- Create Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Appreciation Offer</masterLabel>
+            <translation><!-- Customer Appreciation Offer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalate</masterLabel>
+            <translation><!-- Escalate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Get Account Data</masterLabel>
+            <translation><!-- Get Account Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Get Case Data</masterLabel>
+            <translation><!-- Get Case Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Get Communication Preferences Data</masterLabel>
+            <translation><!-- Get Communication Preferences Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Get Customer Data</masterLabel>
+            <translation><!-- Get Customer Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guide Me</masterLabel>
+            <translation><!-- Guide Me --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guided Selling</masterLabel>
+            <translation><!-- Guided Selling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gun Permit</masterLabel>
+            <translation><!-- Gun Permit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marriage License</masterLabel>
+            <translation><!-- Marriage License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mental Health</masterLabel>
+            <translation><!-- Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Case</masterLabel>
+            <translation><!-- New Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Task</masterLabel>
+            <translation><!-- New Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outcome</masterLabel>
+            <translation><!-- Outcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Extension</masterLabel>
+            <translation><!-- Payment Extension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Feedback</masterLabel>
+            <translation><!-- Product Feedback --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Save Contact Data</masterLabel>
+            <translation><!-- Save Contact Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submit</masterLabel>
+            <translation><!-- Submit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Term Life Quote</masterLabel>
+            <translation><!-- Term Life Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Troubleshoot</masterLabel>
+            <translation><!-- Troubleshoot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uber Integration</masterLabel>
+            <translation><!-- Uber Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Account Data</masterLabel>
+            <translation><!-- Update Account Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verify Caller</masterLabel>
+            <translation><!-- Verify Caller --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test custom HTML templates --></label>
+        <name>vlocity_cmt__TestHTMLTemplates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>vlocity_cmt__Type__c</name>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPQ</masterLabel>
+            <translation><!-- CPQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Challenge</masterLabel>
+            <translation><!-- Challenge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Service</masterLabel>
+            <translation><!-- Customer Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DataRaptor Extract</masterLabel>
+            <translation><!-- DataRaptor Extract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthy Start</masterLabel>
+            <translation><!-- Healthy Start --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Library</masterLabel>
+            <translation><!-- Library --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OmniScripts</masterLabel>
+            <translation><!-- OmniScripts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample</masterLabel>
+            <translation><!-- Sample --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>vlocity_cmt__Version__c</name>
+    </fields>
+</CustomObjectTranslation>

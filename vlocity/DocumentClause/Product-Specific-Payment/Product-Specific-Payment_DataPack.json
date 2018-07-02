@@ -1,0 +1,13 @@
+{
+    "%vlocity_namespace%__Category__c": "Services",
+    "%vlocity_namespace%__ClauseContent__c": "The price for the Product may be charged upfront or monthly. For monthly payment Products, at the end of the 12 month Minimum Period We will continue to supply the Product to You on a month to month basis on the terms applicable at that time (including price), unless You tell Us in writing or We tell You otherwise, at least 30 days before the automatic extension.",
+    "%vlocity_namespace%__ContractTypes__c": "",
+    "%vlocity_namespace%__IsArchived__c": false,
+    "%vlocity_namespace%__IsRestricted__c": false,
+    "%vlocity_namespace%__Tokens__c": "",
+    "%vlocity_namespace%__Type__c": "Generic",
+    "Name": "Product Specific Payment",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentClause__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__DocumentClause__c/Product Specific Payment"
+}

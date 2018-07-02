@@ -1,0 +1,7 @@
+{
+    "%vlocity_namespace%__CalculationMatrixVersion__c": "Sample-Volume-Based-Discounts_Version.json",
+    "Name": "Sample Volume Based Discounts",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrix__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__CalculationMatrix__c/Sample Volume Based Discounts"
+}

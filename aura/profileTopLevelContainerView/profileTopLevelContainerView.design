@@ -1,0 +1,3 @@
+<design:component label="Vlocity Lightning Profiler">
+	<design:attribute name="entityId" label="Context Id" description="Context Object Id" />
+</design:component>

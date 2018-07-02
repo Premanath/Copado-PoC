@@ -1,0 +1,22 @@
+{
+    "%vlocity_namespace%__ApplicableItemTypes__c": "QuoteLineItem",
+    "%vlocity_namespace%__ApplicableTypes__c": "Quote",
+    "%vlocity_namespace%__ContractTypes__c": "",
+    "%vlocity_namespace%__DocumentFontStyle__c": "Arial, Helvetica, sans-serif",
+    "%vlocity_namespace%__DocumentStyleData__c": "",
+    "%vlocity_namespace%__DocumentTemplateSection__c": "T-C-Office-Internet_DocumentTemplateSections.json",
+    "%vlocity_namespace%__ExternalID__c": "T&C - Office Internet/1/Vlocity/1491963329764",
+    "%vlocity_namespace%__ImageStyleData__c": "",
+    "%vlocity_namespace%__IsActive__c": true,
+    "%vlocity_namespace%__IsSignatureRequired__c": false,
+    "%vlocity_namespace%__SectionHeadersDisplayStyle__c": "{\"headingLevels\":[{\"title\":\"Section Heading 1\",\"styles\":{\"font-weight\":\"bold\",\"font-family\":\"Arial, Helvetica, sans-serif\",\"font-size\":\"18pt\",\"text-align\":\"left\",\"color\":\"#000000\",\"padding-left\":\"0px\"}},{\"title\":\"Section Heading 2\",\"styles\":{\"font-weight\":\"bold\",\"font-family\":\"Arial, Helvetica, sans-serif\",\"font-size\":\"14pt\",\"text-align\":\"left\",\"color\":\"#000000\",\"padding-left\":\"0px\"}},{\"title\":\"Section Heading 3\",\"styles\":{\"font-weight\":\"bold\",\"font-family\":\"Arial, Helvetica, sans-serif\",\"font-size\":\"12pt\",\"text-align\":\"left\",\"color\":\"#000000\",\"padding-left\":\"0px\"}}]}",
+    "%vlocity_namespace%__SectionHeadersFontStyle__c": "{\"level1\":\"style=\\\"font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size: 18pt; text-align: left; color: #000000; padding-left: 0px; width: 100%; display: inline-block;\\\"\",\"level1padding\":\"padding-left: 0px;\",\"level2\":\"style=\\\"font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size: 14pt; text-align: left; color: #000000; padding-left: 0px; width: 100%; display: inline-block;\\\"\",\"level2padding\":\"padding-left: 0px;\",\"level3\":\"style=\\\"font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size: 12pt; text-align: left; color: #000000; padding-left: 0px; width: 100%; display: inline-block;\\\"\",\"level3padding\":\"padding-left: 0px;\"}",
+    "%vlocity_namespace%__Status__c": "Active",
+    "%vlocity_namespace%__TrackContractRedlines__c": true,
+    "%vlocity_namespace%__Type__c": "Select Template Type",
+    "%vlocity_namespace%__VersionNumber__c": 1,
+    "Name": "T&C - Office Internet",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/T&C - Office Internet"
+}

@@ -1,0 +1,10 @@
+{
+    "input": {
+        "Age": "20",
+        "Face Amount": "1000000",
+        "Gender": "Male",
+        "Term Length": "TL20",
+        "Tobacco": "Yes",
+        "UW_Class": "Standard"
+    }
+}

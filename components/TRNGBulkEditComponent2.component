@@ -1,0 +1,1168 @@
+<apex:component controller="vlocity_cmt.BulkXLIEditController2">
+    <apex:attribute name="contextId" description="Page context Id"  required="true" type="Id"/>
+    <apex:attribute name="objectToQuery" description="Object from which bulk edit will operate" required="true" type="String"/>
+    <apex:attribute name="foreignKeyName" description="Relation between contextId and objectToQuert" required="true" type="String"/>
+    <apex:attribute name="backUrl" description="Review cart page url"  type="String"/>
+    <apex:attribute name="postEditProcessor" description="Processing unit to be called after bulk edit"  type="String"/>
+    <html xmlns:ng="http://angularjs.org"  ng-app="bulkEditApp">
+    <head>
+        <title>Bulk Edit</title>
+        <apex:includeScript value="/soap/ajax/31.0/connection.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/css/vlocity.css')}"/>
+
+        <style type="text/css">
+            .vlocity table.records {
+                margin-bottom: 0;
+            }
+            .vlocity table.records tr th:first-of-type, .vlocity table.records tr td:first-of-type {
+                width: 60px;
+            }
+            .vlocity .form-inline .addedfield-value {
+                width: 120px;
+            }
+            [ng\:cloak], [ng-cloak], .ng-cloak {
+                display: none !important;
+            }
+            .vlocity input[type="text"].ng-invalid, .vlocity input[type="number"].ng-invalid, .vlocity select.ng-invalid {
+                border-color: red; }
+            .vlocity .vlc-overlay {
+                position: fixed;
+                z-index: 1038;
+                background-color: rgba(255, 255, 255, 0.9);
+                width: 100%;
+                height: 100%;
+                top:0;}
+            .vlocity .vlc-overlay svg {
+                width: 28px;
+                display: block;
+                margin: 225px auto; }
+            .modal-body p {
+                word-wrap: break-word;
+            }
+            .scrollstyle{
+                max-height: 200px;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body class="vlocity" style="padding-top: 70px;"  ng-controller="BaseCtrl as bCtrl" ng-init="bCtrl.initApp()" >
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div>
+        <div class="modal-body container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <p>
+                        {{message}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+
+        </div>
+    </script>
+
+    <script id="LookupContent.html" type="text/ng-template">
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div class=".modal-scrollbar-measure">
+        <div ng-init="names = lookups" class="scrollstyle">
+            <div ng-repeat="x in names" style="margin-left: 10px" >
+                <label>
+                    <input type="radio" ng-model="value.data" name="lookup" ng-value="x"> {{ x.Name }}
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+
+        </div>
+    </script>
+
+
+    <div  ng-show="bCtrl.showSpinner()" class="vlc-overlay">
+        <vlc-loader></vlc-loader>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <a  href="{!backUrl}" class="btn btn-default navbar-btn navbar-right" id="bulkeditPop">Exit</a>
+        </div>
+    </nav>
+    <div class=" ng-cloak container-fluid " ng-if="bCtrl.appInitialized()">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">Find and Replace</h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body" ng-controller="QueryCtrl as qCtrl">
+                                <form name="queryForm" class="form-inline" ng-submit="qCtrl.applyQuery()">
+                                    <div style="margin-bottom: 8px;">
+                                        <select class="form-control" ng-model="qCtrl.selectedFieldId" ng-change="qCtrl.removeFields(qCtrl.selectedFieldId)">
+                                            <option value="{{field.id}}" ng-repeat="field in qCtrl.queryableFields() | orderBy:'seq' track by field.id " ng-disabled="field.id == -1" ng-selected="field.id == -1">{{field.label}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 8px;" ng-repeat="addedField in qCtrl.addedFields track by addedField.id">
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" value="{{addedField.label}}" readonly="readonly" bs-tooltip="bCtrl.getTooltip(addedField.label)"/>&nbsp;
+                                            <select class="form-control" ng-model="addedField.queryOperator" ng-options="opp as opp.label for opp in qCtrl.queryOpps() | filter:{allowedTypes:addedField.type}:false"  ng-required="true"></select>&nbsp;
+                                            <input type="text" class="form-control" ng-model="addedField.value" ng-required="true"  ng-if="qCtrl.isDefaultInput(addedField)"/>
+                                            <div style="display:inline;" ng-switch="addedField.dbType">
+                                                <div class="input-group datepicker" ng-switch-when="DATE" ng-click="$event.preventDefault(); $event.stopPropagation();">
+                                                    <label for="datepicker-{{addedField.id}}" class="input-group-addon"><i class="icon icon-v-calendar-line"></i></label>
+                                                    <input type="text" id="datepicker-{{addedField.id}}" class="form-control" ng-model="addedField.value" bs-datepicker="true" data-autoclose="1" data-model-date-format="yyyy-MM-dd" data-date-format="MM/dd/yyyy" data-date-type="string"
+                                                           data-icon-left="icon icon-v-left-caret" data-icon-right="icon icon-v-right-caret"  ng-required="true"  ng-readonly="true" style="cursor: pointer;background:white" trigger="click"/>
+                                                </div>
+
+                                                <div ng-switch-when="DATETIME"  ng-click="$event.preventDefault(); $event.stopPropagation();" style="display: inline;">
+                                                    <div class="input-group datepicker">
+                                                        <label for="datepicker-{{addedField.id}}" class="input-group-addon"><i class="icon icon-v-calendar-line"></i></label>
+                                                        <input type="text" id="datepicker-{{addedField.id}}" class="form-control" ng-model="addedField.value" bs-datepicker="true" data-autoclose="1" data-model-date-format="yyyy-MM-dd HH:mm:ss" data-date-format="MM/dd/yyyy" data-icon-left="icon icon-v-left-caret"
+                                                               data-icon-right="icon icon-v-right-caret" ng-readonly="true"  ng-required="true"  style="cursor: pointer;background:white" trigger="click"/>
+                                                    </div>
+                                                    <div class="timepicker" style="display:inline;">
+                                                        <input type="text" class="form-control" id="timepicker-qs-{{addedField.id}}" ng-model="addedField.value" data-autoclose="1" bs-timepicker="true" data-icon-up="icon icon-v-up-caret" data-icon-down="icon icon-v-down-caret" ng-readonly="true"  ng-required="true" data-model-time-format="yyyy-MM-dd HH:mm:ss"
+                                                               style="cursor: pointer;background:white" trigger="click"/>
+                                                    </div>
+                                                </div>
+                                            </div>&nbsp;
+                                            <button  class="btn btn-default btn-sm form-control" type="button" ng-click="qCtrl.addFields(addedField)">
+                                                <span class="glyphicon icon-v-trash" style="font-size: 15px; vertical-align: bottom;" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <button class="btn btn-primary" type="submit" ng-disabled="qCtrl.addedFields.length <= 0 || queryForm.$invalid">Query</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <tabset  justified="true">
+                                    <tab heading="REPLACE"  ng-controller="EditFieldCtrl as eCtrl" >
+                                        <div id="oldReplace" >
+                                            <form  name="editForm" style="padding:15px;" class="form-inline" ng-submit="eCtrl.updateRecords()">
+                                                <div style="margin-bottom: 8px;">
+                                                    <select class="form-control" style="max-width:100%;" ng-model="eCtrl.selectedFieldId" ng-change="eCtrl.removeFields(eCtrl.selectedFieldId)">
+                                                        <option value="{{field.id}}" ng-repeat="field in eCtrl.editableFields()  track by $index" ng-disabled="field.id == -1" ng-selected="field.id == -1">{{field.label}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="row" style="margin-bottom: 8px;" ng-repeat="addedField in eCtrl.addedFields track by addedField.id">
+                                                    <div class="col-sm-12" style="display: flex">
+                                                        <input type="text" class="form-control" value="{{addedField.label}}" readonly="readonly" bs-tooltip="bCtrl.getTooltip(addedField.label)"/>&nbsp;
+                                                        <select class="form-control" ng-model="addedField.editOperator"  ng-options="opp as opp.label for opp in eCtrl.editFieldOpps() | filter:{allowedTypes:addedField.type}:false"  ng-required="true"></select>&nbsp;
+                                                        <input type="text" class="form-control" ng-model="addedField.value"  ng-required="true" ng-if="eCtrl.isDefaultInput(addedField) && (addedField.label != 'Quantity' && addedField.dbType != 'REFERENCE')"/>
+
+                                                        <div class="input-group" ng-if="eCtrl.isDefaultInput(addedField) && (addedField.dbType == 'REFERENCE')">
+                                                            <input type="text" class="form-control" ng-model="addedField.Name" ng-required="true" />
+                                                            <span class="input-group-addon" style="padding-right: 1px; padding-left: 1px;" ng-click="eCtrl.getLookupRecords(addedField)">
+                                                                    <i class="glyphicon icon-v-search"></i>
+                                                            </span>
+                                                        </div>
+
+                                                        <input type="text" class="form-control" ng-model="addedField.value"  ng-required="true" ng-if="eCtrl.isDefaultInput(addedField) && addedField.label == 'Quantity'" ng-pattern="/^\d+$/"/>
+                                                        <div style="display:inline;" ng-switch="addedField.dbType">
+                                                            <select class="form-control" ng-model="addedField.value"  ng-options="allowed.value as allowed.label for allowed in addedField.allowedValues"   ng-switch-when="PICKLIST" ng-required="true"></select>
+                                                            <select class="form-control" ng-model="addedField.value"  ng-options="allowed.value as allowed.label for allowed in addedField.allowedValues"  multiple="multiple" converttostring="converttostring" ng-switch-when="MULTIPICKLIST" ng-required="true"></select>
+                                                            <div class="input-group datepicker" ng-switch-when="DATE" ng-click="$event.preventDefault(); $event.stopPropagation();">
+                                                                <label for="datepicker-{{addedField.id}}" class="input-group-addon"><i class="icon icon-v-calendar-line"></i></label>
+                                                                <input type="text" id="datepicker-{{addedField.id}}" class="form-control" ng-model="addedField.value" bs-datepicker="true" data-autoclose="1" data-model-date-format="yyyy-MM-dd" data-date-format="MM/dd/yyyy" data-date-type="string"
+                                                                       data-icon-left="icon icon-v-left-caret" data-icon-right="icon icon-v-right-caret" ng-readonly="true" style="cursor: pointer;background:white"  ng-required="true"  trigger="click"/>
+                                                            </div>
+                                                            <div ng-switch-when="DATETIME"  ng-click="$event.preventDefault(); $event.stopPropagation();" style="display: inline;">
+                                                                <div class="input-group datepicker">
+                                                                    <label for="datepicker-{{addedField.id}}" class="input-group-addon"><i class="icon icon-v-calendar-line"></i></label>
+                                                                    <input type="text" id="datepicker-{{addedField.id}}" class="form-control" ng-model="addedField.value" bs-datepicker="true" data-autoclose="1" data-icon-left="icon icon-v-left-caret"
+                                                                           data-icon-right="icon icon-v-right-caret" ng-readonly="true" style="cursor: pointer;background:white"  ng-required="true"  data-model-date-format="yyyy-MM-dd hh:mm:ss" data-date-format="MM/dd/yyyy" data-date-type="string" trigger="click"/>
+                                                                </div>
+                                                                <div class="timepicker" style="display:inline;">
+                                                                    <input type="text" class="form-control" id="timepicker-{{addedField.id}}" ng-model="addedField.value" data-autoclose="1" bs-timepicker="true" data-icon-up="icon icon-v-up-caret" data-icon-down="icon icon-v-down-caret" ng-readonly="true"
+                                                                           ng-required="true"  style="cursor: pointer;background:white" data-model-time-format="yyyy-MM-dd hh:mm:ss" data-time-type="string" trigger="click"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>&nbsp;
+                                                        <button class="btn btn-default btn-sm form-control" ng-click="eCtrl.addFields(addedField)">
+                                                            <span class="glyphicon icon-v-trash" style="font-size: 15px; vertical-align: bottom;"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <hr/>
+                                                <button class="btn btn-primary" type="submit"  ng-disabled="editForm.$invalid|| eCtrl.chekcReplaceForm()">Replace</button>
+                                            </form>
+                                        </div>
+                                    </tab>
+                                    <tab heading="SPLIT"  ng-controller="SplitCtrl as sCtrl">
+                                        <div ng-if="!sCtrl.splitable()">
+                                            <div class="alert alert-danger" ng-bind="sCtrl.splitErrMsg()">
+                                            </div>
+                                        </div>
+                                        <div id="advSplit" ng-if="sCtrl.splitable()">
+                                            <div class="row">
+                                                <div class="col-sm-12 text-center">
+                                                    <h3>Total Quantity <span class="label label-default" ng-bind="sCtrl.appData().liQuant"></span></h3>
+                                                </div>
+                                            </div>
+                                            <form name="splitForm"  style="padding:15px;"  class="form-horizontal"  ng-submit="sCtrl.split()">
+                                                <div class="form-group"  style="margin-bottom: 8px;">
+                                                    <label for="noofrecords" class="col-sm-3 control-label">No. of Records to Split into</label>
+                                                    <div class="col-sm-6 input-group">
+                                                        <input id="noofrecords" type="number" class="form-control" ng-model="sCtrl.totalRecords" ng-disabled="sCtrl.appData().liQuant <= 1" ng-required="true" ng-pattern="/^[1-9][0-9]{0,3}$/"/>
+                                                        <span class="input-group-btn" style="padding-left:5px;">
+                                                    <button  class="btn btn-default btn-sm form-control" type="button" ng-click="sCtrl.populateRecords()" ng-disabled="sCtrl.appData().liQuant <= 1 || sCtrl.totalRecords > sCtrl.appData().liQuant">
+                                                    <span class="glyphicon icon-v-right-arrow" style="font-size: 15px; vertical-align: bottom;" aria-hidden="true"></span>
+                                                    </button>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 8px;" ng-repeat="record in sCtrl.records track by $index">
+                                                    <div class="col-sm-6 col-sm-offset-3 input-group">
+                                                        <input id="record{{$index}}" type="number" class="form-control" ng-model="sCtrl.records[$index]"  ng-required="true" placeholder="Quantity" ng-pattern="/^[1-9][0-9]*$/"/>
+                                                        <span class="input-group-btn" style="padding-left:5px;">
+                                                    <button  class="btn btn-default btn-sm form-control" type="button"  ng-click="sCtrl.deleteRecord($index)" >
+                                                    <span class="glyphicon icon-v-trash" style="font-size: 15px; vertical-align: bottom;" aria-hidden="true"></span>
+                                                    </button>
+                                                    <button style="float: none;" class="btn btn-default btn-sm form-control" type="button" ng-if="$index === (sCtrl.records.length -1)"  ng-click="sCtrl.addRecord()">
+                                                    <span class="glyphicon icon-v-plus" style="font-size: 15px; vertical-align: bottom;" aria-hidden="true"></span>
+                                                    </button>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                                <hr/>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <button class="btn btn-primary" type="submit" id="splitNValidate" ng-disabled="sCtrl.chekcSplitForm() || splitForm.$invalid">Split</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </tab>
+                                </tabset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">Records to be Changed</h5>
+            </div>
+            <div class="panel-body" ng-controller="RecordsCtrl as rCtrl">
+                <form name="recordForm" class="form-horizontal">
+                    <div>
+                        <label>
+                            <input type="checkbox" ng-change="rCtrl.toggleAllRecords()" ng-model="rCtrl.selectAllRecords" />&nbsp;&nbsp;Select All
+                        </label>
+                    </div>
+                    <table style="display: block; overflow-x: auto;" class="table records">
+                        <tr>
+                            <th ng-repeat="header in rCtrl.headers()"><span bs-tooltip="bCtrl.getTooltip(header.name)">{{header.name}}</span></th>
+                        </tr>
+                        <tr ng-repeat="record in rCtrl.records()">
+                            <td ng-repeat="i in rCtrl.headersPointers track by $index" >
+                                <input type="checkbox" ng-if="$index === 0" ng-model="rCtrl.selectedRecords()[record.Id]" />
+                                <span ng-if="$index > 0" bs-tooltip="bCtrl.getTooltip(record[i])">{{record[i]}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <apex:includeScript value="/support/console/31.0/integration.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/javascripts/vlocity.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__JQUERYJS)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__AngularJS)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__ANGULARBOOT)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__bootstrapslider)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__AngularStrapJS)}"/>
+    <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__AngularStrapTplJS)}"/>
+    <script type="text/javascript">
+        'use strict';
+
+        angular.module('bulkEditApp', ['ui.bootstrap','mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.datepicker','mgcrea.ngStrap.timepicker', 'ngSanitize']);
+        angular.module('bulkEditApp').directive('converttostring', function() {
+            return {
+                require: 'ngModel',
+                link: function(scope, element, attrs, ngModel) {
+                    ngModel.$parsers.push(function(val) {
+                        if(angular.isArray(val))
+                            return val.join(";");
+                    });
+                    ngModel.$formatters.push(function(val) {
+                        return '' + val;
+                    });
+                }
+            };
+        });
+        angular.module('bulkEditApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance,title,message) {
+            $scope.title = title;
+            $scope.message = message;
+            $scope.ok = function () {
+                $modalInstance.close();
+            };
+
+        });
+        angular.module('bulkEditApp').controller('LookupInstanceCtrl', function ($scope, $modalInstance,title,lookups,field) {
+            $scope.title = title;
+            $scope.lookups = lookups;
+            $scope.value = {
+                data: {
+                id: field.Value,
+                name: field.Name
+                }
+            };
+            $scope.ok = function () {
+                field.Value = $scope.value.data.Id;
+                field.Name = $scope.value.data.Name;
+                $modalInstance.close();
+            };
+
+        });
+        //config data...
+        angular.module('bulkEditApp').value('configData',{
+            bulkEditConfiguration : {
+                contextId : '{!contextId}',
+                objectToQuery : '{!objectToQuery}',
+                foreignKeyName : '{!foreignKeyName}',
+                postEditProcessor : '{!postEditProcessor}',
+                backUrl : '{!backUrl}'
+            },
+            remoteAction : {
+                queryRecords: '{!$RemoteAction.BulkXLIEditController2.queryRecords}',
+                updateRecords: '{!$RemoteAction.BulkXLIEditController2.updateRecords}',
+                initializeApp : '{!$RemoteAction.BulkXLIEditController2.initializeApp}',
+                runPostProcessor : '{!$RemoteAction.BulkXLIEditController2.runPostProcessor}',
+                split : '{!$RemoteAction.BulkXLIEditController2.split}',
+                getLookupRecords : '{!$RemoteAction.BulkXLIEditController2.getLookupRecords}'
+            }
+        });
+
+        //Base controller...
+        (function(){
+            function SplitCtrl (recordServ,cfgData,uiServ,wind) {
+                var self = this;
+                self.records = [];
+                self.splitErrMsg = function(){
+                    return recordServ.getSplitErrMsg();
+                };
+                self.splitable = function(){
+                    return recordServ.getRecordSplitable();
+                };
+                self.chekcSplitForm = function(){               
+                    if (self.appData().liQuant <= 1)
+                        return true;
+                    if(!self.totalRecords || self.totalRecords < 2)
+                        return true;
+                    if(!self.records || self.records.length < 2)
+                        return true;
+                    for( var i = 0; i< self.records.length;i++){
+                        if(!self.records[i] || self.records[i] == 0)
+                            return true;
+                    }
+                    return false;
+                };
+                self.validateStrictSplit = function(){
+                    var tempSum = 0;
+                    for(var i = 0; i < self.records.length; i++){
+                        tempSum += parseInt ( Number(self.records[i]).toFixed(0) );
+                    }
+                    return (tempSum === self.appData().liQuant); //TODO
+                };
+                self.resetSplitForm = function(){
+                    self.records = [];
+                    delete self.totalRecords;
+                };
+                self.split = function(){
+                    if(self.appData().strictSplit && !self.validateStrictSplit()){
+                        uiServ.openAlertWindow('SPLIT CONFIGURATION ERROR','Sum of all the records do not match total quantity : ' + self.appData().liQuant);
+                        return;
+                    }
+                    uiServ.setShowSpinner(true);
+                    recordServ.split(self.records,self.appData()).then(
+                            function(sucResult){
+                                uiServ.setShowSpinner(false);
+                                if(sucResult.statusCode === 0){ // this is for job
+                                    uiServ.openAlertWindow('SPLIT INFO',sucResult.message);
+                                }else if(sucResult.statusCode === 3){
+                                    // update the record data on succ...
+                                    var newRecords = sucResult.data.newRecords;
+                                    recordServ.reRenderRecords(newRecords);
+                                    recordServ.setAppInitData(sucResult.data.splitConfigData);
+                                    self.resetSplitForm();
+                                    var prevSelectedRecords = recordServ.getSelectedRecords();
+                                    for(var i = 0 ; i < newRecords.length; i++){
+                                        prevSelectedRecords[newRecords[i]["Id"]] = true;
+                                    }
+                                    recordServ.setSelectedRecords(prevSelectedRecords);
+                                }else{
+                                    uiServ.openAlertWindow('SPLIT UNKNOWN ERROR',sucResult.message);
+                                }
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('SPLIT ERROR',errResult);
+                                console.log(errResult);
+                            }
+                    );
+                };
+                self.addRecord = function(){
+                    //fix for CMT-297, when the text field is changed without using the play button to reflect the no of rows
+                    //change the text fields value to reflect the actual no of rows in the UI
+                    if(self.records.length != self.totalRecords){
+                        self.totalRecords = self.records.length;
+                    }
+                    if(self.records){
+                        self.records.push('');
+                    }
+                    if(self.totalRecords){
+                        self.totalRecords++;
+                    }
+                };
+                self.deleteRecord = function(index){
+                    //fix for CMT-297, when the text field is changed without using the play button to reflect the no of rows
+                    //change the text fields value to reflect the actual no of rows in the UI
+                    if(self.records.length != self.totalRecords){
+                        self.totalRecords = self.records.length;
+                    }
+                    if(self.records.length > index){
+                        if(self.totalRecords){
+                            self.totalRecords--;
+                        }
+                        self.records.splice(index,1);
+
+                    }
+                };
+                self.populateRecords = function(){
+                    if(self.totalRecords){
+                        if(self.records.length == 0){ // first time
+                            for (var i = 0; i < self.totalRecords; i++) self.records[i] = '';
+                        }else{
+                            var prevLen = self.records.length;
+                            if(self.totalRecords > self.records.length){
+                                for(var j=1; j<= self.totalRecords - prevLen;j++){
+                                    self.records.push('');
+                                }
+                            }else{
+                                for(var k=1; k<= prevLen - self.totalRecords;k++){
+                                    self.records.pop();
+                                }
+                            }
+                        }
+                    }
+                };
+                self.appData = function(){
+                    return recordServ.getAppInitData();
+                };
+                self.showSpinner = function(){
+                    return uiServ.getShowSpinner();
+                };
+
+            }
+            angular.module('bulkEditApp').controller('SplitCtrl',['RecordsService','configData','UIService','$window',SplitCtrl]);
+
+        })();
+        //QueryableFieldsService...
+        (function(){
+            function QueryableFieldsService (baseServ) {
+                var self = this;
+                var qbleFields = [{id:-1,label:'Add a Field to Query',seq:-1}];//default value
+                qbleFields = qbleFields.concat(baseServ.getAppInitData().queryableFields);
+                var queryOpps = [];
+                queryOpps = baseServ.getAppInitData().queryOperators;//default value
+                QueryableFieldsService.prototype.getQueryableFields = function(){
+                    return qbleFields;
+                };
+                QueryableFieldsService.prototype.getQueryOpps = function(){
+                    return queryOpps;
+                };
+                QueryableFieldsService.prototype.removeFields = function(fieldId){
+                    var i = qbleFields.length;
+                    while(i--){
+                        if(qbleFields[i].id && (qbleFields[i].id != -1) && qbleFields[i].id === fieldId){
+                            return qbleFields.splice(i,1); // return removed...need to be added
+                        }
+
+                    }
+                };
+                QueryableFieldsService.prototype.addFields = function(field){
+                    qbleFields.push(field);
+                };
+            }
+
+            angular.module('bulkEditApp').service('QueryableFieldsService',['BaseService',QueryableFieldsService]);
+        })();
+
+        //query controller...
+        (function(){
+            function QueryCtrl (fieldsService,recService,uiServ) {
+                var self = this;
+                self.selectedFieldId = -1;
+                self.addedFields = [];
+                self.isDefaultInput = function(curField){
+                    if(curField.dbType.toLowerCase() === "date" || curField.dbType.toLowerCase() === "datetime")
+                        return false;
+                    return true;
+                }
+                self.queryableFields = function(){
+                    return fieldsService.getQueryableFields();
+                };
+                self.removeFields = function(fieldId){
+                    var removedField = fieldsService.removeFields(fieldId);
+                    self.selectedFieldId = -1;
+                    if(removedField && removedField.length > 0){
+                        self.addedFields.push(removedField[0]);
+                    }
+                };
+                self.addFields = function(fieldToAdd){
+                    for(var i = 0; i< self.addedFields.length; i++){
+                        if(self.addedFields[i].id === fieldToAdd.id){
+                            fieldsService.addFields( self.addedFields.splice(i,1)[0]);
+                            break;
+                        }
+                    }
+                };
+                self.queryOpps = function(){
+                    return fieldsService.getQueryOpps();
+                };
+                self.applyQuery = function(){
+                    uiServ.setShowSpinner(true);
+                    recService.queryRecords(self.addedFields).then(
+                            function(sucResult){
+                                uiServ.setShowSpinner(false);
+                                recService.setRecords(sucResult);
+                                recService.setALLRecordsChecked();
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('POWER UPDATE ERROR',errResult);
+                                console.log(errResult);
+                            }
+                    );
+                };
+
+            }
+
+            angular.module('bulkEditApp').controller('QueryCtrl',['QueryableFieldsService','RecordsService','UIService',QueryCtrl]);
+
+        })();
+
+        //EditableFieldsService...
+        (function(){
+            function EditableFieldsService (baseServ) {
+                var self = this;
+                var editableFields = [{id:-1,label:'Add a Field to Change', seq:-1}];//default value
+                editableFields = editableFields.concat(baseServ.getAppInitData().editFields);
+                var editFeildsOpps = [];
+                editFeildsOpps = baseServ.getAppInitData().editFieldOperators;//default value
+                EditableFieldsService.prototype.getEditableFields = function(){
+                    return editableFields;
+                };
+                EditableFieldsService.prototype.getEditFieldsOpps = function(){
+                    return editFeildsOpps;
+                };
+                EditableFieldsService.prototype.removeFields = function(fieldId){
+                    var i = editableFields.length;
+                    while(i--){
+                        if(editableFields[i].id && (editableFields[i].id != -1) && editableFields[i].id === fieldId){
+                            return editableFields.splice(i,1); // return removed...need to be added
+                        }
+                    }
+                };
+                EditableFieldsService.prototype.addFields = function(field){
+                    editableFields.push(field);
+                };
+            }
+            angular.module('bulkEditApp').service('EditableFieldsService',['BaseService',EditableFieldsService]);
+        })();
+        //edit field controller...
+        (function(){
+            function EditFieldCtrl (editFieldsService,recordService,uiServ,$scope) {
+                var self = this;
+                self.selectedFieldId = -1;
+                self.addedFields = [];
+
+                self.isDefaultInput = function(curField){
+                    if(curField.dbType.toLowerCase() === "picklist" || curField.dbType.toLowerCase() === "multipicklist" || curField.dbType.toLowerCase() === "date" || curField.dbType.toLowerCase() === "datetime")
+                        return false;
+                    return true;
+                }
+                self.chekcReplaceForm = function(){
+                    if (self.addedFields.length <= 0)
+                        return true;
+                    // get selected ids length..should go in  service..
+                    var selectedIds = [];
+                    var tempSelected = recordService.getSelectedRecords();
+                    for(var oneId in tempSelected){
+                        if(tempSelected[oneId]){
+                            selectedIds.push(oneId);
+                        }
+                    }
+                    if(selectedIds.length <= 0)
+                        return true;
+                    return false;
+                };
+                self.addFields = function(fieldToAdd){
+                    for(var i = 0; i< self.addedFields.length; i++){
+                        if(self.addedFields[i].id === fieldToAdd.id){
+                            editFieldsService.addFields( self.addedFields.splice(i,1)[0]);
+                            break;
+                        }
+                    }
+                };
+                self.editableFields = function(){
+                    return editFieldsService.getEditableFields();
+                };
+                self.removeFields = function(fieldId){
+                    var removedField = editFieldsService.removeFields(fieldId);
+                    self.selectedFieldId = -1;
+                    if(removedField && removedField.length > 0){
+                        self.addedFields.push(removedField[0]);
+                    }
+                };
+                self.editFieldOpps = function(){
+                    return editFieldsService.getEditFieldsOpps();
+                };
+                self.getLookupRecords = function(field){
+                    uiServ.setShowSpinner(true);
+                    recordService.getLookupRecords(field).then(
+                            function(sucResult){
+                                uiServ.setShowSpinner(false);
+                                if(sucResult.statusCode === 0){
+                                    uiServ.getLookupRecordsPopup(field.label,sucResult.data, field);
+                                }else if(sucResult.statusCode === 1){
+                                    uiServ.openAlertWindow('POWER UPDATE ERROR',sucResult.message);
+                                }else{
+                                    uiServ.openAlertWindow('UNKNOWN ERROR',sucResult.message);
+                                }
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('POWER UPDATE ERROR',errResult);
+                                console.log(errResult);
+                            }
+                    );
+
+                };
+                self.updateRecords = function(){
+                    for(var i=0;i<self.addedFields.length;i++){
+                        var addedField = self.addedFields[i];
+                        if(addedField.dbType === 'DATETIME'){
+                            try{
+                                var time = document.getElementById('timepicker-'+addedField.id).value;
+                                var d = addedField.value.split(' ');
+                                addedField.value = d[0] + ' ' + time;
+                            }catch(exception){
+                                console.log(exception);
+                            }
+                        }
+
+                    }
+
+                    uiServ.setShowSpinner(true);
+                    recordService.updateRecords(self.addedFields).then(
+                            function(sucResult){
+                                uiServ.setShowSpinner(false);
+                                if(sucResult.statusCode === 0){ // this is for job
+                                    uiServ.openAlertWindow('POWER UPDATE INFO',sucResult.message);
+                                }else if(sucResult.statusCode === 3){
+                                    // update the record data on succ...
+                                    recordService.reRenderRecords(sucResult.data);
+                                }else{
+                                    uiServ.openAlertWindow('POWER UPDATE UNKNOWN ERROR',sucResult.message);
+                                }
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('POWER UPDATE ERROR',errResult);
+                                console.log(errResult);
+                            }
+                    );
+                };
+               /* 
+               Auto type ahead for lookup records
+               
+               self.accounts = [];
+
+                self.complete = function(view, field){
+                    console.log(view+ ' #complete ' +field );
+
+                    recordService.getLookupRecords(field).then(
+                            function(sucResult){
+                                uiServ.setShowSpinner(false);
+                                if(sucResult.statusCode === 0){
+
+                                    self.accounts = sucResult.data;
+
+                                }else{
+                                    uiServ.openAlertWindow('ERROR AutoLoading',sucResult.message);
+                                }
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('ERROR AutoLoading',errResult);
+                                console.log(errResult);
+                            }
+                    );
+
+                    return self.accounts;
+                };
+                $scope.$on('$bsTypeahead.select', function(value, account) {
+                    console.log("selected accout" + account);
+                }); */
+            }
+            angular.module('bulkEditApp').controller('EditFieldCtrl',['EditableFieldsService','RecordsService','UIService','$scope',EditFieldCtrl]);
+
+        })();
+        //ModalService...
+        (function(){
+            function UIService (uiModal) {
+                var self = this;
+                var showSpinner = false;
+                UIService.prototype.getShowSpinner = function(shSpin){
+                    return showSpinner;
+                };
+                UIService.prototype.setShowSpinner = function(shSpin){
+                    showSpinner = shSpin;
+                };
+                UIService.prototype.openAlertWindow = function (title, message) {
+                    var modalInstance = uiModal.open({
+                        templateUrl: 'myModalContent.html',
+                        controller: 'ModalInstanceCtrl',
+                        resolve : {
+                            title:function(){
+                                return title;
+                            },
+                            message:function(){
+                                return message;
+                            },
+                        }
+                    });
+                };
+                UIService.prototype.getLookupRecordsPopup = function(title, lookups, field){
+                    var modalInstance = uiModal.open({
+                        templateUrl: 'LookupContent.html',
+                        controller: 'LookupInstanceCtrl',
+                        resolve : {
+                            title:function(){
+                                return title;
+                            },
+                            lookups:function(){
+                                return lookups;
+                            },
+                            field:function(){
+                                return field;
+                            }
+                        }
+                    });
+                };
+            }
+            angular.module('bulkEditApp').service('UIService',['$modal',UIService]);
+        })();
+        //RecordsService...
+        (function(){
+            function RecordsService (angQServ,appConfig,baseServ) {
+                var self = this;
+                var records = baseServ.getAppInitData().displayItemsList;
+                var selectedRecords = {};
+                var recordSplitable = false;
+                var splitAppInitData = {};
+                var splitErrMsg;
+                RecordsService.prototype.getSplitErrMsg = function(){
+                    return splitErrMsg;
+                };
+                RecordsService.prototype.getAppInitData = function(){ // this is split app data..not the whole app's data. confusing name.
+                    return splitAppInitData;
+                };
+                RecordsService.prototype.setAppInitData = function(data){
+                    splitAppInitData = data;
+                };
+                RecordsService.prototype.getRecordSplitable = function(){
+                    var selectedIds = [];
+                    var isQuantityHeader = false;
+                    if(headers){
+                        for(var i = 0 ; i < headers.length ; i++){
+                            if(headers[i].id === "Quantity"){
+                                isQuantityHeader = true;
+                            }
+                        }
+                    }
+                    if(!isQuantityHeader){
+                        splitErrMsg = "Quantity field not added in the record panel, this should be added to split records";
+                        return false;
+                    }
+                    for(var oneId in selectedRecords){
+                        if(selectedRecords[oneId]){
+                            selectedIds.push(oneId);
+                        }
+                    }
+                    if(selectedIds.length === 0){
+                        splitErrMsg = 'Please select one item to split';
+                        return false;
+                    }
+                    if(selectedIds.length  > 1){
+                        splitErrMsg = 'You cannot split more than 1 item';
+                        return false;
+                    }
+                    var selectedRecordId = selectedIds[0];
+                    var selectedRecord;
+                    for(var i = 0; i< records.length; i++){
+                        if(records[i]["Id"] == selectedRecordId){
+                            selectedRecord = records[i];
+                            break;
+                        }
+                    }
+                    if(!selectedRecord || !selectedRecord["Quantity"] || selectedRecord["Quantity"] <= 1){
+                        splitErrMsg = "Selected item's quantity must be greater than 1";
+                        return false;
+                    }
+
+                    splitErrMsg = '';
+                    splitAppInitData.liId = selectedRecord["Id"];
+                    splitAppInitData.liQuant = selectedRecord["Quantity"];
+                    if(!splitAppInitData.strictSplit){ // one time is ok..bad design..
+                        splitAppInitData.strictSplit = baseServ.getAppInitData().strictSplitModeEnabled;
+                    }
+                    return true;
+                };
+                RecordsService.prototype.setRecordSplitable = function(value){
+                    recordSplitable = value;
+                };
+
+                RecordsService.prototype.getSelectedRecords = function(){
+                    return selectedRecords;
+                };
+                RecordsService.prototype.setSelectedRecords = function(value){
+                    selectedRecords = value;
+                };
+                RecordsService.prototype.setALLRecordsChecked = function(){
+                    selectedRecords = {};
+                    for(var i=0; i< records.length; i++){
+                        selectedRecords[records[i].Id] = true;
+                    }
+                };
+                RecordsService.prototype.setALLRecordsUnChecked = function(){
+                    selectedRecords = {};
+                };
+                RecordsService.prototype.getRecords = function(){
+                    return records;
+                };
+                RecordsService.prototype.setRecords = function(newRecords){
+                    records = newRecords;
+                };
+
+                var headers = baseServ.getAppInitData().headerFields; // we need to add select header at the top from ui..;)
+                headers.splice(0,0,{id:"_select",name:"Select"});
+                RecordsService.prototype.getRecordHeaders = function(){
+                    return headers;
+                };
+                RecordsService.prototype.queryRecords = function(fields){
+                    var deferred = angQServ.defer();
+                    var callback = function(result,event){
+                        try{
+                            var sresult = [];
+                            if (event.status) {
+                                sresult = angular.fromJson(result);
+                                if(sresult.success){
+                                    deferred.resolve(sresult.data);
+                                }else{
+                                    deferred.reject(sresult.message);
+                                }
+                            } else {
+                                deferred.reject(event.message);
+                            }
+                        }catch(err){
+                            deferred.reject();
+                        }
+                    };
+                    Visualforce.remoting.Manager.invokeAction(appConfig.remoteAction.queryRecords, appConfig.bulkEditConfiguration, fields, callback, {escape: false});
+                    return deferred.promise;
+                };
+                RecordsService.prototype.split = function(records,splitConfig){
+                    var deferred = angQServ.defer();
+                    var callback = function(result,event){
+                        try{
+                            var sresult = [];
+                            if (event.status) {
+                                sresult = angular.fromJson(result);
+                                if(sresult.success){
+                                    deferred.resolve(sresult);
+                                }else{
+                                    deferred.reject(sresult.message);
+                                }
+                            } else {
+                                deferred.reject(event.message);
+                            }
+                        }catch(err){
+                            deferred.reject();
+                        }
+                    };
+                    Visualforce.remoting.Manager.invokeAction(appConfig.remoteAction.split, records, splitConfig,appConfig.bulkEditConfiguration, callback, {escape: false});
+                    return deferred.promise;
+                };
+                RecordsService.prototype.updateRecords = function(fields){
+                    var deferred = angQServ.defer();
+                    var callback = function(result,event){
+                        try{
+                            var sresult = [];
+                            if (event.status) {
+                                sresult = angular.fromJson(result);
+                                if(sresult.success){
+                                    deferred.resolve(sresult);
+                                }else{
+                                    deferred.reject(sresult.message);
+                                }
+                            } else {
+                                deferred.reject(event.message);
+                            }
+                        }catch(err){
+                            deferred.reject();
+                        }
+                    };
+                    //need to create list of ids...
+                    var selectedIds = [];
+                    for(var oneId in selectedRecords){
+                        if(selectedRecords[oneId]){
+                            selectedIds.push(oneId);
+                        }
+                    }
+                    Visualforce.remoting.Manager.invokeAction(appConfig.remoteAction.updateRecords, appConfig.bulkEditConfiguration, selectedIds, fields, callback, {escape: false});
+                    return deferred.promise;
+                };
+
+                RecordsService.prototype.getLookupRecords = function(obj){
+                    var deferred = angQServ.defer();
+                    var objectType = obj.objectType;
+                    var label = obj.label;
+                    var queryid = obj.queryId;
+                    var callback = function(result,event){
+                        try{
+                            var sresult = [];
+                            if (event.status) {
+                                sresult = angular.fromJson(result);
+                                if(sresult.success){
+                                    deferred.resolve(sresult);
+                                }else{
+                                    deferred.reject(sresult.message);
+                                }
+                            } else {
+                                deferred.reject(event.message);
+                            }
+                        }catch(err){
+                            deferred.reject();
+                        }
+                    };
+
+                    Visualforce.remoting.Manager.invokeAction(appConfig.remoteAction.getLookupRecords, appConfig.bulkEditConfiguration, objectType, queryid, callback, {escape: false});
+                    return deferred.promise;
+                };
+
+                RecordsService.prototype.reRenderRecords = function(updatedRecords){//tracking by ids...worst N^2 complex...smaller set...!!!!
+                    for(var i = 0; i< updatedRecords.length; i++){
+                        var updated = false;
+                        for(var j=0; j<records.length;j++){
+                            if(updatedRecords[i]['Id'] == records[j]['Id']){
+                                records[j] = updatedRecords[i];
+                                updated = true;
+                                break;
+                            }
+                        }
+                        if(!updated){
+                            records.push(updatedRecords[i]);
+                        }
+                    }
+                };
+            }
+
+            angular.module('bulkEditApp').service('RecordsService',['$q','configData','BaseService',RecordsService]);
+        })();
+
+        //records controller...
+        (function(){
+            function RecordsCtrl (RecordsService) {
+                var self = this;
+                RecordsService.setALLRecordsChecked();
+                self.selectedRecords = function(){
+                    return RecordsService.getSelectedRecords();
+                };
+                self.toggleAllRecords = function(){
+                    if(self.selectAllRecords){
+                        RecordsService.setALLRecordsChecked();
+                    }else{
+                        RecordsService.setALLRecordsUnChecked();
+                    }
+                };
+                self.selectedRecordsCount = function(){
+                    var selectedIds = [];
+                    var selectedRecordsObj = self.selectedRecords();
+                    var i = 0;
+                    for(var oneId in selectedRecordsObj){
+                        if(selectedRecordsObj[oneId]){
+                            //someone left..!!!
+                            i++;
+                        }
+                    }
+                    return i;
+                };
+                self.records = function(){
+                    var recordsTodisplay =  RecordsService.getRecords(); // need to post process
+                    var count = self.selectedRecordsCount();
+                    if(count === recordsTodisplay.length)
+                        self.selectAllRecords = true;
+                    else
+                        self.selectAllRecords = false;
+                    return recordsTodisplay;
+                };
+                self.headers = function(){
+                    return RecordsService.getRecordHeaders();
+                };
+                self.headersPointers = [];
+                var tempHeaders = self.headers();
+                for(var i=0; i<tempHeaders.length;i++){
+                    self.headersPointers[i] = tempHeaders[i].id;
+                }
+            }
+            angular.module('bulkEditApp').controller('RecordsCtrl',['RecordsService',RecordsCtrl]);
+
+        })();
+        //BaseFieldsService...
+        (function(){
+            function BaseService (angQServ) {
+                var self = this;
+                var appInitialized = false;
+                var appInitData = {};
+                BaseService.prototype.getAppInitialized = function(){
+                    return appInitialized;
+                };
+                BaseService.prototype.getAppInitData = function(){
+                    return appInitData;
+                };
+                BaseService.prototype.initializeApp = function(appConfig){
+                    var deferred = angQServ.defer();
+                    var callback = function(result,event){
+                        try{
+                            var sresult = [];
+                            if (event.status) {
+                                sresult = angular.fromJson(result);
+                                if(sresult.success && sresult.statusCode == 0){
+                                    appInitialized = true;
+                                    appInitData = sresult.data;
+                                    deferred.resolve(sresult);
+                                }else{
+                                    deferred.reject(sresult.message);
+                                }
+                            } else {
+                                deferred.reject(event.message);
+                            }
+                        }catch(err){
+                            deferred.reject();
+                        }
+                    };
+                    Visualforce.remoting.Manager.invokeAction(appConfig.remoteAction.initializeApp, appConfig.bulkEditConfiguration, callback, {escape: false});
+                    return deferred.promise;
+                };
+                BaseService.prototype.validateSelectedItems = function(appConfig){
+                    var deferred = angQServ.defer();
+                    var callback = function(result,event){
+                        try{
+                            var sresult = [];
+                            if (event.status) {
+                                sresult = angular.fromJson(result);
+                                if(sresult.success){
+                                    deferred.resolve(sresult);
+                                }else{
+                                    deferred.reject(sresult.message);
+                                }
+                            } else {
+                                deferred.reject(event.message);
+                            }
+                        }catch(err){
+                            deferred.reject();
+                        }
+                    };
+                    Visualforce.remoting.Manager.invokeAction(appConfig.remoteAction.runPostProcessor, appConfig.bulkEditConfiguration, callback, {escape: false});
+                    return deferred.promise;
+                };
+            }
+            angular.module('bulkEditApp').service('BaseService',['$q',BaseService]);
+        })();
+        //Base controller...
+        (function(){
+            function BaseCtrl (baseServ,cfgData,uiServ,wind) {
+                var self = this;
+                self.getTooltip = function(title){
+                    return {title:title};
+                };
+                self.initApp = function(){
+                    baseServ.initializeApp(cfgData).then(
+                            function(sucResult){
+                                if(sucResult.statusCode === 0){
+                                    uiServ.setShowSpinner(false);
+                                }else{
+                                    uiServ.openAlertWindow('POWER UPDATE ERROR',sucResult.message);
+                                }
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('POWER UPDATE ERROR',errResult);
+                                console.log(errResult);
+                            }
+                    );
+                };
+                self.runPostAndExit = function(event){
+                    if(!cfgData.bulkEditConfiguration.postEditProcessor)
+                        return;
+                    event.preventDefault();
+                    uiServ.setShowSpinner(true);
+                    baseServ.validateSelectedItems(cfgData).then(
+                            function(sucResult){
+                                if(sucResult.statusCode === 0){
+                                    wind.location.href = cfgData.bulkEditConfiguration.backUrl;
+                                }else{
+                                    uiServ.setShowSpinner(false);
+                                    uiServ.openAlertWindow('POWER UPDATE ERROR',sucResult.message);
+                                }
+                            },function(errResult){
+                                uiServ.setShowSpinner(false);
+                                uiServ.openAlertWindow('POWER UPDATE ERROR',errResult);
+                            }
+                    );
+                };
+                self.appInitialized = function(){
+                    return baseServ.getAppInitialized();
+                };
+                self.showSpinner = function(){
+                    return uiServ.getShowSpinner();
+                };
+
+            }
+            angular.module('bulkEditApp').controller('BaseCtrl',['BaseService','configData','UIService','$window',BaseCtrl]);
+        })();
+        // need vlc-loader...todo:- make it reusuable..
+        angular.module('bulkEditApp').directive('vlcLoader', function() {
+            return {
+                restrict: 'E',
+                templateNamespace: 'svg',
+                replace: true,
+                template:
+                '<svg x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">'+
+                '<g width="48" height="48">'+
+                '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="0.75s" repeatCount="indefinite"/>'+
+                '<path fill="#dedede" d="M24,45C12.4,45,3,35.6,3,24S12.4,3,24,3V0l0,0C10.7,0,0,10.7,0,24c0,13.3,10.7,24,24,24V45z"/>'+
+                '<path fill="#05a6df" d="M24,3c11.6,0,21,9.4,21,21s-9.4,21-21,21v3l0,0c13.3,0,24-10.7,24-24C48,10.7,37.3,0,24,0V3z"/>'+
+                '</g>'+
+                '</svg>',
+                scope: {
+                    stroke: '@'
+                }
+            };
+        });
+    </script>
+
+    </body>
+    </html>
+</apex:component>

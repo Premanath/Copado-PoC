@@ -1,0 +1,41 @@
+{
+    "ContextId": "00141000003Rw75",
+    "Id": "00141000003Rw75AAC",
+    "Name": "Hilton - London",
+    "SelectBilling": {
+        "BillingList": [
+            {
+                "AutoPaymentAmount": "Minimum Due",
+                "BillDeliveryMethod": "Paper Billing",
+                "BillFrequency": "Monthly",
+                "BillingAutopay": true,
+                "BillingCity": "London",
+                "BillingEmailAddress": "bjones@hilton.co.uk",
+                "BillingName": "Hilton - London",
+                "BillingPaymentType": "Prepaid",
+                "BillingPhone": "4243323887",
+                "Id": "00141000003Rw8VAAS",
+                "vlcSelected": true
+            }
+        ],
+        "IsBillingAccountSelected": 1
+    },
+    "UpdateBilling": {
+        "AutoPaymentAmount": "TEST",
+        "BillDeliveryMethod": "eMail",
+        "BillFrequency": "Quarterly",
+        "BillingAutopay": true,
+        "BillingEmailAddress": "bjones@hilton.co.uk",
+        "BillingName": "Hilton - London",
+        "BillingPaymentType": "Prepaid",
+        "BillingPhone": "9993323887"
+    },
+    "id": "a1I41000007tG8CEAU",
+    "layout": "lightning",
+    "timeStamp": "2017-03-18T10:02:07.702Z",
+    "userId": "00541000000lbpqAAA",
+    "userName": "dlq@cmt-vdo.vpl",
+    "userProfile": "System Administrator",
+    "vlcPersistentComponent": {
+    }
+}

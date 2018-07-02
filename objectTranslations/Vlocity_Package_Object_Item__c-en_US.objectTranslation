@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vlocity Package Object Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vlocity Package Object Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- DataRaptor --></label>
+        <name>DataRaptor__c</name>
+        <relationshipLabel><!-- Vlocity Package Object Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Vlocity OmniScript --></label>
+        <name>Vlocity_OmniScript__c</name>
+        <relationshipLabel><!-- Vlocity Package Object Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Vlocity Package --></label>
+        <name>Vlocity_Package__c</name>
+        <relationshipLabel><!-- Vlocity Package Object Items --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

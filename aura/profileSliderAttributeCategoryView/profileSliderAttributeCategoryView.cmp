@@ -1,0 +1,28 @@
+<aura:component access="GLOBAL" controller="vlocity_cmt.ProfileClientAttributeController">
+    <aura:registerEvent name="profileUpdated" type="vlocity_cmt:profileUpdatedEvent"/>
+    <aura:registerEvent name="updatedEvent" type="vlocity_cmt:profileAttributeValueUpdatedEvent"/>
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="vlocity_cmt:profileAttributeCategoryUpdatedEvent" action="{!c.handleAttributeCategoryUpdatedEvent}"/>
+    <aura:attribute name="entityId" type="String"/>
+    <aura:attribute name="nsPrefix" type="String"/>
+    <aura:attribute name="attributeCategoryCode" type="String"/>
+    <aura:attribute name="attributeCategoryName" type="String"/>
+    <aura:attribute name="appliedAttributes" type="vlocity_cmt.SegmentElement"/>
+    <aura:attribute name="isLanguageRTL" type="Boolean"/>
+    
+    <section onclick="{!c.editAttributes}">
+        <h3 class="slds-section-title--divider">{!v.attributeCategoryName}</h3>
+        <article class="slider-attribute-list">
+            <aura:iteration items="{!v.appliedAttributes}" var="attribute">
+                <vlocity_cmt:profileSquareSliderAttribute attributeName="{!attribute.Name}"
+                                                        attributeValue="{!attribute.SegmentValue}"
+                                                        appliedAttributeCode="{!attribute.SegmentCode}"
+                                                        change="{!c.handleProfileAttributeValueChangedEvent}" 
+                                                        nsPrefix="{!v.nsPrefix}"
+                                                        isLanguageRTL="{!v.isLanguageRTL}" />
+
+            </aura:iteration>
+        </article>
+    </section>
+        
+</aura:component>

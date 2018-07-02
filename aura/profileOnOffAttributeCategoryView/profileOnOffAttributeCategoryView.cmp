@@ -1,0 +1,18 @@
+<aura:component access="GLOBAL" controller="vlocity_cmt.ProfileClientAttributeController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="vlocity_cmt:profileAttributeCategoryUpdatedEvent" action="{!c.handleAttributeCategoryUpdatedEvent}"/>
+    <aura:attribute name="entityId" type="String"/> 
+    <aura:attribute name="nsPrefix" type="String"/>
+    <aura:attribute name="attributeCategoryCode" type="String"/>
+    <aura:attribute name="attributeCategoryName" type="String"/>
+    <aura:attribute name="isLanguageRTL" type="Boolean"/>
+    <aura:attribute name="appliedAttributes" type="vlocity_cmt.SegmentElement"/>
+    
+    <section onclick="{!c.editAttributes}">
+        <h3 class="slds-section-title--divider">{!v.attributeCategoryName}</h3>
+        <article class="onoff-attribute-list group">
+            <vlocity_cmt:profileOnOffAttributeList appliedAttributes="{!v.appliedAttributes}" isLanguageRTL="{!v.isLanguageRTL}"/>
+        </article>
+    </section>
+        
+</aura:component>

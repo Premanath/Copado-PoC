@@ -1,0 +1,112 @@
+<apex:page controller="vlocity_cmt.LookupRequestResultController" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+<html xmlns:ng="http://angularjs.org" lang="en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" dir="{!IF(isLanguageRTL, 'rtl', 'ltr')}">
+    <head>
+        <title>Lookup Request Result</title>
+        <base target="_parent"/>
+        <meta charset="utf-8"/>
+        <apex:includeScript value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/javascripts/vlocity.js')}"/>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__SldsAngular}"/>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__ViaDirectives}"/>
+        <apex:includeScript value="{!$Resource.vlocity_cmt__LookupRequestResult}"/>
+        <apex:includeScript value="/support/console/31.0/integration.js"/>
+        <apex:stylesheet value="{!URLFOR($Resource.vlocity_cmt__vlocity_assets, '/css/font-hack.css')}"/>
+        <apex:stylesheet value="{!IF(isLanguageRTL, URLFOR($Resource.vlocity_cmt__slds, '/assets/styles/salesforce-lightning-design-system-vf.rtl.min.css'), URLFOR($Resource.vlocity_cmt__slds, '/assets/styles/salesforce-lightning-design-system-vf.min.css'))}"/>
+        <apex:stylesheet value="{!$Resource.vlocity_cmt__LookupRequestResultCss}"/>
+    </head>
+    <body>
+        <div ng-app="lookuprequestresult" ng-controller="lookupController" class="via-slds preload" via-screen-height="viaScreenHeight">
+            <div class="lookup-container">
+                <div ng-class="{'show-loader': vlcLoading}" class="slds-spinner_container">
+                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+                <div class="slds-notify_container via-top-global-alert" ng-class="{'show-validation': validationErrorHandler.validation.message}">
+                    <div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert" ng-class="{'slds-theme--error': validationErrorHandler.validation.type === 'error'}">
+                        <button class="slds-button slds-button--icon-inverse slds-notify__close" ng-click="validationErrorHandler.hideValidation()">
+                            <slds-button-svg-icon sprite="'utility'" icon="'close'" ></slds-button-svg-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <span class="slds-assistive-text">Error</span>
+                        <h2 ng-bind-html="validationErrorHandler.validation.message">
+                            <slds-svg-icon sprite="'utility'" icon="'ban'" size="'small'" extra-classes="'icon-text-email slds-m-right--x-small'" ng-show="validationErrorHandler.validation.type === 'error'"></slds-svg-icon>
+                        </h2>
+                    </div>
+                </div>
+                <div class="via-pane via-pane-{{$index}} {{pane}}" ng-repeat="pane in viaPanes" ng-include="'viaPane' + $index + '.tpl.html'" ng-class="{'via-pane-active': viaPane >= $index, 'via-pane-inactive': viaPane < $index}"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var nameSpacePrefix, remoteActions, baseRequestUrl, userName, showScratchPad, eventDrivenMode, liLabels;
+            nameSpacePrefix = '{!nameSpacePrefix}';
+            baseRequestUrl = '{!$Site.BaseRequestUrl}';
+            userName = '{!$User.Username}';
+            showScratchPad = '{!showScratchPad}';
+            eventDrivenMode = '{!eventDrivenMode}';
+            remoteActions = {
+                getLookupRequests: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getLookupRequests}',
+                    config: {escape: false}
+                },
+                getSearchResult: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getSearchResult}',
+                    config: {escape: false}
+                },
+                getLookupVerificationAction: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getLookupVerificationAction}',
+                    config: {escape: false}
+                },
+                invokeVOIMethod: {
+                    action: '{!$RemoteAction.LookupRequestResultController.invokeVOIMethod}',
+                    config: {escape: false}
+                },
+                getStepActions: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getStepActions}',
+                    config: {escape: false}
+                },
+                getVerificationPaneActions: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getVerificationPaneActions}',
+                    config: {escape: false}
+                },
+                getNextLookupRequests: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getNextLookupRequests}',
+                    config: {escape: false}
+                },
+                getNextLookupRequestsWithoutSearch: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getNextLookupRequestsWithoutSearch}',
+                    config: {escape: false}
+                },
+                getSearchResultById: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getSearchResultById}',
+                    config: {escape: false}
+                },
+                getSearchResultByIds: {
+                    action: '{!$RemoteAction.LookupRequestResultController.getSearchResultByIds}',
+                    config: {escape: false}
+                }
+            };
+            liLabels = {
+                'InteractionLauncher_Launch':'{!$label.InteractionLauncher_Launch}',
+                'InteractionLauncher_OK':'{!$label.InteractionLauncher_OK}',
+                'InteractionLauncher_RelatedParty': '{!$label.InteractionLauncher_RelatedParty}',
+                'InteractionLauncher_Search':'{!$label.InteractionLauncher_Search}',
+                'InteractionLauncher_SearchResult':'{!$label.InteractionLauncher_SearchResult}',
+                'InteractionLauncher_UnrelatedParty': '{!$label.InteractionLauncher_UnrelatedParty}',
+                'InteractionLauncher_VerifyCaller': '{!$label.InteractionLauncher_VerifyCaller}',
+                'InteractionLauncher_Verify': '{!$label.InteractionLauncher_Verify}',
+                'InteractionLauncher_VerifyAndSearch': '{!$label.InteractionLauncher_VerifyAndSearch}',
+                'InteractionLauncher_Scratchpad': '{!$label.InteractionLauncher_Scratchpad}',
+                'InteractionLauncher_EnterSearchTerms': '{!$label.InteractionLauncher_EnterSearchTerms}',
+                'InteractionLauncher_NoSearchResults': '{!$label.InteractionLauncher_NoSearchResults}',
+                'InteractionLauncher_NoSearchResultsRecordId': '{!$label.InteractionLauncher_NoSearchResultsRecordId}',
+                'InteractionLauncher_CallerFields': '{!$label.InteractionLauncher_CallerFields}',
+                'InteractionLauncher_VerifyHeading': '{!$label.InteractionLauncher_VerifyHeading}',
+                'InteractionLauncher_OptionalVerifyHeading': '{!$label.InteractionLauncher_OptionalVerifyHeading}',
+                'InteractionLauncher_MustVerify': '{!$label.InteractionLauncher_MustVerify}',
+                'InteractionLauncher_NoLookupRequests': '{!$label.InteractionLauncher_NoLookupRequests}'
+            };
+        </script>
+    </body>
+</html>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Displayed Fields --></label>
+        <name>vlocity_cmt__DisplayedFields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification Email Id --></label>
+        <name>vlocity_cmt__NotificationEmailId__c</name>
+    </fields>
+</CustomObjectTranslation>

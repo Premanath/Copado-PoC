@@ -1,0 +1,16 @@
+{
+    "output": [
+        {
+            "aggregationResults": {
+            },
+            "calculationResults": [
+                {
+                    "AnnualPremium": 2004.2,
+                    "ID": "input",
+                    "MonthlyPremium": 178.37,
+                    "QuarterlyPremium": 519.09
+                }
+            ]
+        }
+    ]
+}

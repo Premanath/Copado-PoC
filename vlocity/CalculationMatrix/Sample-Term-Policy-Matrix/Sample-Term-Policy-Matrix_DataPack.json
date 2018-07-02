@@ -1,0 +1,7 @@
+{
+    "%vlocity_namespace%__CalculationMatrixVersion__c": "Sample-Term-Policy-Matrix_Version.json",
+    "Name": "Sample Term Policy Matrix",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__CalculationMatrix__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__CalculationMatrix__c/Sample Term Policy Matrix"
+}
