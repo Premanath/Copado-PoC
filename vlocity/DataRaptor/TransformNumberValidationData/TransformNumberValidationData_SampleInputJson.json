@@ -1,0 +1,8 @@
+{
+    "numberDetails": {
+        "code": "SUCCESS",
+        "fnnChurnIndicator": "Y",
+        "fullNationalNumber": "0345678001",
+        "reason": "The FNN is Serviced by Telstra Vendors"
+    }
+}

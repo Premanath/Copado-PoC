@@ -7,7 +7,7 @@
         "%vlocity_namespace%__DisplaySectionName__c": false,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -40,7 +40,7 @@
         "%vlocity_namespace%__DisplaySectionName__c": false,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -78,7 +78,7 @@
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentClause__c"
         },
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -111,7 +111,7 @@
         "%vlocity_namespace%__DisplaySectionName__c": true,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -144,7 +144,7 @@
         "%vlocity_namespace%__DisplaySectionName__c": true,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -177,7 +177,7 @@
         "%vlocity_namespace%__DisplaySectionName__c": true,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -210,17 +210,12 @@
         "%vlocity_namespace%__DisplaySectionName__c": true,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Backup Template/11/Infosys/1528707412733",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Backup Template",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
         },
-        "%vlocity_namespace%__EmbeddedTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
-            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Office Internet T&C",
-            "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
-        },
+        "%vlocity_namespace%__EmbeddedTemplateId__c": "",
         "%vlocity_namespace%__IsInNewPage__c": false,
         "%vlocity_namespace%__IsRestricted__c": false,
         "%vlocity_namespace%__IsWordTableHeaderRepeated__c": false,

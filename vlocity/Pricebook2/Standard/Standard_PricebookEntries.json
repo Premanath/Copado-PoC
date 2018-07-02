@@ -18,7 +18,7 @@
         "Product2Id": {
             "Name": "Customer Appreciation Event - VIP Ticket",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NYQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eqQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CAE500",
@@ -26,7 +26,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M6NYQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M5eqQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -47,7 +47,7 @@
         "Product2Id": {
             "Name": "Customer Appreciation Event - Premier Ticket",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NnQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f5QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CAE200",
@@ -55,7 +55,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M6NnQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M5f5QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -76,7 +76,7 @@
         "Product2Id": {
             "Name": "Customer Appreciation Event - Standard Ticket",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NoQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f6QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CAE100",
@@ -84,6 +84,6 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M6NoQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard/VlocityRecordSourceKey:01t7F000003M5f6QAC"
     }
 ]

@@ -3,6 +3,35 @@
         "%vlocity_namespace%__FloorPrice__c": "",
         "%vlocity_namespace%__OverageCharge__c": "",
         "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Vivo V5",
+        "Pricebook2.Name": "B2B Price Book",
+        "Pricebook2Id": {
+            "Name": "B2B Price Book",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/B2B Price Book",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Vivo V5",
+        "Product2Id": {
+            "Name": "Vivo V5",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000002dyjMQAQ",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "VO_V5",
+        "UnitPrice": 850,
+        "UseStandardPrice": false,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000002dyjMQAQ"
+    },
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
         "%vlocity_namespace%__RecurringPrice__c": 50,
         "%vlocity_namespace%__RecurringUOM__c": "Monthly",
         "IsActive": true,
@@ -18,7 +47,7 @@
         "Product2Id": {
             "Name": "Family Simple Choice Plan",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NQQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eiQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "P2",
@@ -26,7 +55,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NQQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5eiQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -47,7 +76,7 @@
         "Product2Id": {
             "Name": "Individual Simple Choice Plan",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NRQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5ejQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "P1",
@@ -55,7 +84,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NRQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5ejQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -76,7 +105,7 @@
         "Product2Id": {
             "Name": "Apple iPhone 6",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NUQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5emQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "AI6",
@@ -84,7 +113,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NUQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5emQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -105,7 +134,7 @@
         "Product2Id": {
             "Name": "Apple iPhone 6s",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NWQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eoQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "IP6s",
@@ -113,7 +142,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NWQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5eoQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -134,7 +163,7 @@
         "Product2Id": {
             "Name": "Business Video Service Solution",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NXQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5epQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "BVSS",
@@ -142,7 +171,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NXQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5epQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -163,7 +192,7 @@
         "Product2Id": {
             "Name": "Customer Appreciation Event - VIP Ticket",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NYQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eqQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CAE500",
@@ -171,7 +200,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NYQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5eqQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -192,7 +221,7 @@
         "Product2Id": {
             "Name": "Office Internet Solution",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NdQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5evQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "OfficeInternet",
@@ -200,7 +229,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NdQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5evQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -221,7 +250,7 @@
         "Product2Id": {
             "Name": "SMART Hub Cloud Backup",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NeQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5ewQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SHCB",
@@ -229,7 +258,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NeQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5ewQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -250,7 +279,7 @@
         "Product2Id": {
             "Name": "Customer Appreciation Event - Premier Ticket",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NnQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f5QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CAE200",
@@ -258,7 +287,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NnQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5f5QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -279,7 +308,7 @@
         "Product2Id": {
             "Name": "Customer Appreciation Event - Standard Ticket",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NoQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f6QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CAE100",
@@ -287,7 +316,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NoQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5f6QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -308,7 +337,7 @@
         "Product2Id": {
             "Name": "Verizon Fiber Internet",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NrQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f9QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Verizon fiber_Internet",
@@ -316,7 +345,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NrQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5f9QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -337,7 +366,7 @@
         "Product2Id": {
             "Name": "Video - High Def TV",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NsQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fAQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Video_High_Def",
@@ -345,7 +374,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NsQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fAQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -366,14 +395,14 @@
         "Product2Id": {
             "Name": "Business Continuity Express - 100GB Storage",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NwQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fEQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 99.99,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NwQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fEQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -394,14 +423,14 @@
         "Product2Id": {
             "Name": "Business Continuity Express - 500GB Storage",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NxQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fFQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 99.99,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NxQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fFQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -422,7 +451,7 @@
         "Product2Id": {
             "Name": "Business Networks",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NyQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fGQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "AD-007",
@@ -430,7 +459,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NyQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fGQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -451,7 +480,7 @@
         "Product2Id": {
             "Name": "Business Phone+ and Coax",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NzQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fHQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Busines_Phone_Coax",
@@ -459,7 +488,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6NzQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fHQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -480,7 +509,7 @@
         "Product2Id": {
             "Name": "Business Phone+ and Fiber",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O0QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fIQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Business_Phone_Fiber",
@@ -488,7 +517,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O0QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fIQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -509,7 +538,7 @@
         "Product2Id": {
             "Name": "CB Coax Internet",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O1QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fJQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Op_Transport",
@@ -517,7 +546,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O1QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fJQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -538,7 +567,7 @@
         "Product2Id": {
             "Name": "CB Phone Plus+",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O2QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fKQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CB_Phone_Plus",
@@ -546,7 +575,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O2QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fKQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -567,14 +596,14 @@
         "Product2Id": {
             "Name": "Charter Desktop Security",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O3QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fLQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 9.99,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O3QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fLQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -595,14 +624,14 @@
         "Product2Id": {
             "Name": "Charter Desktop Security - 1 to 10 USER COUNT",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O4QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fMQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 0,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O4QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fMQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -623,14 +652,14 @@
         "Product2Id": {
             "Name": "Charter Desktop Security - 10 ADDITIONAL USER Pack",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O5QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fNQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 0,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O5QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fNQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -651,7 +680,7 @@
         "Product2Id": {
             "Name": "Charter Public View TV Package",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O6QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fOQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CB Public View TV Package",
@@ -659,7 +688,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O6QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fOQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -680,7 +709,7 @@
         "Product2Id": {
             "Name": "Charter Voice Trunks",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O7QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fPQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Voice_Trunks",
@@ -688,7 +717,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O7QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fPQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -709,7 +738,7 @@
         "Product2Id": {
             "Name": "Fiber Internet",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O8QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fQQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "fiber_Internet",
@@ -717,7 +746,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O8QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fQQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -738,7 +767,7 @@
         "Product2Id": {
             "Name": "Managed Cloud Storage",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6O9QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fRQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Managed Cloud",
@@ -746,7 +775,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6O9QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fRQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -767,14 +796,14 @@
         "Product2Id": {
             "Name": "Office 365 Premium",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OAQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fSQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 0,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OAQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fSQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -795,7 +824,7 @@
         "Product2Id": {
             "Name": "Office 365 Premium - 5 USER PACK",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OBQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fTQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "MSFT_OFFICE_365_5_USER_PACK",
@@ -803,7 +832,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OBQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fTQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -824,7 +853,7 @@
         "Product2Id": {
             "Name": "Video - Business Programming",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OCQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fUQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Video_Bus_Programming",
@@ -832,7 +861,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OCQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fUQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -853,7 +882,7 @@
         "Product2Id": {
             "Name": "Video - Digital Music",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6ODQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fVQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Video_Music",
@@ -861,7 +890,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6ODQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fVQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -882,7 +911,7 @@
         "Product2Id": {
             "Name": "Video - Sports Programming",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OEQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fWQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Video_Sports",
@@ -890,7 +919,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OEQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fWQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -911,7 +940,7 @@
         "Product2Id": {
             "Name": "XO Fiber Internet",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OFQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fXQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "XO fiber_Internet",
@@ -919,7 +948,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OFQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fXQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -940,7 +969,7 @@
         "Product2Id": {
             "Name": "Adventure",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OGQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fYQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "AD-008",
@@ -948,7 +977,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OGQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fYQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -969,7 +998,7 @@
         "Product2Id": {
             "Name": "Free Installation",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OHQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fZQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "FreeInstall",
@@ -977,7 +1006,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OHQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fZQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -998,7 +1027,7 @@
         "Product2Id": {
             "Name": "Internet Installation and Connectivity",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OMQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5feQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "IIC",
@@ -1006,7 +1035,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OMQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5feQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1027,7 +1056,7 @@
         "Product2Id": {
             "Name": "Business Internet acquisition promotion",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6ONQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5ffQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "BIAP",
@@ -1035,7 +1064,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6ONQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5ffQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1056,7 +1085,7 @@
         "Product2Id": {
             "Name": "Free 30 days of service",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OOQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fgQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "30DS",
@@ -1064,7 +1093,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OOQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fgQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1085,7 +1114,7 @@
         "Product2Id": {
             "Name": "Offer 1",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OUQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fmQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Offer1",
@@ -1093,7 +1122,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OUQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fmQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1114,7 +1143,7 @@
         "Product2Id": {
             "Name": "Offer 4",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OVQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fnQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Offer4",
@@ -1122,7 +1151,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OVQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fnQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1143,7 +1172,7 @@
         "Product2Id": {
             "Name": "Offer 5",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OWQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5foQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Offer5",
@@ -1151,7 +1180,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OWQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5foQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1172,7 +1201,7 @@
         "Product2Id": {
             "Name": "IP Phone",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OXQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fpQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "IPP",
@@ -1180,7 +1209,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OXQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fpQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1201,7 +1230,7 @@
         "Product2Id": {
             "Name": "Offer 2",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OYQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fqQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Offer2",
@@ -1209,7 +1238,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OYQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5fqQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1230,7 +1259,7 @@
         "Product2Id": {
             "Name": "Offer 3",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OZQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5frQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "Offer3",
@@ -1238,7 +1267,7 @@
         "UseStandardPrice": true,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6OZQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5frQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1259,7 +1288,7 @@
         "Product2Id": {
             "Name": "VoIP",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6PcQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5guQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "MIS-VoIP",
@@ -1267,7 +1296,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6PcQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5guQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1288,7 +1317,7 @@
         "Product2Id": {
             "Name": "CB Phone Plus++",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6Q7QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5hPQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "CB_Phone_Plus",
@@ -1296,7 +1325,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6Q7QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5hPQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1317,14 +1346,14 @@
         "Product2Id": {
             "Name": "Business Continuity Express - 5TB Storage",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6Q9QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5hRQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "UnitPrice": 99.99,
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6Q9QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5hRQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1345,7 +1374,7 @@
         "Product2Id": {
             "Name": "Family Package",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6QoQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5i6QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "BP-FAM09",
@@ -1353,7 +1382,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6QoQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5i6QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -1374,7 +1403,7 @@
         "Product2Id": {
             "Name": "Home Networking Service Visit",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6R6QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5iOQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "HNSVC",
@@ -1382,6 +1411,35 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M6R6QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003M5iOQAS"
+    },
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Oneplus5T",
+        "Pricebook2.Name": "B2B Price Book",
+        "Pricebook2Id": {
+            "Name": "B2B Price Book",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/B2B Price Book",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Oneplus5T",
+        "Product2Id": {
+            "Name": "Oneplus5T",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003faFIQAY",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "IP6s",
+        "UnitPrice": 850,
+        "UseStandardPrice": false,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2B Price Book/VlocityRecordSourceKey:01t7F000003faFIQAY"
     }
 ]

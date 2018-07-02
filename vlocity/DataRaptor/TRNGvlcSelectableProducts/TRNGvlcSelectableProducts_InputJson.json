@@ -1,0 +1,31 @@
+{
+    "ContextId": null,
+    "Step 5": {
+        "Product": null
+    },
+    "Welcome Note": {
+        "Already have an Account?": null,
+        "Member Validation": null,
+        "New User Information": {
+            "Email": null,
+            "First Name": null,
+            "Last Name": null,
+            "Mobile Number": null
+        },
+        "TypeAhead-Block": {
+            "TypeAhead": null
+        }
+    },
+    "timeStamp": null,
+    "userId": null,
+    "userName": null,
+    "userProfile": null,
+    "vlcPersistentComponent": {
+    },
+    "vlcTimeTracking": {
+        "Get Account Data DR": null,
+        "Step 5": null,
+        "TRNGgetProducts": null,
+        "Welcome Note": null
+    }
+}

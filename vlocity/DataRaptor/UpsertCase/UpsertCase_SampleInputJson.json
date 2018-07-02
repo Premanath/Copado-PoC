@@ -1,0 +1,13 @@
+{
+    "Case": {
+        "Case Info Block": {
+            "Account": "Acme",
+            "Casee": "00001013",
+            "Priority": "High",
+            "Status": "N"
+        }
+    },
+    "ContextId": "",
+    "timeStamp": "2015-06-08T11:41:40.962Z",
+    "userName": "training@telco.edu"
+}

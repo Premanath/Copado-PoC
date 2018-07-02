@@ -7,7 +7,7 @@
         "%vlocity_namespace%__DisplaySectionName__c": true,
         "%vlocity_namespace%__DocumentClauseId__c": "",
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Office Internet T&C/2/Infosys/1526970442892",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Office Internet T&C",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"
@@ -45,7 +45,7 @@
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentClause__c"
         },
         "%vlocity_namespace%__DocumentTemplateId__c": {
-            "%vlocity_namespace%__ExternalID__c": null,
+            "%vlocity_namespace%__ExternalID__c": "Office Internet T&C/2/Infosys/1526970442892",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
             "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__DocumentTemplate__c/Office Internet T&C",
             "VlocityRecordSObjectType": "%vlocity_namespace%__DocumentTemplate__c"

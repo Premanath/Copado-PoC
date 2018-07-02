@@ -1,0 +1,15 @@
+{
+    "Case": {
+        "Case Info Block": {
+            "Account": "Acme",
+            "Casee": "00001001",
+            "Origin": "",
+            "Priority": "High",
+            "Status": "New",
+            "Type": "Product"
+        }
+    },
+    "ContextId": "",
+    "timeStamp": "2015-06-08T11:41:40.962Z",
+    "userName": "training@telco.edu"
+}

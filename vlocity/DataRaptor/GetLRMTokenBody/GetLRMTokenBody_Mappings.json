@@ -1,0 +1,16 @@
+[
+    {
+        "%vlocity_namespace%__DefaultValue__c": "client_id=AXpgQNix085ko9SZjpVYQ2Td4SBsZei7&client_secret=9WucpF5TuEWgkFth&grant_type=client_credentials",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "newClient",
+        "%vlocity_namespace%__DomainObjectFieldType__c": "String",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "GetLRMAccessTokenCustom6664",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "GetLRMTokenBody",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

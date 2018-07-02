@@ -3,6 +3,35 @@
         "%vlocity_namespace%__FloorPrice__c": "",
         "%vlocity_namespace%__OverageCharge__c": "",
         "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Vivo V5",
+        "Pricebook2.Name": "B2C Mobile Price Book",
+        "Pricebook2Id": {
+            "Name": "B2C Mobile Price Book",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/B2C Mobile Price Book",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Vivo V5",
+        "Product2Id": {
+            "Name": "Vivo V5",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000002dyjMQAQ",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "VO_V5",
+        "UnitPrice": 650,
+        "UseStandardPrice": false,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000002dyjMQAQ"
+    },
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
         "%vlocity_namespace%__RecurringPrice__c": 80,
         "%vlocity_namespace%__RecurringUOM__c": "Monthly",
         "IsActive": true,
@@ -18,7 +47,7 @@
         "Product2Id": {
             "Name": "Family Simple Choice Plan",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NQQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eiQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "P2",
@@ -26,7 +55,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NQQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5eiQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -47,7 +76,7 @@
         "Product2Id": {
             "Name": "Individual Simple Choice Plan",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NRQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5ejQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "P1",
@@ -55,7 +84,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NRQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5ejQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -76,7 +105,7 @@
         "Product2Id": {
             "Name": "Samsung Galaxy Note4",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NSQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5ekQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SGN4",
@@ -84,7 +113,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NSQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5ekQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -105,7 +134,7 @@
         "Product2Id": {
             "Name": "Samsung Galaxy S6",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NTQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5elQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SGS6",
@@ -113,7 +142,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NTQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5elQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -134,7 +163,7 @@
         "Product2Id": {
             "Name": "Apple iPhone 6",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NUQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5emQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "AI6",
@@ -142,7 +171,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NUQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5emQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -163,7 +192,7 @@
         "Product2Id": {
             "Name": "Beats Earbud",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NVQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5enQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "BEA101",
@@ -171,7 +200,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NVQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5enQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -192,7 +221,7 @@
         "Product2Id": {
             "Name": "Apple iPhone 6s",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NWQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eoQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "IP6s",
@@ -200,7 +229,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NWQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5eoQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -221,7 +250,7 @@
         "Product2Id": {
             "Name": "LG G Pad X 8.0 Tablet",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NZQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5erQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "LGGX",
@@ -229,7 +258,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NZQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5erQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -250,7 +279,7 @@
         "Product2Id": {
             "Name": "LG G6 Phone",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NaQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5esQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "LG6",
@@ -258,7 +287,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NaQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5esQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -279,7 +308,7 @@
         "Product2Id": {
             "Name": "LG Spring Fling Bundle Offer",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NbQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5etQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "LGSPRO",
@@ -287,7 +316,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NbQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5etQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -308,7 +337,7 @@
         "Product2Id": {
             "Name": "Sony Earbud",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NfQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5exQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SON101",
@@ -316,7 +345,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NfQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5exQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -337,7 +366,7 @@
         "Product2Id": {
             "Name": "Galaxy 6 Case",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NgQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5eyQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SAM103",
@@ -345,7 +374,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NgQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5eyQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -366,7 +395,7 @@
         "Product2Id": {
             "Name": "iPhone Car Charger",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NhQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5ezQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "APL101",
@@ -374,7 +403,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NhQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5ezQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -395,7 +424,7 @@
         "Product2Id": {
             "Name": "iPhone Case",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NiQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f0QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "APL102",
@@ -403,7 +432,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NiQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5f0QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -424,7 +453,7 @@
         "Product2Id": {
             "Name": "Motorola Car Charger",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NjQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f1QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "MOT101",
@@ -432,7 +461,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NjQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5f1QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -453,7 +482,7 @@
         "Product2Id": {
             "Name": "Note 4 Case",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NkQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f2QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SAM102",
@@ -461,7 +490,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NkQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5f2QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -482,7 +511,7 @@
         "Product2Id": {
             "Name": "Samsung Car Charger",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NlQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f3QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SAM101",
@@ -490,7 +519,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NlQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5f3QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -511,7 +540,7 @@
         "Product2Id": {
             "Name": "Skullcandy Earbud",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NmQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f4QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SKU101",
@@ -519,7 +548,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NmQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5f4QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -540,7 +569,7 @@
         "Product2Id": {
             "Name": "SIM Starter Kit",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6NpQAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5f7QAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "SIM3in1",
@@ -548,7 +577,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6NpQAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5f7QAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -569,7 +598,7 @@
         "Product2Id": {
             "Name": "Unlimited talk and text",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OPQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fhQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "UTT",
@@ -577,7 +606,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6OPQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5fhQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -598,7 +627,7 @@
         "Product2Id": {
             "Name": "Unlimited data",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OQQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fiQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "UD",
@@ -606,7 +635,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6OQQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5fiQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -627,7 +656,7 @@
         "Product2Id": {
             "Name": "4G LTE data 1GB",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6ORQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fjQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "4G1GB",
@@ -635,7 +664,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6ORQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5fjQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -656,7 +685,7 @@
         "Product2Id": {
             "Name": "Mobile HotSpot",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OSQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5fkQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "MHS",
@@ -664,7 +693,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6OSQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5fkQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -685,7 +714,7 @@
         "Product2Id": {
             "Name": "No annual service contract",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6OTQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5flQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "NASC",
@@ -693,7 +722,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6OTQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5flQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -714,7 +743,7 @@
         "Product2Id": {
             "Name": "4G LTE data 3GB",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6QXQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5hpQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "4G3GB",
@@ -722,7 +751,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6QXQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5hpQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -743,7 +772,7 @@
         "Product2Id": {
             "Name": "4G LTE data 5GB",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6QYQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5hqQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "4G5GB",
@@ -751,7 +780,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6QYQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5hqQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -772,7 +801,7 @@
         "Product2Id": {
             "Name": "4G LTE data Unlimited",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6QZQA0",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5hrQAC",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "4GUL",
@@ -780,7 +809,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6QZQA0"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5hrQAC"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -801,7 +830,7 @@
         "Product2Id": {
             "Name": "Visa Gift Card $100",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6R5QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5iNQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "VISA100",
@@ -809,7 +838,7 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6R5QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5iNQAS"
     },
     {
         "%vlocity_namespace%__FloorPrice__c": "",
@@ -830,7 +859,7 @@
         "Product2Id": {
             "Name": "Home Networking Service Visit",
             "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
-            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M6R6QAK",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003M5iOQAS",
             "VlocityRecordSObjectType": "Product2"
         },
         "ProductCode": "HNSVC",
@@ -838,6 +867,35 @@
         "UseStandardPrice": false,
         "VlocityDataPackType": "SObject",
         "VlocityRecordSObjectType": "PricebookEntry",
-        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M6R6QAK"
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003M5iOQAS"
+    },
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": "",
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "Name": "Oneplus5T",
+        "Pricebook2.Name": "B2C Mobile Price Book",
+        "Pricebook2Id": {
+            "Name": "B2C Mobile Price Book",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Pricebook2/B2C Mobile Price Book",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.Name": "Oneplus5T",
+        "Product2Id": {
+            "Name": "Oneplus5T",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "VlocityRecordSourceKey:01t7F000003faFIQAY",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "IP6s",
+        "UnitPrice": 650,
+        "UseStandardPrice": false,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/B2C Mobile Price Book/VlocityRecordSourceKey:01t7F000003faFIQAY"
     }
 ]

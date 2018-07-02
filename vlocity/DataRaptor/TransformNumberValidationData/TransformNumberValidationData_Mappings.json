@@ -1,0 +1,41 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Output:Churnability",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "numberDetails:fnnChurnIndicator",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TransformNumberValidationDataCustom1152",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TransformNumberValidationData",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Output:FNN",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "numberDetails:fullNationalNumber",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TransformNumberValidationDataCustom2932",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TransformNumberValidationData",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Output:Protability",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "numberDetails:fnnPortabilityIndicator",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TransformNumberValidationDataCustom7485",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TransformNumberValidationData",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

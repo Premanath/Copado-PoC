@@ -18,7 +18,7 @@
     "%vlocity_namespace%__PreprocessorClassName__c": "",
     "%vlocity_namespace%__ProcessNowThreshold__c": 0,
     "%vlocity_namespace%__RollbackOnError__c": false,
-    "%vlocity_namespace%__SampleInputJSON__c": "CopadoTestDataRaptor_SampleInputJson.json",
+    "%vlocity_namespace%__SampleInputJSON__c": "{}",
     "%vlocity_namespace%__SampleInputRows__c": "",
     "%vlocity_namespace%__TargetOutDocuSignTemplateId__c": "",
     "%vlocity_namespace%__TargetOutJson__c": "",
